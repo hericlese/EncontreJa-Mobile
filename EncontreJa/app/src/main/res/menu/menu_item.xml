@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+
+        <item android:title="Conta">
+            <menu>
+                <item
+                    android:id="@+id/login"
+                    android:title="Login"
+                    android:icon="@drawable/btnlogin"/>
+                <item
+                    android:id="@+id/perfil"
+                    android:title="Perfil"
+                    android:icon="@drawable/btnperfil"/>
+                <item
+                    android:id="@+id/logout"
+                    android:title="Logout"
+                    android:icon="@drawable/btnlogout"/>
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="Profissional">
+            <menu>
+                <item
+                    android:id="@+id/vagas"
+                    android:title="Procurar Vagas"
+                    android:icon="@drawable/btnvagas"/>
+                <item
+                    android:id="@+id/atualizarC"
+                    android:title="Adicionar Currículo"
+                    android:icon="@drawable/btnatualizarc"/>
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+         <item android:title="Empresa">
+            <menu>
+                <item
+                    android:id="@+id/profissionalitem"
+                    android:title="Procurar Profissional"
+                    android:icon="@drawable/btnprofissional"/>
+                <item
+                    android:id="@+id/myvaga"
+                    android:title="Adicionar Vagas"
+                    android:icon="@drawable/btnaddvaga"/>
+            </menu>
+        </item>
+    </group>
+
+    <group android:checkableBehavior="single">
+        <item android:title="App">
+            <menu>
+                <item
+                    android:id="@+id/sobre"
+                    android:title="Sobre"
+                    android:icon="@drawable/btnsobre"/>
+                <item
+                    android:id="@+id/sair"
+                    android:title="Sair"
+                    android:icon="@drawable/btnexit"/>
+            </menu>
+        </item>
+    </group>
+
+
+
+</menu>
