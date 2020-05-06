@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
-    LinearLayout btnRegistrar;
+    LinearLayout btnRegistrarE, btnRegistrarP;
 
-    @SuppressLint("RestrictedApi")
+    @SuppressLint({"RestrictedApi", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,7 +30,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         drawerLayout= findViewById(R.id.drawer); //pagina toolbar escondida
         toolbar = findViewById(R.id.toolbar);  // toolbar
         navigationView = findViewById(R.id.navigationView); //barra de navegação
-        LinearLayout btnRegistrar = (LinearLayout) findViewById(R.id.card_registrar); //Botão Registrar
+        btnRegistrarE = findViewById(R.id.card_registrarE); //Botão RegistrarEmpresa
+        btnRegistrarP = findViewById(R.id.card_registrarP); //Botão RegistrarProfissional
 
 
 
@@ -43,8 +44,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView.setNavigationItemSelectedListener(this);
 
 
-        btnRegistrar.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {   //Btn Registrar
+        btnRegistrarP.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {   //Btn RegistrarProfissional
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itCadastroProfissional = new Intent(
@@ -53,6 +54,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 );
                 // chamar a outra Activity
                 startActivity(itCadastroProfissional);
+            }
+        });
+
+        btnRegistrarE.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {   //Btn RegistrarEmpresa
+                // passar os dados para outra View (activity_resultado.xml)
+                // Intent(classe origem, classe destino.class)
+                Intent itCadastroEmpresa = new Intent(
+                        MainActivity.this,
+                        CadastrarEmpresa.class
+                );
+                // chamar a outra Activity
+                startActivity(itCadastroEmpresa);
             }
         });
 
