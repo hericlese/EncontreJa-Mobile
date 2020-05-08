@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
-    LinearLayout btnRegistrarE, btnRegistrarP;
+    LinearLayout btnRegistrarE, btnRegistrarP, btnProcurarP, btnProcurarV,btnAnunciarC;
 
     @SuppressLint({"RestrictedApi", "WrongViewCast"})
     @Override
@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         navigationView = findViewById(R.id.navigationView); //barra de navegação
         btnRegistrarE = findViewById(R.id.card_registrarE); //Botão RegistrarEmpresa
         btnRegistrarP = findViewById(R.id.card_registrarP); //Botão RegistrarProfissional
+        btnProcurarP = findViewById(R.id.card_anunciosMain); //Botão ProcurarProfissional
+        btnProcurarV = findViewById(R.id.card_vagasMain); //Botão ProcurarVagas
+        btnAnunciarC = findViewById(R.id.card_AnunciarCurriculoMain); //Botão ProcurarVagas
 
 
 
@@ -43,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+            //Botoes para novas activies
 
         btnRegistrarP.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {   //Btn RegistrarProfissional
@@ -70,6 +74,46 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+        btnProcurarP.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {   //Btn RegistrarProfissional
+                // passar os dados para outra View (activity_resultado.xml)
+                // Intent(classe origem, classe destino.class)
+                Intent itProcurarProfissional = new Intent(
+                        MainActivity.this,
+                        AnunciosProfissionais.class
+                );
+                // chamar a outra Activity
+                startActivity(itProcurarProfissional);
+            }
+        });
+
+
+        btnProcurarV.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {   //Btn RegistrarProfissional
+                // passar os dados para outra View (activity_resultado.xml)
+                // Intent(classe origem, classe destino.class)
+                Intent itProcurarVagas = new Intent(
+                        MainActivity.this,
+                        AnunciosVagas.class
+                );
+                // chamar a outra Activity
+                startActivity(itProcurarVagas);
+            }
+        });
+
+
+        btnAnunciarC.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {   //Btn RegistrarProfissional
+                // passar os dados para outra View (activity_resultado.xml)
+                // Intent(classe origem, classe destino.class)
+                Intent itAnunciarCurriculo = new Intent(
+                        MainActivity.this,
+                        AnunciarCurriculo.class
+                );
+                // chamar a outra Activity
+                startActivity(itAnunciarCurriculo);
+            }
+        });
 
 
 

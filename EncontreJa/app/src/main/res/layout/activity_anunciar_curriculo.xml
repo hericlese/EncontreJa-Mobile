@@ -1,6 +1,172 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<androidx.drawerlayout.widget.DrawerLayout
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    tools:openDrawer="end"
+    android:id="@+id/drawer"
+    android:background="#fff"
+    android:layout_height="match_parent"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/header"
+            android:background="@drawable/header"
+            />
+
+        <TextView
+            android:layout_width="150dp"
+            android:layout_height="110dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="60dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/quadrantabold"
+            android:text="Cadastrar Curriculo"
+            android:textAlignment="textStart"
+            android:textColor="#ffff"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="150dp"
+            android:fontFamily="@font/quadrantabold"
+            android:text="Preencha o formulário abaixo"
+            android:textAlignment="viewStart"
+            android:textColor="@color/colorAccent"
+            android:textSize="14dp" />
+
+
+
+        <ScrollView
+            android:layout_alignParentBottom="true"
+            android:fillViewport="true"
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:orientation="vertical"
+            android:rowCount="9"
+            android:scrollbars="vertical"
+            android:padding="5dp"
+            >
+
+
+            <androidx.cardview.widget.CardView
+                android:alignmentMode="alignMargins"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_rowWeight="1"
+                android:layout_columnWeight="1"
+                android:layout_margin="10dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="vertical"
+                    android:padding="5dp"
+                    >
+
+
+                    <TextView
+                        android:id="@+id/competencia2vaga"
+                        android:layout_width="fill_parent"
+                        android:layout_height="15dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_column="0"
+                        android:text="Nome:"
+                        android:textColor="#6f6f6f"
+                        android:textSize="12sp"
+                        android:autoSizeTextType="uniform"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/editTextNomeCurriculo"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="10dp"
+                        android:background="#FAF8F8"
+                        android:ems="10"
+                        android:textAlignment="center"
+                        android:hint=" Digite seu nome completo"
+                        android:inputType="textPersonName"
+                        android:textSize="14dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.114" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="15dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_column="0"
+                        android:layout_marginTop="10dp"
+                        android:text="Dados Básicos:"
+                        android:textColor="#6f6f6f"
+                        android:textSize="12sp"
+                        android:autoSizeTextType="uniform"
+                        android:textStyle="bold"/>
+
+                    <EditText
+                        android:id="@+id/editTextDadosBasicosCurriculo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:background="#FAF8F8"
+                        android:textSize="14dp"
+                        android:layout_marginEnd="15dp"
+                        android:ems="10"
+                        android:hint=" Use este campo para descrever dados básicos ex: \n Brasileiro \n Solteiro \n Não Fumante \n "
+                        android:gravity="start|top"
+                        android:inputType="textMultiLine"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+
+
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </ScrollView>
+
+    </RelativeLayout>
+
+
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navigationView"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#ffff"
+        app:headerLayout="@layout/header"
+        app:itemTextColor="#000000"
+        android:textSize="16dp"
+        app:menu="@menu/menu_item" />
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

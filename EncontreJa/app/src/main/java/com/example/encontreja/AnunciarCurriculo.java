@@ -1,15 +1,18 @@
 package com.example.encontreja;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+
 import com.google.android.material.navigation.NavigationView;
 
-public class CadastrarProfissional extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class AnunciarCurriculo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;
     Toolbar toolbar;
@@ -21,7 +24,7 @@ public class CadastrarProfissional extends AppCompatActivity implements Navigati
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cadastrar_profissionais);
+        setContentView(R.layout.activity_anunciar_curriculo);
         drawerLayout= findViewById(R.id.drawer); //pagina toolbar escondida
         toolbar = findViewById(R.id.toolbar);  // toolbar
         navigationView = findViewById(R.id.navigationView); //barra de navegação
