@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
-    LinearLayout btnRegistrarE, btnRegistrarP, btnProcurarP, btnProcurarV,btnAnunciarC;
+    LinearLayout btnRegistrarE, btnRegistrarP, btnProcurarP, btnProcurarV,btnAnunciarC, btnAnunciarV;
 
     @SuppressLint({"RestrictedApi", "WrongViewCast"})
     @Override
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btnProcurarP = findViewById(R.id.card_anunciosMain); //Botão ProcurarProfissional
         btnProcurarV = findViewById(R.id.card_vagasMain); //Botão ProcurarVagas
         btnAnunciarC = findViewById(R.id.card_AnunciarCurriculoMain); //Botão ProcurarVagas
+        btnAnunciarV = findViewById(R.id.card_AnunciarVagaMain); //Botão AnunciarVagas
 
 
 
@@ -112,6 +113,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 );
                 // chamar a outra Activity
                 startActivity(itAnunciarCurriculo);
+            }
+        });
+
+
+        btnAnunciarV.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {   //Btn RegistrarProfissional
+                // passar os dados para outra View (activity_resultado.xml)
+                // Intent(classe origem, classe destino.class)
+                Intent itAnunciarVaga = new Intent(
+                        MainActivity.this,
+                        AnunciarVagas.class
+                );
+                // chamar a outra Activity
+                startActivity(itAnunciarVaga);
             }
         });
 

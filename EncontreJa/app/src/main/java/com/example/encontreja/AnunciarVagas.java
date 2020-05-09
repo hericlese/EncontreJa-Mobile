@@ -12,7 +12,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
 
-public class AnunciosVagas extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class AnunciarVagas extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     DrawerLayout drawerLayout;
     Toolbar toolbar;
@@ -24,7 +24,7 @@ public class AnunciosVagas extends AppCompatActivity implements NavigationView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_anuncio_vagas);
+        setContentView(R.layout.activity_anunciar_vagas);
         drawerLayout= findViewById(R.id.drawer); //pagina toolbar escondida
         toolbar = findViewById(R.id.toolbar);  // toolbar
         navigationView = findViewById(R.id.navigationView); //barra de navegação

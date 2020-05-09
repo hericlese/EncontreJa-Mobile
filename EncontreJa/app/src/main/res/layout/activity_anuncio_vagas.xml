@@ -371,7 +371,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -398,7 +397,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -419,7 +417,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -444,7 +441,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -465,7 +461,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -576,7 +571,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -603,7 +597,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -624,7 +617,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -649,7 +641,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -670,7 +661,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -781,7 +771,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -808,7 +797,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -829,7 +817,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -854,7 +841,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -875,7 +861,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -986,7 +971,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -1013,7 +997,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1034,7 +1017,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1059,7 +1041,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1080,7 +1061,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -1191,7 +1171,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -1218,7 +1197,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1239,7 +1217,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1264,7 +1241,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1285,7 +1261,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -1396,7 +1371,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -1423,7 +1397,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1444,7 +1417,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1469,7 +1441,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1490,7 +1461,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -1601,7 +1571,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -1628,7 +1597,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1649,7 +1617,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1674,7 +1641,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1695,7 +1661,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -1806,7 +1771,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -1833,7 +1797,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1854,7 +1817,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1879,7 +1841,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -1900,7 +1861,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -2011,7 +1971,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -2038,7 +1997,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -2059,7 +2017,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -2084,7 +2041,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -2105,213 +2061,6 @@
 
 
                                 <TextView
-
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="17dp"
-                                    android:text="1 Vaga"
-                                    android:layout_gravity="left"
-                                    android:textAlignment="textStart"
-                                    android:textColor="@color/v4"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold"
-                                    android:autoSizeTextType="uniform"
-                                    tools:ignore="RtlCompat" />
-
-                            </LinearLayout>
-
-
-                        </GridLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_rowWeight="1"
-                    android:layout_gravity="top"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="6dp">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        >
-                        <ImageView
-                            android:layout_marginTop="0dp"
-                            android:layout_width="50dp"
-                            android:layout_height="70dp"
-                            android:layout_gravity="left"
-                            android:layout_marginEnd="5dp"
-                            android:src="@drawable/anuncioempresalogo" />
-
-                        <TextView
-
-                            android:layout_width="200dp"
-                            android:layout_height="23dp"
-                            android:text="Cargo Vaga"
-                            android:textAlignment="textStart"
-                            android:textColor="@color/v5"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-
-                            />
-
-                        <TextView
-
-                            android:layout_width="fill_parent"
-                            android:layout_height="17dp"
-                            android:text="GROGREE LCTS"
-                            android:layout_gravity="end"
-                            android:layout_marginStart="5dp"
-                            android:textColor="@color/v2"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            android:autoSizeTextType="uniform"
-                            />
-
-                        //grid competencias
-
-                        <GridLayout
-                            android:layout_marginStart="-330dp"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="19dp"
-                            android:columnCount="4">
-
-                            ///////////////////////////////////////COMPETENCIA 1
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/separacao_campo">>
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 1"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="0"
-                                android:layout_gravity="start|bottom"
-                                android:orientation="horizontal"
-                                android:background="@drawable/separacao_campo">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_marginEnd="5dp"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 2"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-
-
-                            </LinearLayout>
-
-                            ///////////////////////////////////////COMPETENCIA 2
-
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/separacao_campo">>
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 3"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="1"
-                                android:layout_marginTop="30dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 4"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-
-                            ///////////////////////////////////////COMPETENCIA 3
-
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 5"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="3"
-                                android:layout_gravity="start|bottom"
-                                android:orientation="horizontal">
-
-
-                                <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -2422,7 +2171,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -2449,7 +2197,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -2470,7 +2217,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -2495,7 +2241,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -2516,7 +2261,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -2627,7 +2371,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -2654,7 +2397,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -2675,7 +2417,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -2700,7 +2441,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -2721,213 +2461,6 @@
 
 
                                 <TextView
-
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="17dp"
-                                    android:text="1 Vaga"
-                                    android:layout_gravity="left"
-                                    android:textAlignment="textStart"
-                                    android:textColor="@color/v4"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold"
-                                    android:autoSizeTextType="uniform"
-                                    tools:ignore="RtlCompat" />
-
-                            </LinearLayout>
-
-
-                        </GridLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-                <androidx.cardview.widget.CardView
-                    android:layout_rowWeight="1"
-                    android:layout_gravity="top"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="6dp">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        >
-                        <ImageView
-                            android:layout_marginTop="0dp"
-                            android:layout_width="50dp"
-                            android:layout_height="70dp"
-                            android:layout_gravity="left"
-                            android:layout_marginEnd="5dp"
-                            android:src="@drawable/anuncioempresalogo" />
-
-                        <TextView
-
-                            android:layout_width="200dp"
-                            android:layout_height="23dp"
-                            android:text="Cargo Vaga"
-                            android:textAlignment="textStart"
-                            android:textColor="@color/v5"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-
-                            />
-
-                        <TextView
-
-                            android:layout_width="fill_parent"
-                            android:layout_height="17dp"
-                            android:text="GROGREE LCTS"
-                            android:layout_gravity="end"
-                            android:layout_marginStart="5dp"
-                            android:textColor="@color/v2"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            android:autoSizeTextType="uniform"
-                            />
-
-                        //grid competencias
-
-                        <GridLayout
-                            android:layout_marginStart="-330dp"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="19dp"
-                            android:columnCount="4">
-
-                            ///////////////////////////////////////COMPETENCIA 1
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/separacao_campo">>
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 1"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="0"
-                                android:layout_gravity="start|bottom"
-                                android:orientation="horizontal"
-                                android:background="@drawable/separacao_campo">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_marginEnd="5dp"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 2"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-
-
-                            </LinearLayout>
-
-                            ///////////////////////////////////////COMPETENCIA 2
-
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/separacao_campo">>
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 3"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="1"
-                                android:layout_marginTop="30dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 4"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-
-                            ///////////////////////////////////////COMPETENCIA 3
-
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 5"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="3"
-                                android:layout_gravity="start|bottom"
-                                android:orientation="horizontal">
-
-
-                                <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -3038,7 +2571,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -3065,7 +2597,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -3086,7 +2617,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -3111,7 +2641,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -3132,7 +2661,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -3243,7 +2771,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -3270,7 +2797,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -3291,7 +2817,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -3316,7 +2841,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -3337,7 +2861,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -3448,7 +2971,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_marginEnd="5dp"
                                     android:layout_height="15dp"
@@ -3475,7 +2997,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -3496,7 +3017,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -3521,7 +3041,6 @@
 
                                 <TextView
                                     android:layout_marginBottom="3dp"
-
                                     android:layout_width="wrap_content"
                                     android:layout_height="15dp"
                                     android:layout_marginStart="2dp"
@@ -3542,7 +3061,6 @@
 
 
                                 <TextView
-
                                     android:layout_width="fill_parent"
                                     android:layout_height="17dp"
                                     android:text="1 Vaga"
@@ -3561,430 +3079,16 @@
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_rowWeight="1"
-                    android:layout_gravity="top"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="6dp">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        >
-                        <ImageView
-                            android:layout_marginTop="0dp"
-                            android:layout_width="50dp"
-                            android:layout_height="70dp"
-                            android:layout_gravity="left"
-                            android:layout_marginEnd="5dp"
-                            android:src="@drawable/anuncioempresalogo" />
-
-                        <TextView
-
-                            android:layout_width="200dp"
-                            android:layout_height="23dp"
-                            android:text="Cargo Vaga"
-                            android:textAlignment="textStart"
-                            android:textColor="@color/v5"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-
-                            />
-
-                        <TextView
-
-                            android:layout_width="fill_parent"
-                            android:layout_height="17dp"
-                            android:text="GROGREE LCTS"
-                            android:layout_gravity="end"
-                            android:layout_marginStart="5dp"
-                            android:textColor="@color/v2"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            android:autoSizeTextType="uniform"
-                            />
-
-                        //grid competencias
-
-                        <GridLayout
-                            android:layout_marginStart="-330dp"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="19dp"
-                            android:columnCount="4">
-
-                            ///////////////////////////////////////COMPETENCIA 1
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/separacao_campo">>
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 1"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="0"
-                                android:layout_gravity="start|bottom"
-                                android:orientation="horizontal"
-                                android:background="@drawable/separacao_campo">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_marginEnd="5dp"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 2"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-
-
-                            </LinearLayout>
-
-                            ///////////////////////////////////////COMPETENCIA 2
-
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/separacao_campo">>
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 3"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="1"
-                                android:layout_marginTop="30dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 4"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-
-                            ///////////////////////////////////////COMPETENCIA 3
-
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 5"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="3"
-                                android:layout_gravity="start|bottom"
-                                android:orientation="horizontal">
-
-
-                                <TextView
-
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="17dp"
-                                    android:text="1 Vaga"
-                                    android:layout_gravity="left"
-                                    android:textAlignment="textStart"
-                                    android:textColor="@color/v4"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold"
-                                    android:autoSizeTextType="uniform"
-                                    tools:ignore="RtlCompat" />
-
-                            </LinearLayout>
-
-
-                        </GridLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:layout_rowWeight="1"
-                    android:layout_gravity="top"
-                    android:layout_height="wrap_content"
-                    android:layout_columnWeight="1"
-                    android:layout_margin="5dp"
-                    app:cardCornerRadius="5dp"
-                    app:cardElevation="6dp">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center"
-                        android:orientation="horizontal"
-                        >
-                        <ImageView
-                            android:layout_marginTop="0dp"
-                            android:layout_width="50dp"
-                            android:layout_height="70dp"
-                            android:layout_gravity="left"
-                            android:layout_marginEnd="5dp"
-                            android:src="@drawable/anuncioempresalogo" />
-
-                        <TextView
-
-                            android:layout_width="200dp"
-                            android:layout_height="23dp"
-                            android:text="Cargo Vaga"
-                            android:textAlignment="textStart"
-                            android:textColor="@color/v5"
-                            android:textSize="14sp"
-                            android:textStyle="bold"
-
-                            />
-
-                        <TextView
-
-                            android:layout_width="fill_parent"
-                            android:layout_height="17dp"
-                            android:text="GROGREE LCTS"
-                            android:layout_gravity="end"
-                            android:layout_marginStart="5dp"
-                            android:textColor="@color/v2"
-                            android:textSize="10sp"
-                            android:textStyle="bold"
-                            android:autoSizeTextType="uniform"
-                            />
-
-                        //grid competencias
-
-                        <GridLayout
-                            android:layout_marginStart="-330dp"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="19dp"
-                            android:columnCount="4">
-
-                            ///////////////////////////////////////COMPETENCIA 1
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/separacao_campo">>
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 1"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="0"
-                                android:layout_gravity="start|bottom"
-                                android:orientation="horizontal"
-                                android:background="@drawable/separacao_campo">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_marginEnd="5dp"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 2"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-
-
-                            </LinearLayout>
-
-                            ///////////////////////////////////////COMPETENCIA 2
-
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content"
-                                android:background="@drawable/separacao_campo">>
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 3"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="1"
-                                android:layout_marginTop="30dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 4"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-
-                            ///////////////////////////////////////COMPETENCIA 3
-
-
-                            <LinearLayout
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="start"
-                                android:orientation="horizontal"
-                                android:layout_height="wrap_content">
-
-                                <TextView
-                                    android:layout_marginBottom="3dp"
-
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_column="0"
-                                    android:text="Competencia 5"
-                                    android:layout_marginEnd="5dp"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="12sp"
-                                    android:autoSizeTextType="uniform"
-                                    android:textStyle="bold"/>
-                            </LinearLayout>
-
-                            <LinearLayout
-                                android:layout_row="0"
-                                android:layout_column="3"
-                                android:layout_gravity="start|bottom"
-                                android:orientation="horizontal">
-
-
-                                <TextView
-
-                                    android:layout_width="fill_parent"
-                                    android:layout_height="17dp"
-                                    android:text="1 Vaga"
-                                    android:layout_gravity="left"
-                                    android:textAlignment="textStart"
-                                    android:textColor="@color/v4"
-                                    android:textSize="14sp"
-                                    android:textStyle="bold"
-                                    android:autoSizeTextType="uniform"
-                                    tools:ignore="RtlCompat" />
-
-                            </LinearLayout>
-
-
-                        </GridLayout>
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
-
-
-
-
-
-
 
 
 
 
 
             </GridLayout>
+
+
+
+
 
 
 
