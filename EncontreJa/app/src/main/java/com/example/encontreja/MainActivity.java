@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -20,7 +19,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     Toolbar toolbar;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
-    LinearLayout btnRegistrarE, btnRegistrarP, btnProcurarP, btnProcurarV,btnAnunciarC, btnAnunciarV;
+    LinearLayout btnRegistrarE, btnRegistrarP, btnProcurarP, btnProcurarV,btnAnunciarC, btnAnunciarV, btnLogar;
 
     @SuppressLint({"RestrictedApi", "WrongViewCast"})
     @Override
@@ -36,6 +35,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btnProcurarV = findViewById(R.id.card_vagasMain); //Botão ProcurarVagas
         btnAnunciarC = findViewById(R.id.card_AnunciarCurriculoMain); //Botão ProcurarVagas
         btnAnunciarV = findViewById(R.id.card_AnunciarVagaMain); //Botão AnunciarVagas
+        btnLogar = findViewById(R.id.btnLogin); //Botão login home
 
 
 
@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             //Botoes para novas activies
 
         btnRegistrarP.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {   //Btn RegistrarProfissional
+            public void onClick(View v) {   //Btn Registrar Profissional
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itCadastroProfissional = new Intent(
@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
         btnRegistrarE.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {   //Btn RegistrarEmpresa
+            public void onClick(View v) {   //Btn Registrar Empresa
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itCadastroEmpresa = new Intent(
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         });
 
         btnProcurarP.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {   //Btn RegistrarProfissional
+            public void onClick(View v) {   //Btn Procurar Profissional
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itProcurarProfissional = new Intent(
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         btnProcurarV.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {   //Btn RegistrarProfissional
+            public void onClick(View v) {   //Btn Procurar Vaga
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itProcurarVagas = new Intent(
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         btnAnunciarC.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {   //Btn RegistrarProfissional
+            public void onClick(View v) {   //Btn Anunciar Curriculo
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itAnunciarCurriculo = new Intent(
@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
         btnAnunciarV.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {   //Btn RegistrarProfissional
+            public void onClick(View v) {   //Btn Anunciar Vaga
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itAnunciarVaga = new Intent(
@@ -130,6 +130,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+
+        btnLogar.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {   //Btn Login
+                // passar os dados para outra View (activity_resultado.xml)
+                // Intent(classe origem, classe destino.class)
+                Intent itLogar = new Intent(
+                        MainActivity.this,
+                        LogarUsuario.class
+                );
+                // chamar a outra Activity
+                startActivity(itLogar);
+            }
+        });
 
 
 

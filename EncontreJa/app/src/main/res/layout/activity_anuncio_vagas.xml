@@ -58,6 +58,7 @@
             android:alignmentMode="alignMargins"
             android:columnOrderPreserved="false"
             android:orientation="vertical"
+            android:layout_marginBottom="10dp"
             android:rowCount="9"
             android:scrollbars="vertical"
             android:padding="5dp"

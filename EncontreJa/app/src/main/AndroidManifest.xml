@@ -23,6 +23,7 @@
         <activity android:name=".AnunciosVagas"/>
         <activity android:name=".AnunciarCurriculo"/>
         <activity android:name=".AnunciarVagas"/>
+        <activity android:name=".LogarUsuario"/>
 
 
     </application>
