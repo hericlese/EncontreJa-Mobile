@@ -21,6 +21,10 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven{url "https://jipack.io"}
+        maven{url "//dl.bintray.com/drummer-aidan/maven/"}
+        maven { url "https://oss.jfrog.org/libs-snapshot" }
+
         
     }
 }

@@ -38,6 +38,13 @@ function saltHashPassword(userPassword){
     return passwordData;
 }
 
+function checkHashPassword(userPassword,salt)
+{
+    let passwordData = sha512(userPassword,salt);
+    return passwordData;
+
+}
+
 const app = express();
 app.use(bodyParser.json()); //Aceitar parametros Json
 app.use(bodyParser.urlencoded({extended: true})); //aceitar parametros de URL coidificada
@@ -81,13 +88,40 @@ app.post('/registrar/',(req,res,next)=>{
 })
 
 
-/*
-app.get("/",(req,res,next)=>{
-    console.log('Password: 123456');
-    let encrypt = saltHashPassword("123456");
-    console.log('Encrypt:'+encrypt.passwordHash);
-    console.log('Salt:'+encrypt.salt);
+app.post('/login/',(req,res,next)=>{
+    let post_data = req.body;
 
-})*/
+    //extrai senha e email para o request
+    let user_password = post_data.password;
+    let email = post_data.email;
+
+    con.query('SELECT * FROM usuario_profissional where email=?',[email], function(err,result,fields){
+        con.on('error',function(err){
+            console.log('[MySQL ERROR]',err);
+        });
+
+        if(result && result.length)
+        {
+             let salt = result[0].salt;  //pega resultado salt caso seja um conta existente
+             let encrypted_password = result[0].encrypted_password;
+             // hash passaword do login co salt no banco de dados
+             let hashed_password = checkHashPassword(user_password,salt).passwordHash;
+             
+             if(encrypted_password == hashed_password)
+                res.end(JSON.stringify(result[0])) // se senha for verdadeira , retorna todos informações do usuario
+                
+            else
+                res.end(JSON.stringify('Senha Errada'));        
+        }
+        else
+        {
+            res.json('Usuario Não Existente!!!');
+        }
+    });
+
+})
+
+
+
 
 

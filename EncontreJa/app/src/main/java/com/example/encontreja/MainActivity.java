@@ -11,15 +11,20 @@ import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
+
+import com.example.encontreja.Controler.NodeJS;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
+    NodeJS myAPI;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     LinearLayout btnRegistrarE, btnRegistrarP, btnProcurarP, btnProcurarV,btnAnunciarC, btnAnunciarV, btnLogar;
+
+
 
     @SuppressLint({"RestrictedApi", "WrongViewCast"})
     @Override
@@ -137,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 // Intent(classe origem, classe destino.class)
                 Intent itLogar = new Intent(
                         MainActivity.this,
-                        LogarUsuario.class
+                        LoginUsuario.class
                 );
                 // chamar a outra Activity
                 startActivity(itLogar);
@@ -151,9 +156,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
         return false;
-    }
+    }// opções do menu
 
-    // opções do menu
+
+
 
 
 
