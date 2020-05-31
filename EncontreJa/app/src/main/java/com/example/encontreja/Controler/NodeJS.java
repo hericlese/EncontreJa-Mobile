@@ -21,6 +21,19 @@ public interface NodeJS {
                                         @Field("cep") String cep,
                                         @Field("sexo") String sexo);
 
+
+    @POST("/registrarempresa/")
+    @FormUrlEncoded
+    Observable<String> registrarEmpresa(@Field("email") String email,
+                                        @Field("name") String name,
+                                        @Field("password") String password,
+                                        @Field("empresa") String empresa,
+                                        @Field("responsavel") String responsavel,
+                                        @Field("description") String description,
+                                        @Field("email_contato") String email_contato);
+
+
+
     @POST("/login/")
     @FormUrlEncoded
     Observable<String> logarUsuario(@Field("email") String email,

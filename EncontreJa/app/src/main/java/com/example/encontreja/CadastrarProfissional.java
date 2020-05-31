@@ -43,13 +43,11 @@ public class CadastrarProfissional extends AppCompatActivity implements Navigati
 
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
-
     @Override
     protected void onStop(){
         compositeDisposable.clear();
         super.onStop();
     }
-
     @Override
     protected void onDestroy(){
         compositeDisposable.clear();
@@ -109,7 +107,7 @@ public class CadastrarProfissional extends AppCompatActivity implements Navigati
             @Override
             public void onClick(View v) {
 
-             String empresa = "2";// cadastro = 2 = a  anunciante no banco 1 = empresa
+             String empresa = "2";// cadastro "2" = a anunciante e "1" = empresa no banco
                 registrarUsuario(edit_email.getText().toString(),edit_password.getText().toString(),edit_name.getText().toString(),edit_emailProfissionalContato.getText().toString(),empresa.toString(),edit_nascimento.getText().toString(),edit_celular.getText().toString(),edit_cep.getText().toString(),check_result.toString());
             }
         });
@@ -126,19 +124,18 @@ public class CadastrarProfissional extends AppCompatActivity implements Navigati
     }
 
     private void registrarUsuario(String email, String password,String name,String email_contato,String empresa,String data,String telefone,String cep,String sexo) {
-
         compositeDisposable.add((Disposable) myAPI.registrarUsuario(email,name,password,email_contato,empresa,data,telefone,cep,sexo)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(new Consumer<String>() {
-                @Override
-                public void accept(String s) throws Exception {
-                    Toast.makeText(CadastrarProfissional.this, ""+s, Toast.LENGTH_SHORT).show();
-                }
-            })
-        );
+        @Override
+        public void accept(String s) throws Exception {
+            Toast.makeText(CadastrarProfissional.this, ""+s, Toast.LENGTH_SHORT).show();
+        }
+    })
+            );
 
-    }
+}
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {

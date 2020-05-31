@@ -54,6 +54,10 @@ app.listen(PORT, () =>{
     console.log(`Servidor Rodando na porta ${PORT}`);
 })
 
+
+
+
+// registrando profissional
 app.post('/registrarusuario/',(req,res,next)=>{
     let post_data = req.body; //pegando parametros do POST
     let uid = uuid.v4(); // pegando codigo uuid v4
@@ -93,6 +97,65 @@ app.post('/registrarusuario/',(req,res,next)=>{
     });
 
 })
+
+
+// registrando empresa
+app.post('/registrarempresa/',(req,res,next)=>{
+    let post_data = req.body; //pegando parametros do POST
+    let uid = uuid.v4(); // pegando codigo uuid v4
+    let plaint_password = post_data.password; // pegando parametros do form post
+    let hash_data = saltHashPassword(plaint_password);
+    let password = hash_data.passwordHash; // pegando valor hash
+    let salt = hash_data.salt; //get salt
+
+    let name = post_data.name;
+    let email = post_data.email;
+    let empresa = post_data.empresa;
+    let responsavel = post_data.responsavel;
+    let description = post_data.description;
+    let email_contato = post_data.email_contato;   
+
+    
+
+    con.query('SELECT * FROM usuario_empresa where email=?',[email], function(err,result,fields){
+        con.on('error',function(err){
+            console.log('[MySQL ERROR]',err);
+        });
+
+        if(result && result.length)
+            res.json('Usuario Existente!!!');
+        else
+        {               
+
+            con.query('INSERT INTO `usuario_empresa`(`nique_id`, `name`, `email`, `encrypted_password`, `salt`, `empresa`, `responsavel`, `description`,`email_contato`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,?,?,?,?,NOW(),NOW())',[uid,name,email,password,salt,empresa,responsavel,description,email_contato],
+            function(err,result,fields){
+                con.on('error',function(err){
+                    console.log('[MySQL ERROR',err);
+                    res.json('Erro ao Registrar:',err );
+                });
+                res.json('Registrado com sucesso!');
+            })
+        }
+    });
+
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 app.post('/login/',(req,res,next)=>{
