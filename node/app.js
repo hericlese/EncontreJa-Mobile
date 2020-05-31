@@ -54,7 +54,7 @@ app.listen(PORT, () =>{
     console.log(`Servidor Rodando na porta ${PORT}`);
 })
 
-app.post('/registrar/',(req,res,next)=>{
+app.post('/registrarusuario/',(req,res,next)=>{
     let post_data = req.body; //pegando parametros do POST
     let uid = uuid.v4(); // pegando codigo uuid v4
     let plaint_password = post_data.password; // pegando parametros do form post
@@ -64,6 +64,12 @@ app.post('/registrar/',(req,res,next)=>{
 
     let name = post_data.name;
     let email = post_data.email;
+    let email_contato = post_data.email_contato;
+    let empresa = post_data.email_contato;
+    let data = post_data.data;
+    let telefone = post_data.telefone;
+    let cep = post_data.cep;
+    let sexo = post_data.sexo;
 
     con.query('SELECT * FROM usuario_profissional where email=?',[email], function(err,result,fields){
         con.on('error',function(err){
@@ -74,7 +80,8 @@ app.post('/registrar/',(req,res,next)=>{
             res.json('Usuario Existente!!!');
         else
         {
-            con.query('INSERT INTO `usuario_profissional`(`unique_id`, `name`, `email`, `encrypted_password`, `salt`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,NOW(),NOW())',[uid,name,email,password,salt], 
+
+            con.query('INSERT INTO `usuario_profissional`(`unique_id`, `name`, `email`, `encrypted_password`, `salt`, `email_contato`, `empresa`, `data`, `telefone`, `cep`, `sexo`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,?,?,?,?,?,?,NOW(),NOW())',[uid,name,email,password,salt,email_contato,empresa,data,telefone,cep,sexo],
             function(err,result,fields){
                 con.on('error',function(err){
                     console.log('[MySQL ERROR',err);

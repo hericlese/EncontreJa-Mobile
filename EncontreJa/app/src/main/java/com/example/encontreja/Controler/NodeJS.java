@@ -9,11 +9,17 @@ import retrofit2.http.Query;
 
 
 public interface NodeJS {
-    @POST("/registrar/")
+    @POST("/registrarusuario/")
     @FormUrlEncoded
     Observable<String> registrarUsuario(@Field("email") String email,
-                                         @Field("name") String name,
-                                         @Field("password") String password);
+                                        @Field("name") String name,
+                                        @Field("password") String password,
+                                        @Field("email_contato") String email_contato,
+                                        @Field("empresa") String empresa,
+                                        @Field("data") String data,
+                                        @Field("telefone") String telefone,
+                                        @Field("cep") String cep,
+                                        @Field("sexo") String sexo);
 
     @POST("/login/")
     @FormUrlEncoded

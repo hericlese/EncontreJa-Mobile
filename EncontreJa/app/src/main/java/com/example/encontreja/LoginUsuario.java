@@ -106,14 +106,14 @@ public class LoginUsuario extends AppCompatActivity implements NavigationView.On
 
 
 
-        ConversorJson string = new ConversorJson("resustado");
+ /*       ConversorJson string = new ConversorJson("resustado");
         string.getResultado();
 
         GsonBuilder builder = new GsonBuilder();
         Gson gson = new Gson();
         Usuario usuario = gson.fromJson(string.getResultado(), Usuario.class);
 
-
+*/
 
     }
 

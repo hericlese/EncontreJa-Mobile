@@ -42,7 +42,7 @@
         android:layout_height="110dp"
         android:layout_alignParentEnd="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="90dp"
+        android:layout_marginTop="85dp"
         android:layout_marginEnd="150dp"
         android:fontFamily="@font/quadrantabold"
         android:text="Preencha o formulário abaixo"
@@ -71,7 +71,7 @@
     <androidx.cardview.widget.CardView
         android:alignmentMode="alignMargins"
         android:layout_width="fill_parent"
-        android:layout_height="match_parent"
+        android:layout_height="fill_parent"
         android:layout_rowWeight="1"
         android:layout_columnWeight="1"
         android:layout_margin="25dp"
@@ -91,7 +91,7 @@
             android:layout_height="48dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="40dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginEnd="15dp"
             android:background="#FAF8F8"
             android:ems="10"
             android:hint=" Digite seu nome completo"
@@ -154,6 +154,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextSenha1" />
 
+        <EditText
+            android:id="@+id/editTextEmailProfissionalContato"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:background="#FAF8F8"
+            android:textSize="14dp"
+            android:layout_marginTop="30dp"
+            android:ems="10"
+            android:hint=" Digite seu email para contato"
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.114" />
+
     <EditText
         android:id="@+id/editTextNascimento"
         android:layout_width="200dp"
@@ -165,9 +183,8 @@
         android:layout_marginTop="30dp"
         android:ems="10"
         android:hint=" Data de nascimento"
-        android:inputType="date"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextSenha2" />
+        android:inputType="number"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextCelular"
@@ -180,8 +197,7 @@
         android:ems="10"
         android:hint=" Telefone celular"
         android:inputType="phone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextNascimento" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/editTextCep"
@@ -194,8 +210,7 @@
         android:ems="10"
         android:hint=" Digite seu CEP"
         android:inputType="number"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextCelular" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <CheckBox
         android:id="@+id/checkBoxHomem"
@@ -204,6 +219,7 @@
         android:layout_marginStart="15dp"
         android:layout_marginTop="30dp"
         android:text="Homem"
+
         app:layout_constraintStart_toStartOf="@+id/checkBoxHomem"
         app:layout_constraintTop_toBottomOf="@+id/checkBoxHomem" />
 
@@ -214,23 +230,34 @@
             android:layout_marginStart="120dp"
             android:layout_marginTop="-32dp"
             android:text="Mulher"
+
             app:layout_constraintStart_toEndOf="@+id/checkBoxMulher"
             app:layout_constraintTop_toBottomOf="@+id/checkBoxMulher"
             />
 
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            app:cardCornerRadius="12dp"
+            android:background="#CCCC"
+            app:cardElevation="6dp"
+            >
+
         <LinearLayout
             android:id="@+id/btnRegistrarUsuario"
-            android:layout_width="90dp"
-            android:layout_height="40dp"
-            android:layout_gravity="right"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:layout_marginBottom="10dp"
-            android:layout_marginTop="10dp"
             android:padding="5dp">
 
             <TextView
-                android:layout_width="80dp"
-                android:layout_height="40dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:layout_marginTop="3dp"
                 android:text="Registrar"
                 android:textAlignment="center"
@@ -239,6 +266,8 @@
                 android:textStyle="bold" />
 
         </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 

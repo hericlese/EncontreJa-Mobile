@@ -5,8 +5,11 @@ import android.util.AndroidException;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -33,8 +36,11 @@ public class CadastrarProfissional extends AppCompatActivity implements Navigati
     ActionBarDrawerToggle toggle;
 
     LinearLayout btnRegistrar;
-    EditText edit_email,edit_password,edit_name;
+    EditText edit_email,edit_password,edit_name,edit_emailProfissionalContato,edit_nascimento,edit_celular,edit_cep;
+    CheckBox check_sexoh, check_sexom;
     NodeJS myAPI;
+    String check_result;
+
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
 
@@ -68,15 +74,43 @@ public class CadastrarProfissional extends AppCompatActivity implements Navigati
         navigationView = findViewById(R.id.navigationView); //barra de navegação
 
         btnRegistrar = (LinearLayout)findViewById(R.id.btnRegistrarUsuario);
-        edit_email = (EditText) findViewById((R.id.editTextEmailProfissional));
-        edit_password = (EditText)findViewById((R.id.editTextSenha1));
+        edit_email = (EditText) findViewById(R.id.editTextEmailProfissional);
+        edit_password = (EditText)findViewById(R.id.editTextSenha1);
         edit_name = (EditText)findViewById(R.id.editTextNomeProfissional);
-        //Event de click
+        edit_emailProfissionalContato = (EditText)findViewById(R.id.editTextEmailProfissionalContato);
+        edit_nascimento = (EditText)findViewById(R.id.editTextNascimento);
+        edit_celular = (EditText)findViewById(R.id.editTextCelular);
+        edit_cep = (EditText)findViewById(R.id.editTextCep);
+        check_sexoh = (CheckBox)findViewById(R.id.checkBoxHomem);
+        check_sexom = (CheckBox)findViewById(R.id.checkBoxMulher);
 
+
+
+        //Event de click em checkbox
+        check_sexoh.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                check_sexom.setChecked(false);
+                check_result = "1";
+            }
+        });
+        check_sexom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                check_sexoh.setChecked(false);
+                check_result = "1";
+
+            }
+        });
+
+
+        //Event de click em registrar
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                registrarUsuario(edit_email.getText().toString(),edit_password.getText().toString(),edit_name.getText().toString());
+
+             String empresa = "2";// cadastro = 2 = a  anunciante no banco 1 = empresa
+                registrarUsuario(edit_email.getText().toString(),edit_password.getText().toString(),edit_name.getText().toString(),edit_emailProfissionalContato.getText().toString(),empresa.toString(),edit_nascimento.getText().toString(),edit_celular.getText().toString(),edit_cep.getText().toString(),check_result.toString());
             }
         });
 
@@ -91,9 +125,9 @@ public class CadastrarProfissional extends AppCompatActivity implements Navigati
 
     }
 
-    private void registrarUsuario(String email, String password,String name) {
+    private void registrarUsuario(String email, String password,String name,String email_contato,String empresa,String data,String telefone,String cep,String sexo) {
 
-        compositeDisposable.add((Disposable) myAPI.registrarUsuario(email,name,password)
+        compositeDisposable.add((Disposable) myAPI.registrarUsuario(email,name,password,email_contato,empresa,data,telefone,cep,sexo)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(new Consumer<String>() {
@@ -103,7 +137,8 @@ public class CadastrarProfissional extends AppCompatActivity implements Navigati
                 }
             })
         );
-        }
+
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
