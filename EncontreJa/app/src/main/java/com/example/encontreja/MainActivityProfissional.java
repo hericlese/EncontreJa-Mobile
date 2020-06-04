@@ -4,9 +4,8 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.LinearLayout;
-
+import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,7 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.encontreja.Controler.NodeJS;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivityEmpresa extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     NodeJS myAPI;
     DrawerLayout drawerLayout;
@@ -30,7 +29,7 @@ public class MainActivityEmpresa extends AppCompatActivity implements Navigation
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main_empresa);
+        setContentView(R.layout.activity_main);
         drawerLayout= findViewById(R.id.drawer); //pagina toolbar escondida
         toolbar = findViewById(R.id.toolbar);  // toolbar
         navigationView = findViewById(R.id.navigationView); //barra de navegação
@@ -58,7 +57,7 @@ public class MainActivityEmpresa extends AppCompatActivity implements Navigation
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itProcurarProfissional = new Intent(
-                        MainActivityEmpresa.this,
+                        MainActivity.this,
                         AnunciosProfissionais.class
                 );
                 // chamar a outra Activity
@@ -72,7 +71,7 @@ public class MainActivityEmpresa extends AppCompatActivity implements Navigation
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itProcurarVagas = new Intent(
-                        MainActivityEmpresa.this,
+                        MainActivity.this,
                         AnunciosVagas.class
                 );
                 // chamar a outra Activity
@@ -86,7 +85,7 @@ public class MainActivityEmpresa extends AppCompatActivity implements Navigation
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itAnunciarCurriculo = new Intent(
-                        MainActivityEmpresa.this,
+                        MainActivity.this,
                         AnunciarCurriculo.class
                 );
                 // chamar a outra Activity
@@ -100,7 +99,7 @@ public class MainActivityEmpresa extends AppCompatActivity implements Navigation
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itAnunciarVaga = new Intent(
-                        MainActivityEmpresa.this,
+                        MainActivity.this,
                         AnunciarVagas.class
                 );
                 // chamar a outra Activity
@@ -114,7 +113,7 @@ public class MainActivityEmpresa extends AppCompatActivity implements Navigation
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itLogar = new Intent(
-                        MainActivityEmpresa.this,
+                        MainActivity.this,
                         LoginUsuario.class
                 );
                 // chamar a outra Activity
