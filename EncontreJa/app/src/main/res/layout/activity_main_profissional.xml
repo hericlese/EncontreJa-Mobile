@@ -50,36 +50,6 @@
            android:textColor="@color/colorAccent"
            android:textSize="14dp" />
 
-       <androidx.cardview.widget.CardView
-           android:layout_width="match_parent"
-           android:layout_height="40dp"
-           android:layout_marginLeft="310dp"
-           android:layout_marginRight="15dp"
-           android:layout_marginTop="20dp"
-           app:cardCornerRadius="12dp"
-           app:cardElevation="6dp">
-
-           <LinearLayout
-               android:id="@+id/btnLogin"
-               android:layout_width="90dp"
-               android:layout_height="40dp"
-               android:layout_gravity="center"
-               android:orientation="vertical"
-               android:padding="5dp">
-
-               <TextView
-
-                   android:layout_width="80dp"
-                   android:layout_height="40dp"
-                   android:layout_marginTop="3dp"
-                   android:text="Login"
-                   android:textAlignment="center"
-                   android:textColor="#6f6f6f"
-                   android:textSize="14sp"
-                   android:textStyle="bold" />
-           </LinearLayout>
-
-       </androidx.cardview.widget.CardView>
 
 
 
@@ -106,7 +76,7 @@
                app:cardElevation="6dp">
 
                <LinearLayout
-                   android:id="@+id/card_anunciosMain"
+                   android:id="@+id/card_AnunciarCurriculoMain"
                    android:layout_width="fill_parent"
                    android:layout_height="wrap_content"
                    android:layout_gravity="center"
@@ -114,22 +84,25 @@
                    android:padding="1dp">
 
                    <ImageView
+                       android:layout_gravity="center"
                        android:layout_marginTop="2dp"
                        android:layout_width="140dp"
                        android:layout_height="150dp"
-                       android:layout_gravity="center"
-                       android:src="@drawable/btnprofissionais" />
+                       android:padding="9dp"
+                       android:src="@drawable/btnanunciarcurriculo" />
 
                    <TextView
                        android:layout_gravity="center"
                        android:layout_width="140dp"
                        android:layout_height="52dp"
                        android:layout_marginTop="2dp"
-                       android:text="Procurar\n Profissional"
+                       android:text="Anunciar seu\n Currículo"
                        android:textAlignment="center"
                        android:textColor="#6f6f6f"
                        android:textSize="18sp"
+                       tools:ignore="HardcodedText"
                        android:textStyle="bold"/>
+
                </LinearLayout>
            </androidx.cardview.widget.CardView>
 
@@ -184,7 +157,7 @@
                app:cardElevation="6dp">
 
                <LinearLayout
-                   android:id="@+id/card_AnunciarVagaMain"
+                   android:id="@+id/card_MeuCurriculoMain"
                    android:layout_width="fill_parent"
                    android:layout_height="wrap_content"
                    android:layout_gravity="center"
@@ -197,14 +170,14 @@
                        android:layout_width="140dp"
                        android:layout_height="150dp"
                        android:padding="9dp"
-                       android:src="@drawable/btnvagas2" />
+                       android:src="@drawable/btnmeucurriculo" />
 
                    <TextView
                        android:layout_gravity="center"
                        android:layout_width="140dp"
                        android:layout_height="52dp"
                        android:layout_marginTop="2dp"
-                       android:text="Anunciar uma\n Vaga"
+                       android:text="Meus \n Curriculos"
                        android:textAlignment="center"
                        android:textColor="#6f6f6f"
                        android:textSize="18sp"
@@ -222,7 +195,7 @@
                app:cardElevation="6dp">
 
                <LinearLayout
-                   android:id="@+id/card_AnunciarCurriculoMain"
+                   android:id="@+id/card_EditarCadastroProfissionalMain"
                    android:layout_width="fill_parent"
                    android:layout_height="wrap_content"
                    android:layout_gravity="center"
@@ -235,20 +208,19 @@
                        android:layout_width="140dp"
                        android:layout_height="150dp"
                        android:padding="9dp"
-                       android:src="@drawable/btnanunciarcurriculo" />
+                       android:src="@drawable/ic_editvaga24dp" />
 
                    <TextView
                        android:layout_gravity="center"
                        android:layout_width="140dp"
                        android:layout_height="52dp"
                        android:layout_marginTop="2dp"
-                       android:text="Anunciar seu\n Currículo"
+                       android:text="Editar \n Cadastro"
                        android:textAlignment="center"
                        android:textColor="#6f6f6f"
                        android:textSize="18sp"
                        tools:ignore="HardcodedText"
                        android:textStyle="bold"/>
-
 
                </LinearLayout>
            </androidx.cardview.widget.CardView>

@@ -1,31 +1,41 @@
 package com.example.encontreja.Controler;
 
+import android.content.Intent;
+import android.text.BoringLayout;
+import android.util.Log;
+
+import com.example.encontreja.LoginUsuario;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
+
 import java.io.Serializable;
-import java.util.List;
+
 
 
 public class Usuario implements Serializable {
 
-    private String id,nome;
-    private Boolean login,empresa;
+    private String id;
 
+    private String name;
 
-    public List<Usuario> usuarios;
+    private String email;
+
+    private String email_contato;
+
+    private String empresa;
+
+    private String login;
 
 
     //Construtor
-    public Usuario(String id, String nome, Boolean login, Boolean empresa) {
-
-        login = false;
-        empresa = false;
-
-        this.id = id;
-        this.nome = nome;
+    public Usuario(String id, String name, String email, String email_contato, String empresa, String login) {
         this.login = login;
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.email_contato = email_contato;
         this.empresa = empresa;
-
     }
-
 
     //Getters and Setters
 
@@ -37,36 +47,57 @@ public class Usuario implements Serializable {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Boolean getLogin() {
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail_contato() {
+        return email_contato;
+    }
+
+    public void setEmail_contato(String email_contato) {
+        this.email_contato = email_contato;
+    }
+
+    public String getEmpresa() {
+        return empresa;
+    }
+
+    public void setEmpresa(String empresa) {
+        this.empresa = empresa;
+    }
+
+    public String getLogin() {
         return login;
     }
 
-    public void setLogado(Boolean logado) {
+    public void setLogin(String login) {
         this.login = login;
     }
 
 
-    public Boolean getEmpresa() {
-        return empresa;
-    }
 
-    public void setEmpresa(Boolean empresa) {
-        this.empresa = empresa;
-    }
 
 
     @Override
-    public String toString(){
-        return id;
+    public String toString() {
+
+        return name + id + login;
+
 
     }
+
 
 }

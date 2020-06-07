@@ -10,7 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import com.example.encontreja.Controler.Usuario;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 public class AnunciarCurriculo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -18,6 +21,8 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
     Toolbar toolbar;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
+
+    ArrayList<Usuario> usuarios = (ArrayList<Usuario>) getIntent().getSerializableExtra("dados");
 
 
     @SuppressLint({"RestrictedApi", "WrongViewCast"})

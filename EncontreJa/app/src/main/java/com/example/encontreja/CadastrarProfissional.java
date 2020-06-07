@@ -1,15 +1,12 @@
 package com.example.encontreja;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.AndroidException;
 import android.view.MenuItem;
 import android.view.View;
-import android.webkit.WebView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -19,7 +16,6 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.encontreja.Controler.NodeJS;
 import com.example.encontreja.Controler.RetrofitClient;
 import com.google.android.material.navigation.NavigationView;
-
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
@@ -96,7 +92,7 @@ public class CadastrarProfissional extends AppCompatActivity implements Navigati
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 check_sexoh.setChecked(false);
-                check_result = "1";
+                check_result = "0";
 
             }
         });
@@ -107,8 +103,8 @@ public class CadastrarProfissional extends AppCompatActivity implements Navigati
             @Override
             public void onClick(View v) {
 
-             String empresa = "2";// cadastro "2" = a anunciante e "1" = empresa no banco
-                registrarUsuario(edit_email.getText().toString(),edit_password.getText().toString(),edit_name.getText().toString(),edit_emailProfissionalContato.getText().toString(),empresa.toString(),edit_nascimento.getText().toString(),edit_celular.getText().toString(),edit_cep.getText().toString(),check_result.toString());
+             String empresa = "0";// cadastro "0" = anunciante e "1" = empresa no banco
+                registrarUsuario(edit_email.getText().toString(),edit_password.getText().toString(),edit_name.getText().toString(),edit_emailProfissionalContato.getText().toString(),empresa,edit_nascimento.getText().toString(),edit_celular.getText().toString(),edit_cep.getText().toString(),check_result);
             }
         });
 

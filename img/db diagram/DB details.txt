@@ -1,0 +1,89 @@
+					MySQL DB EncontreJa
+
+usuario_profissional	
+	
+id												INT(11) AUTO_INCREMENT Priarykey
+unique_id										VARCHAR(23)
+name											VARCHAR(50)			
+email                     						VARCHAR(100)
+email_contato                     				VARCHAR(100)	
+encrypted_password               		    	VARCHAR(128)
+salt                     						VARCHAR(16)
+created_at	                     				VARCHAR(datatime)
+updated_at	                     				VARCHAR(datatime)
+empresa (type:true=empresa false=anunciante)	BOOLEAN
+data 					        				INT(8)
+telefone										INT(11)
+cep												INT(8)
+sexo											BOOLEAN
+id_ foreignkey									INT(11) AUTO_INCREMENT Foreignkey
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+usuario_curriculo
+
+id												INT(11) AUTO_INCREMENT Priarykey
+name											VARCHAR(50)			
+objetivo										VARCHAR(500)		
+formacao										VARCHAR(1000)		
+experiencia_1                     				VARCHAR(1000)
+experiencia_2                     				VARCHAR(1000)
+experiencia_3                     				VARCHAR(1000)
+cursos                     						VARCHAR(1000)
+links 					        				VARCHAR(500)	
+competencia_extras                     			VARCHAR(1000)
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+usuario_competencias
+
+id												INT(11) AUTO_INCREMENT Priarykey
+competencia										VARCHAR(50)			
+nivel_1											BOOLEAN		
+nivel_2											BOOLEAN		
+nivel_3											BOOLEAN
+
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+usuario_empresa
+
+id												INT(11) AUTO_INCREMENT Priarykey
+nique_id										VARCHAR(23) 
+name											VARCHAR(50)			
+email                     						VARCHAR(100)	
+encrypted_password               		    	VARCHAR(128)
+salt                     						VARCHAR(16)
+created_at	                     				VARCHAR(datatime)
+updated_at	                     				VARCHAR(datatime)
+empresa (type:true=empresa false=anunciante)	BOOLEAN
+responsavel 					        		VARCHAR(50)	
+description										VARCHAR(1000)	
+id_ foreignkey									INT(11) AUTO_INCREMENT Foreignkey
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+empresa_vagas
+
+id												INT(11) AUTO_INCREMENT Priarykey
+cargo											VARCHAR(50)			
+empresa                     					VARCHAR(50)
+competencia_1									VARCHAR(50)
+competencia_1_nivel								INT(1)      (1=basico 2=intermediario 3=avançado)
+competencia_2									VARCHAR(50)
+competencia_2_nivel								INT(1)      (1=basico 2=intermediario 3=avançado)
+competencia_3									VARCHAR(50)
+competencia_3_nivel								INT(1)      (1=basico 2=intermediario 3=avançado)
+competencia_4									VARCHAR(50)
+competencia_4_nivel								INT(1)      (1=basico 2=intermediario 3=avançado)
+competencia_5									VARCHAR(50)
+competencia_5_nivel								INT(1)      (1=basico 2=intermediario 3=avançado)
+vagas											INT(999)
+description										VARCHAR(500)
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+

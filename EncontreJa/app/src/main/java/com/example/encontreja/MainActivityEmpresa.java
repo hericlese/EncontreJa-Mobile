@@ -4,8 +4,9 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.LinearLayout;
 import android.view.View;
+import android.widget.LinearLayout;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,30 +16,28 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.encontreja.Controler.NodeJS;
 import com.google.android.material.navigation.NavigationView;
 
-public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class MainActivityEmpresa extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
     NodeJS myAPI;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
-    LinearLayout  btnProcurarP, btnProcurarV,btnAnunciarC, btnAnunciarV, btnLogar;
+    LinearLayout  btnProcurarP, btnAnunciarV;
 
 
     @SuppressLint({"RestrictedApi", "WrongViewCast"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_empresa);
         drawerLayout= findViewById(R.id.drawer); //pagina toolbar escondida
         toolbar = findViewById(R.id.toolbar);  // toolbar
         navigationView = findViewById(R.id.navigationView); //barra de navegação
-
         btnProcurarP = findViewById(R.id.card_anunciosMain); //Botão ProcurarProfissional
-        btnProcurarV = findViewById(R.id.card_vagasMain); //Botão ProcurarVagas
-        btnAnunciarC = findViewById(R.id.card_AnunciarCurriculoMain); //Botão ProcurarVagas
-        btnAnunciarV = findViewById(R.id.card_AnunciarVagaMain); //Botão AnunciarVagas
-        btnLogar = findViewById(R.id.btnLogin); //Botão login home
+        btnAnunciarV = findViewById(R.id.card_AnunciarVagaMain); //Botão ProcurarVagas
+
+
 
 
 
@@ -57,39 +56,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itProcurarProfissional = new Intent(
-                        MainActivity.this,
+                        MainActivityEmpresa.this,
                         AnunciosProfissionais.class
                 );
                 // chamar a outra Activity
                 startActivity(itProcurarProfissional);
-            }
-        });
-
-
-        btnProcurarV.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {   //Btn Procurar Vaga
-                // passar os dados para outra View (activity_resultado.xml)
-                // Intent(classe origem, classe destino.class)
-                Intent itProcurarVagas = new Intent(
-                        MainActivity.this,
-                        AnunciosVagas.class
-                );
-                // chamar a outra Activity
-                startActivity(itProcurarVagas);
-            }
-        });
-
-
-        btnAnunciarC.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {   //Btn Anunciar Curriculo
-                // passar os dados para outra View (activity_resultado.xml)
-                // Intent(classe origem, classe destino.class)
-                Intent itAnunciarCurriculo = new Intent(
-                        MainActivity.this,
-                        AnunciarCurriculo.class
-                );
-                // chamar a outra Activity
-                startActivity(itAnunciarCurriculo);
             }
         });
 
@@ -99,28 +70,13 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 // passar os dados para outra View (activity_resultado.xml)
                 // Intent(classe origem, classe destino.class)
                 Intent itAnunciarVaga = new Intent(
-                        MainActivity.this,
+                        MainActivityEmpresa.this,
                         AnunciarVagas.class
                 );
                 // chamar a outra Activity
                 startActivity(itAnunciarVaga);
             }
         });
-
-
-        btnLogar.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {   //Btn Login
-                // passar os dados para outra View (activity_resultado.xml)
-                // Intent(classe origem, classe destino.class)
-                Intent itLogar = new Intent(
-                        MainActivity.this,
-                        LoginUsuario.class
-                );
-                // chamar a outra Activity
-                startActivity(itLogar);
-            }
-        });
-
 
 
     }

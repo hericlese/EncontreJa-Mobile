@@ -1,6 +1,8 @@
 package com.example.encontreja;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
@@ -13,9 +15,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+//import com.example.encontreja.Controler.ConversorJson;
 import com.example.encontreja.Controler.NodeJS;
 import com.example.encontreja.Controler.RetrofitClient;
+import com.example.encontreja.Controler.Usuario;
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.ArrayList;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -33,6 +39,7 @@ public class CadastrarEmpresa extends AppCompatActivity implements NavigationVie
     EditText edit_name,edit_email,edit_responsavel,edit_password,edit_emailcontato,edit_description;
     LinearLayout btnRegistrar_empresa;
     NodeJS myAPI;
+    String empresa;
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
     @Override
@@ -66,6 +73,7 @@ public class CadastrarEmpresa extends AppCompatActivity implements NavigationVie
         btnRegistrar_empresa = findViewById(R.id.btnRegistrarProfissional);
 
 
+
         setSupportActionBar(toolbar); // declarando ação da barra de navegação
         getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
@@ -83,38 +91,28 @@ public class CadastrarEmpresa extends AppCompatActivity implements NavigationVie
             @Override
             public void onClick(View v) {
 
-                String empresa = "2";// cadastro "2" = a anunciante e "1" = empresa no banco
-                registrarEmpresa(edit_email.getText().toString(), edit_password.getText().toString(), edit_name.getText().toString(), edit_emailcontato.getText().toString(), empresa.toString(), edit_responsavel.getText().toString(), edit_description.getText().toString());
-            }
+                registrarEmpresa(edit_name.getText().toString(),edit_email.getText().toString(), edit_password.getText().toString(), empresa , edit_responsavel.getText().toString() , edit_description.getText().toString(),edit_emailcontato.getText().toString());
+                empresa = "1"; // cadastro "0" = a anunciante e "1" = empresa no banco
+         }
         });
 
+
     }
-        private void registrarEmpresa(String email,String name,String password,String empresa, String responsavel, String description, String email_contato){
-            compositeDisposable.add((Disposable) myAPI.registrarEmpresa(email,name,password,empresa,responsavel,description,email_contato)
+        private void registrarEmpresa(String name,String email,String password,String empresa, String responsavel, String description, String email_contato){
+            compositeDisposable.add((Disposable) myAPI.registrarEmpresa(name,email,password,empresa,responsavel,description,email_contato)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .subscribe(new Consumer<String>() {
                         @Override
                         public void accept(String s) throws Exception {
                             Toast.makeText(CadastrarEmpresa.this, ""+s, Toast.LENGTH_SHORT).show();
+
                         }
                     })
             );
 
+
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

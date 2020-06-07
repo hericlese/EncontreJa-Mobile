@@ -6,15 +6,11 @@
         <item android:title="Conta">
             <menu>
                 <item
-                    android:id="@+id/login"
-                    android:title="Login"
-                    android:icon="@drawable/btnlogin"/>
-                <item
-                    android:id="@+id/perfil"
+                    android:id="@+id/menu_perfil"
                     android:title="Perfil"
                     android:icon="@drawable/btnperfil"/>
                 <item
-                    android:id="@+id/logout"
+                    android:id="@+id/menu_logout"
                     android:title="Logout"
                     android:icon="@drawable/btnlogout"/>
             </menu>
@@ -25,11 +21,11 @@
         <item android:title="Profissional">
             <menu>
                 <item
-                    android:id="@+id/vagas"
+                    android:id="@+id/menu_procurarvagas"
                     android:title="Procurar Vagas"
                     android:icon="@drawable/btnvagas"/>
                 <item
-                    android:id="@+id/atualizarC"
+                    android:id="@+id/menu_adicionarcurriculo"
                     android:title="Adicionar Currículo"
                     android:icon="@drawable/btnatualizarc"/>
             </menu>
@@ -40,11 +36,11 @@
          <item android:title="Empresa">
             <menu>
                 <item
-                    android:id="@+id/profissionalitem"
+                    android:id="@+id/menu_procurarprofissional"
                     android:title="Procurar Profissional"
                     android:icon="@drawable/btnprofissional"/>
                 <item
-                    android:id="@+id/myvaga"
+                    android:id="@+id/menu_adicionarvagas"
                     android:title="Adicionar Vagas"
                     android:icon="@drawable/btnaddvaga"/>
             </menu>
@@ -55,11 +51,11 @@
         <item android:title="App">
             <menu>
                 <item
-                    android:id="@+id/sobre"
+                    android:id="@+id/menu_sobre"
                     android:title="Sobre"
                     android:icon="@drawable/btnsobre"/>
                 <item
-                    android:id="@+id/sair"
+                    android:id="@+id/menu_sair"
                     android:title="Sair"
                     android:icon="@drawable/btnexit"/>
             </menu>
