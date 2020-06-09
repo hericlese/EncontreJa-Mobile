@@ -15,13 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-//import com.example.encontreja.Controler.ConversorJson;
 import com.example.encontreja.Controler.NodeJS;
 import com.example.encontreja.Controler.RetrofitClient;
 import com.example.encontreja.Controler.Usuario;
 import com.google.android.material.navigation.NavigationView;
-
-import java.util.ArrayList;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -91,14 +88,17 @@ public class CadastrarEmpresa extends AppCompatActivity implements NavigationVie
             @Override
             public void onClick(View v) {
 
-                registrarEmpresa(edit_name.getText().toString(),edit_email.getText().toString(), edit_password.getText().toString(), empresa , edit_responsavel.getText().toString() , edit_description.getText().toString(),edit_emailcontato.getText().toString());
+                registrarEmpresa(edit_name.getText().toString(),edit_email.getText().toString(), edit_password.getText().toString(),
+                        empresa , edit_responsavel.getText().toString() , edit_description.getText().toString(),
+                        edit_emailcontato.getText().toString());
                 empresa = "1"; // cadastro "0" = a anunciante e "1" = empresa no banco
          }
         });
 
 
     }
-        private void registrarEmpresa(String name,String email,String password,String empresa, String responsavel, String description, String email_contato){
+        private void registrarEmpresa(String name,String email,String password,String empresa, String responsavel, String description,
+                                      String email_contato){
             compositeDisposable.add((Disposable) myAPI.registrarEmpresa(name,email,password,empresa,responsavel,description,email_contato)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())

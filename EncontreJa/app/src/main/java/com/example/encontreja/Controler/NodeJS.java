@@ -1,11 +1,9 @@
 package com.example.encontreja.Controler;
 
 import io.reactivex.Observable;
-import io.reactivex.Single;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.POST;
-import retrofit2.http.Query;
 
 
 public interface NodeJS {
@@ -18,8 +16,9 @@ public interface NodeJS {
                                         @Field("empresa") String empresa,
                                         @Field("data") String data,
                                         @Field("telefone") String telefone,
-                                        @Field("cep") String cep,
-                                        @Field("sexo") String sexo);
+                                        @Field("sexo") String sexo,
+                                        @Field("cidade") String cidade,
+                                        @Field("estado") String estado);
 
 
     @POST("/registrarempresa/")
@@ -44,8 +43,8 @@ public interface NodeJS {
 
     @POST("/cadastrarvagas/")
     @FormUrlEncoded
-    Observable<String> cadastrarVagas(@Field("id_empresa") String id_empresa,
-                                      @Field("cargo") String cargo,
+    Observable<String> cadastrarVagas(
+                                        @Field("cargo") String cargo,
                                         @Field("empresa") String empresa,
                                         @Field("competencia1") String competencia1,
                                         @Field("competencia1nivel") String competencia1nivel,
@@ -58,19 +57,10 @@ public interface NodeJS {
                                         @Field("competencia5") String competencia5,
                                         @Field("competencia5nivel") String competencia5nivel,
                                         @Field("vagas") String vagas,
+                                        @Field("description") String description,
+                                        @Field("id_empresa") String id_empresa,
                                         @Field("contrato") String contrato,
-                                        @Field("description") String description);
-
-
-
-
-
-
-
-
-
-
-
-
+                                        @Field("cidade") String cidade,
+                                        @Field("estado") String estado);
 
 }

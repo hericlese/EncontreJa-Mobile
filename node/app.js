@@ -72,8 +72,9 @@ app.post('/registrarusuario/',(req,res,next)=>{
     let empresa = post_data.email_contato;
     let data = post_data.data;
     let telefone = post_data.telefone;
-    let cep = post_data.cep;
     let sexo = post_data.sexo;
+    let cidade = post_data.cidade;
+    let estado = post_data.estado;
 
     con.query('SELECT * FROM usuario_profissional where email=?',[email], function(err,result,fields){ //procurando se existe email na tabela profissionais
         con.on('error',function(err){
@@ -94,7 +95,7 @@ app.post('/registrarusuario/',(req,res,next)=>{
                 }    
                 else        
                 {                       // caso nao tenha em nenhuma das 2 tableas crie um novo usuario profissional       
-                    con.query('INSERT INTO `usuario_profissional`(`unique_id`, `name`, `email`, `encrypted_password`, `salt`, `email_contato`, `empresa`, `data`, `telefone`, `cep`, `sexo`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,?,?,?,?,?,?,NOW(),NOW())',[uid,name,email,password,salt,email_contato,empresa,data,telefone,cep,sexo],
+                    con.query('INSERT INTO `usuario_profissional`(`unique_id`, `name`, `email`, `encrypted_password`, `salt`, `email_contato`, `empresa`, `data`, `telefone`, `sexo`, `cidade`, `estado`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,NOW(),NOW())',[uid,name,email,password,salt,email_contato,empresa,data,telefone,sexo,cidade,estado],
                     function(err,result,fields){
                         con.on('error',function(err){
                             console.log('[MySQL ERROR',err);
@@ -230,7 +231,7 @@ app.post('/login/',(req,res,next)=>{
 app.post('/cadastrarvagas/',(req,res,next)=>{
     let post_data = req.body; //pegando parametros do POST
   
-    let id_empresa = post_data.id;
+    let id_empresa = post_data.id_empresa;
     let cargo = post_data.cargo;
     let empresa = post_data.empresa;
     let competencia1 = post_data.competencia1;
@@ -243,19 +244,80 @@ app.post('/cadastrarvagas/',(req,res,next)=>{
     let competencia4nivel = post_data.competencia4nivel;
     let competencia5 = post_data.competencia5;
     let competencia5nivel = post_data.competencia5nivel;
-    let vagas = post_data.vagas;
-    let contrato = post_data.contrato;
-    let description = post_data.description;       
+    let vagas = post_data.vagas;  
+    let description = post_data.description;  
+    let contrato = post_data.contrato;     
+    let cidade = post_data.cidade;
+    let estado = post_data.estado;
             
-                    
-                con.query('INSERT INTO `empresa_vagas`(`cargo`, `empresa`, `competencia_1`, `competencia_1_nivel`, `competencia_2`, `competencia_2_nivel`, `competencia_3`, `competencia_3_nivel`, `competencia_4`, `competencia_4_nivel`, `competencia_5`, `competencia_5_nivel`, `vagas`, `description`, `fk_empresa`, `contrato`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[cargo,empresa,competencia1,competencia1nivel,competencia2,competencia2nivel,competencia3,competencia3nivel,competencia4,competencia4nivel,competencia5,competencia5nivel,vagas,description,id_empresa,contrato],
+
+    
+                con.query('INSERT INTO `empresa_vagas`(`cargo`, `empresa`, `competencia_1`, `competencia_1_nivel`, `competencia_2`, `competencia_2_nivel`, `competencia_3`, `competencia_3_nivel`, `competencia_4`, `competencia_4_nivel`, `competencia_5`, `competencia_5_nivel`, `vagas`, `description`, `fk_empresa`, `contrato`,`cidade`,`estado`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[cargo,empresa,competencia1,competencia1nivel,competencia2,competencia2nivel,competencia3,competencia3nivel,competencia4,competencia4nivel,competencia5,competencia5nivel,vagas,description,id_empresa,contrato,cidade,estado],
+             
                 function(err,result,fields){
                     con.on('error',function(err){
                         console.log('[MySQL ERROR',err);
                         res.json('Erro ao Registrar:',err );
                     });
                     
-                    res.json('Vaga registrada com sucesso!');
+                    res.json('Vaga registrada com sucesso!'),
+                    res.end(console.log(`Inserindo ${cargo} ${empresa} ${competencia1} ${competencia1nivel} ${competencia2} ${competencia2nivel} ${competencia3} ${competencia3nivel} ${competencia4} ${competencia4nivel} ${competencia5} ${competencia5nivel} ${vagas} ${description} ${id_empresa} ${contrato} ${cidade} ${estado}` ));
+                })   
+ 
+ });
+
+
+
+
+ // Cadastrar Curriculos
+app.post('/cadastrarcurriculo/',(req,res,next)=>{
+    let post_data = req.body; //pegando parametros do POST
+  
+    let id_usuario = post_data.id_usuario;
+    let name = post_data.name;
+    let objetivo = post_data.objetivo;
+    let formacao = post_data.formacao;
+    let experiencia1 = post_data.experiencia1;
+    let experiencia2 = post_data.experiencia2;
+    let experiencia3 = post_data.experiencia3;
+    let cursos = post_data.cursos;
+    let links = post_data.links;  
+    let competenciaextra = post_data.competenciaextra;
+
+    
+                con.query('INSERT INTO `empresa_vagas`(`name`, `objetivo`, `formacao`, `experiencia_1`, `experiencia_2`, `experiencia_3`, `cursos`, `links`, `competencia_extras`, `fk_profissional`) VALUES (?,?,?,?,?,?,?,?,?,?)',[name,objetivo,formacao,experiencia1,experiencia2,experiencia3,cursos,links,competenciaextra,id_usuario],
+             
+                function(err,result,fields){
+                    con.on('error',function(err){
+                        console.log('[MySQL ERROR',err);
+                        res.json('Erro ao Registrar:',err );
+                    });
+                    
+                    res.json('Vaga registrada com sucesso!'),
+                    res.end(console.log(`Inserindo ${name} ${objetivo} ${formacao} ${experiencia2} ${experiencia3} ${cursos} ${links} ${competenciaextra} ${id_usuario}` ));
+                })   
+ 
+ });
+
+
+  // Cadastrar Competencias 
+app.post('/cadastrarcompetencias/',(req,res,next)=>{
+    let post_data = req.body; //pegando parametros do POST
+  
+    let id_usuario = post_data.id_usuario;
+    let competencia = post_data.competencia;
+    let nivel = post_data.objetivo;
+ 
+                con.query('INSERT INTO `empresa_vagas`(`competencia`, `nivel`, `fk_competencia`) VALUES (?,?,?)',[competencia,nivel,id_usuario],
+             
+                function(err,result,fields){
+                    con.on('error',function(err){
+                        console.log('[MySQL ERROR',err);
+                        res.json('Erro ao Registrar:',err );
+                    });
+                    
+                    res.json('Vaga registrada com sucesso!'),
+                    res.end(console.log(`Inserindo ${name} ${objetivo} ${formacao} ${experiencia2} ${experiencia3} ${cursos} ${links} ${competenciaextra} ${id_usuario}` ));
                 })   
  
  });

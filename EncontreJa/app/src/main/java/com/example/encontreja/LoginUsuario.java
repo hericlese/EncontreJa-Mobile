@@ -123,8 +123,6 @@ public class LoginUsuario extends AppCompatActivity{
         Retrofit retrofit = RetrofitClient.getInstance();
         myAPI = retrofit.create(NodeJS.class);
 
-
-
     }
 
     private void  logarUsuario(final String email, String password) {
@@ -186,12 +184,12 @@ public class LoginUsuario extends AppCompatActivity{
                                 else
                                 {
                                     Log.d("LOG", "Teste ID: Usuario Logando");
-//                                    Intent itUsuario = new Intent(
-//                                            LoginUsuario.this,
-//                                            MainActivityProfissional.class
-//                                    );
-//
-//                                    startActivity(itUsuario);
+                                    Intent itUsuario = new Intent(
+                                            LoginUsuario.this,
+                                            MainActivityProfissional.class
+                                    );
+
+                                    startActivity(itUsuario);
                                 }
 
 //                                    Testando parcialmete o que foi coletado

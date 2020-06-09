@@ -9,6 +9,8 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.view.View;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
@@ -80,101 +82,21 @@ public class MainActivityProfissional extends AppCompatActivity implements Navig
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-  ;
-
-                //Coletando valores Intent
-                ArrayList<Usuario> usuarios = (ArrayList<Usuario>)
-                getIntent().getSerializableExtra("listaUsuario");
-        String list = new String(); //Variael string vazia que ira percorrer o list Intent.
-        String login = new String();
-        String id = new String();
-        String empresa = new String();
-        String name = new String();
-        String email_contato = new String();
-        String email = new String();
-
-        //loop foreach
-       for (Usuario usuario : usuarios){
-            list = list + 1;
-                    if(list != null ){
-                     usuario.getLogin();
-                        login = usuario.getLogin();
-
-                     usuario.getId();
-                        id = usuario.getId();
-
-                     usuario.getEmpresa();
-                        empresa = usuario.getEmpresa();
-
-                     usuario.getName();
-                         name = usuario.getName();
-
-                     usuario.getEmail_contato();
-                        email_contato= usuario.getEmail_contato();
-
-                     usuario.getEmail();
-                        email= usuario.getEmail();
-                    }
-        }
-        Log.d("LOG", "Teste intent GET2: " + id+ "-" +name+ "-" +email+ "-" +email_contato+ "-" +empresa+ "-" +login);
 
     }
 
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        ArrayList<Usuario> usuarios = (ArrayList<Usuario>)
-                getIntent().getSerializableExtra("listaUsuario");
-        String list = new String(); //Variael string vazia que ira percorrer o list Intent.
-        String login = new String();
-        String id = new String();
-        String empresa = new String();
-        String name = new String();
-        String email_contato = new String();
-        String email = new String();
 
-        //loop foreach
-        for (Usuario usuario : usuarios){
-            list = list + 1;
-            if(list != null ){
-                usuario.getLogin();
-                login = usuario.getLogin();
-
-                usuario.getId();
-                id = usuario.getId();
-
-                usuario.getEmpresa();
-                empresa = usuario.getEmpresa();
-
-                usuario.getName();
-                name = usuario.getName();
-
-                usuario.getEmail_contato();
-                email_contato= usuario.getEmail_contato();
-
-                usuario.getEmail();
-                email= usuario.getEmail();
-            }
-        }
-
-        usuarios.add(
-                new Usuario(
-                        id.toString(),
-                        name.toString(),
-                        email.toString(),
-                        email_contato.toString(),
-                        empresa.toString(),
-                        login.toString()
-                )
-        );
+        SharedPreferences preferencesUsuario2 = getSharedPreferences(
+                "usuarioSharedPreferences",MODE_PRIVATE);
+        final String empresa = preferencesUsuario2.getString("empresa","");
+        //retornando informação se 1 = empresa se 0 = profissional
 
         switch(menuItem.getItemId()) {
-
             case R.id.menu_perfil: //// pendente
-                Intent intentperfil = new Intent(MainActivityProfissional.this, LoginUsuario.class);
-                intentperfil.putExtra("listaUsuario",usuarios);
-                Log.d("LOG", "Teste intent Menu: " + id+ "-" +name+ "-" +email+ "-" +email_contato+ "-" +empresa+ "-" +login);
-                this.startActivity(intentperfil);
+
                 break;
 
             case R.id.menu_logout: //Ok
@@ -187,45 +109,81 @@ public class MainActivityProfissional extends AppCompatActivity implements Navig
                 SharedPreferences.Editor UsuarioShared = preferencesUsuario.edit();
                 UsuarioShared.clear();
                 UsuarioShared.commit();
+
+                Intent itAnunciarVaga = new Intent(
+                        MainActivityProfissional.this,
+                        LoginUsuario.class
+                );
+                onDestroy();
+                // chamar a outra Activity
+                startActivity(itAnunciarVaga);
+
                 break;
 
             case R.id.menu_procurarvagas: //Pendente
-                Intent intentprocurarvagas = new Intent(MainActivityProfissional.this, LoginUsuario.class);
-                intentprocurarvagas.putExtra("listaUsuario",usuarios);
-                Log.d("LOG", "Teste intent Menu: " + id+ "-" +name+ "-" +email+ "-" +email_contato+ "-" +empresa+ "-" +login);
-                this.startActivity(intentprocurarvagas);
+
+                if(empresa.equals("1")){
+                    Toast.makeText(MainActivityProfissional.this, "Está opção pode ser utilizado somente por cadastro de empresas", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Intent procuravagas = new Intent(
+                            MainActivityProfissional.this,
+                            MainActivityProfissional.class);
+                    startActivity(procuravagas);
+                }
+
+
                 break;
 
-            case R.id.menu_adicionarcurriculo:
-                Intent intentadicionarcurriculo = new Intent(MainActivityProfissional.this, AnunciarCurriculo.class);
-                intentadicionarcurriculo.putExtra("listaUsuario",usuarios);
-                Log.d("LOG", "Teste intent Menu: " + id+ "-" +name+ "-" +email+ "-" +email_contato+ "-" +empresa+ "-" +login);
-                this.startActivity(intentadicionarcurriculo);
+            case R.id.menu_adicionarcurriculo: //Completo
+
+                 if(empresa.equals("1")){
+                     Toast.makeText(MainActivityProfissional.this, "Está opção pode ser utilizado somente por cadastro de profissionais", Toast.LENGTH_SHORT).show();
+
+                 } else {
+                     Intent adccurriculo = new Intent(
+                             MainActivityProfissional.this,
+                             AnunciarCurriculo.class);
+                     startActivity(adccurriculo);
+                 }
+
                 break;
             case R.id.menu_procurarprofissional: //pendente
-                Intent intentprocurarprofissional = new Intent(MainActivityProfissional.this, LoginUsuario.class);
-                intentprocurarprofissional.putExtra("listaUsuario",usuarios);
-                Log.d("LOG", "Teste intent Menu: " + id+ "-" +name+ "-" +email+ "-" +email_contato+ "-" +empresa+ "-" +login);
-                this.startActivity(intentprocurarprofissional);
+
+                if(empresa.equals("0")){
+                    Toast.makeText(MainActivityProfissional.this, "Está opção pode ser utilizado somente por cadastro de empresas", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Intent procurarprofi = new Intent(
+                            MainActivityProfissional.this,
+                            AnunciosProfissionais.class);
+                    startActivity(procurarprofi);
+                }
+
                 break;
 
-            case R.id.menu_adicionarvagas:
-                Intent intentadicionarvagas = new Intent(MainActivityProfissional.this, AnunciarVagas.class);
-                intentadicionarvagas.putExtra("listaUsuario",usuarios);
-                Log.d("LOG", "Teste intent Menu: " + id+ "-" +name+ "-" +email+ "-" +email_contato+ "-" +empresa+ "-" +login);
-                this.startActivity(intentadicionarvagas);
+            case R.id.menu_adicionarvagas: //Completo
+
+                if(empresa.equals("0")){
+                    Toast.makeText(MainActivityProfissional.this, "Está opção pode ser utilizado somente por cadastro de empresas", Toast.LENGTH_SHORT).show();
+
+                } else {
+                    Intent adccurriculo = new Intent(
+                            MainActivityProfissional.this,
+                            AnunciarVagas.class);
+                    startActivity(adccurriculo);
+                }
+
+
                 break;
 
             case R.id.menu_sobre: // pendente
-                Intent intentsobre = new Intent(MainActivityProfissional.this, LoginUsuario.class);
-                intentsobre.putExtra("listaUsuario",usuarios);
-                Log.d("LOG", "Teste intent Menu: " + id+ "-" +name+ "-" +email+ "-" +email_contato+ "-" +empresa+ "-" +login);
-                this.startActivity(intentsobre);
+
+
                 break;
 
             case R.id.menu_sair: //ok
-                Intent intentsair = new Intent(MainActivityProfissional.this, LoginUsuario.class);
-                intentsair.putExtra("listaUsuario","");
+
                 onDestroy();
                 finishAffinity();
                 break;
