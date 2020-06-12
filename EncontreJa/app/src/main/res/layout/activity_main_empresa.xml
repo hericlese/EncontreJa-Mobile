@@ -36,16 +36,16 @@
            android:textStyle="bold" />
 
        <TextView
-           android:layout_width="150dp"
+           android:layout_width="210dp"
            android:layout_height="110dp"
            android:layout_alignParentStart="true"
            android:layout_alignParentEnd="true"
            android:layout_marginStart="10dp"
            android:layout_marginTop="60dp"
-           android:layout_marginEnd="150dp"
+           android:layout_marginEnd="120dp"
 
            android:fontFamily="@font/quadrantabold"
-           android:text="Encontre sua vaga ou seu profissional de forma objetiva e rápida!!!"
+           android:text="Anuncie uma vaga ou EncontreJá seu profissional de forma objetiva e rápida!!!"
            android:textAlignment="viewStart"
            android:textColor="@color/colorAccent"
            android:textSize="14dp" />

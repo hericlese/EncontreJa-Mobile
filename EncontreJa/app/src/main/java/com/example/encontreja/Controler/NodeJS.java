@@ -1,8 +1,13 @@
 package com.example.encontreja.Controler;
 
+import com.example.encontreja.Model.VagasList;
+
+import java.util.List;
+
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 
@@ -39,8 +44,6 @@ public interface NodeJS {
                                     @Field("password") String password);
 
 
-
-
     @POST("/cadastrarvagas/")
     @FormUrlEncoded
     Observable<String> cadastrarVagas(
@@ -52,10 +55,6 @@ public interface NodeJS {
                                         @Field("competencia2nivel") String competencia2nivel,
                                         @Field("competencia3") String competencia3,
                                         @Field("competencia3nivel") String competencia3nivel,
-                                        @Field("competencia4") String competencia4,
-                                        @Field("competencia4nivel") String competencia4nivel,
-                                        @Field("competencia5") String competencia5,
-                                        @Field("competencia5nivel") String competencia5nivel,
                                         @Field("vagas") String vagas,
                                         @Field("description") String description,
                                         @Field("id_empresa") String id_empresa,
@@ -63,4 +62,33 @@ public interface NodeJS {
                                         @Field("cidade") String cidade,
                                         @Field("estado") String estado);
 
+
+
+
+    @POST("/cadastrarcurriculo/")
+    @FormUrlEncoded
+    Observable<String> cadastrarCurriculo(
+                                        @Field("name") String name,
+                                        @Field("objetivo") String objetivo,
+                                        @Field("formacao") String formacao,
+                                        @Field("experiencia1") String experiencia1,
+                                        @Field("experiencia2") String experiencia2,
+                                        @Field("experiencia3") String experiencia3,
+                                        @Field("cursos") String cursos,
+                                        @Field("links") String links,
+                                        @Field("competenciaextra") String competenciaextra,
+                                        @Field("id_usuario") String id_usuario,
+                                        @Field("competencia1") String competencia1,
+                                        @Field("nivel1") String nivel1,
+                                        @Field("competencia2") String competencia2,
+                                        @Field("nivel2") String nivel2,
+                                        @Field("competencia3") String competencia3,
+                                        @Field("nivel3") String nivel3);
+
+    @GET("vagas")
+    Observable<List<VagasList>> getVagasList();
+
+    @POST("searchvagas")
+    @FormUrlEncoded
+    Observable<List<VagasList>> searchevagas(@Field("vaga") String vaga);
 }

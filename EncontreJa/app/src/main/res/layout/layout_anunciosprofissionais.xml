@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:openDrawer="end"
+    android:id="@+id/root_profissionais"
+    android:background="#fff"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="top"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="6dp"
+    android:layout_margin="5dp" >
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                >
+                <ImageView
+                    android:layout_marginTop="0dp"
+                    android:layout_width="55dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="left"
+                    android:layout_marginEnd="5dp"
+                    android:src="@drawable/vagamulher"
+                    />
+
+                <TextView
+                    android:id="@+id/nomeanuncio"
+                    android:layout_width="230dp"
+                    android:layout_height="fill_parent"
+                    android:text="Nome Anuncio"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/v5"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+
+                    />
+
+                <TextView
+                    android:id="@+id/idadeanuncio"
+                    android:layout_width="65dp"
+                    android:layout_height="17dp"
+                    android:text="23 Anos"
+                    android:layout_gravity="top|end"
+                    android:textAlignment="textEnd"
+                    android:textColor="#6f6f6f"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    android:autoSizeTextType="uniform"
+                    />
+
+                //grid competencias
+
+                <GridLayout
+                    android:layout_marginStart="-295dp"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="19dp"
+                    android:columnCount="3">
+
+                    ///////////////////////////////////////COMPETENCIA 1
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="start"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_marginBottom="3dp"
+                            android:id="@+id/competencia1anuncio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_column="0"
+                            android:text="Competencia 1"
+                            android:textColor="#6f6f6f"
+                            android:textSize="12sp"
+                            android:autoSizeTextType="uniform"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_row="0"
+                        android:layout_column="0"
+                        android:layout_gravity="start|bottom"
+                        android:orientation="horizontal"
+                        android:background="@drawable/separacao_campo">
+
+                        <ImageView
+                            android:id="@+id/competencia1estrela1"
+                            android:layout_width="17dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/estrela" />
+
+                        <ImageView
+                            android:id="@+id/competencia1estrela2"
+                            android:layout_width="17dp"
+                            android:layout_height="15dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/estrela" />
+
+                        <ImageView
+                            android:id="@+id/competencia1estrela3"
+                            android:layout_width="17dp"
+                            android:layout_height="15dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/meiaestrela" />
+
+                        <TextView
+                            android:id="@+id/competencia1nivel"
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="2dp"
+                            android:autoSizeTextType="uniform"
+                            android:layout_marginEnd="10dp"
+                            android:text="Avançado"
+                            android:textColor="#6f6f6f"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+                    </LinearLayout>
+
+    ///////////////////////////////////////COMPETENCIA 2
+
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="start"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_marginBottom="3dp"
+                            android:id="@+id/competencia2anuncio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:layout_column="1"
+                            android:text="Competencia 1"
+                            android:textColor="#6f6f6f"
+                            android:layout_marginStart="2dp"
+                            android:textSize="12sp"
+                            android:autoSizeTextType="uniform"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_row="0"
+                        android:layout_column="1"
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal"
+                        android:background="@drawable/separacao_campo">
+
+                        <ImageView
+                            android:id="@+id/competencia2estrela1"
+                            android:layout_width="17dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/estrela" />
+
+                        <ImageView
+                            android:id="@+id/competencia2estrela2"
+                            android:layout_width="17dp"
+                            android:layout_height="15dp"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/meiaestrela" />
+
+                        <ImageView
+                            android:id="@+id/competencia2estrela3"
+                            android:layout_width="17dp"
+                            android:layout_height="15dp"
+                            android:layout_marginBottom="5dp"
+                            />
+
+                        <TextView
+
+                            android:id="@+id/competencia2nivel"
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:layout_gravity="bottom"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="2dp"
+                            android:autoSizeTextType="uniform"
+                            android:text="Médio"
+                            android:textColor="#6f6f6f"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+
+                    ///////////////////////////////////////COMPETENCIA 3
+
+
+                    <LinearLayout
+                        android:layout_marginTop="10dp"
+                        android:layout_gravity="start"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_marginBottom="3dp"
+                            android:id="@+id/competencia3anuncio"
+                            android:layout_width="wrap_content"
+                            android:layout_height="15dp"
+                            android:layout_column="1"
+                            android:text="Competencia 1"
+                            android:textColor="#6f6f6f"
+                            android:layout_marginStart="2dp"
+                            android:textSize="12sp"
+                            android:autoSizeTextType="uniform"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_row="0"
+                        android:layout_column="2"
+                        android:layout_gravity="start|bottom"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/competencia3estrela1"
+                            android:layout_width="17dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="bottom"
+                            android:layout_marginBottom="5dp"
+                            android:src="@drawable/estrela" />
+
+                        <ImageView
+                            android:id="@+id/competencia3estrela2"
+                            android:layout_width="17dp"
+                            android:layout_height="15dp"
+                            android:layout_marginBottom="5dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/competencia3estrela3"
+                            android:layout_width="17dp"
+                            android:layout_height="15dp"
+                            android:layout_marginBottom="5dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/competencia3nivel"
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:layout_gravity="bottom"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginBottom="2dp"
+                            android:autoSizeTextType="uniform"
+                            android:text="Básico"
+                            android:textColor="#6f6f6f"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+
+
+
+
+                    </LinearLayout>
+                </GridLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+

@@ -18,11 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.encontreja.Controler.NodeJS;
-import com.example.encontreja.Controler.Usuario;
 import com.google.android.material.navigation.NavigationView;
-
-import java.io.Serializable;
-import java.util.ArrayList;
 
 public class MainActivityProfissional extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -51,7 +47,7 @@ public class MainActivityProfissional extends AppCompatActivity implements Navig
                 // Intent(classe origem, classe destino.class)
                 Intent itProcurarVagas = new Intent(
                         MainActivityProfissional.this,
-                        AnunciosVagas.class
+                        ProcurarVagas.class
                 );
                 // chamar a outra Activity
                 startActivity(itProcurarVagas);
@@ -91,7 +87,7 @@ public class MainActivityProfissional extends AppCompatActivity implements Navig
 
         SharedPreferences preferencesUsuario2 = getSharedPreferences(
                 "usuarioSharedPreferences",MODE_PRIVATE);
-        final String empresa = preferencesUsuario2.getString("empresa","");
+        String empresa = preferencesUsuario2.getString("empresa","");
         //retornando informação se 1 = empresa se 0 = profissional
 
         switch(menuItem.getItemId()) {
@@ -120,15 +116,15 @@ public class MainActivityProfissional extends AppCompatActivity implements Navig
 
                 break;
 
-            case R.id.menu_procurarvagas: //Pendente
+            case R.id.menu_procurarvagas:
 
                 if(empresa.equals("1")){
-                    Toast.makeText(MainActivityProfissional.this, "Está opção pode ser utilizado somente por cadastro de empresas", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivityProfissional.this, "Está opção pode ser utilizado somente por cadastro de profissionais", Toast.LENGTH_SHORT).show();
 
                 } else {
                     Intent procuravagas = new Intent(
                             MainActivityProfissional.this,
-                            MainActivityProfissional.class);
+                            ProcurarVagas.class);
                     startActivity(procuravagas);
                 }
 
@@ -149,7 +145,7 @@ public class MainActivityProfissional extends AppCompatActivity implements Navig
 
                 break;
             case R.id.menu_procurarprofissional: //pendente
-
+                Log.d("TESTE", "TESTE EMPRESA :"+empresa);
                 if(empresa.equals("0")){
                     Toast.makeText(MainActivityProfissional.this, "Está opção pode ser utilizado somente por cadastro de empresas", Toast.LENGTH_SHORT).show();
 

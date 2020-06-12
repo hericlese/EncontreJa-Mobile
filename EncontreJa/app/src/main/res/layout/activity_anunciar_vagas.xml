@@ -410,167 +410,6 @@
                             android:layout_marginStart="2dp"
                             android:layout_marginTop="10dp"
                             android:autoSizeTextType="uniform"
-                            android:text="4ª Competência em destaque:"
-                            android:textAlignment="center"
-                            android:textColor="#6f6f6f"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_marginStart="2dp"
-                            android:autoSizeTextType="uniform"
-                            android:text="Competência:"
-                            android:textColor="#6f6f6f"
-                            android:textSize="17sp"
-                            android:textStyle="bold" />
-
-                        <EditText
-                            android:id="@+id/editTextCompetencia4Vaga"
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="#FAF8F8"
-                            android:ems="10"
-                            android:gravity="start|top"
-                            android:hint=" Exemplo Ingles"
-                            android:inputType="textPersonName"
-                            android:textSize="14dp"
-                            app:layout_constraintStart_toStartOf="parent" />
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_marginStart="2dp"
-                            android:autoSizeTextType="uniform"
-                            android:text="Nivel:"
-                            android:textColor="#6f6f6f"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <CheckBox
-                            android:id="@+id/comp4N1Vaga"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:text="Básico"
-                            android:textSize="12dp" />
-
-                        <CheckBox
-                            android:id="@+id/comp4N2Vaga"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="120dp"
-                            android:layout_marginTop="-32dp"
-                            android:text="Intermediário "
-                            android:textSize="12dp"/>
-
-                        <CheckBox
-                            android:id="@+id/comp4N3Vaga"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="250dp"
-                            android:layout_marginTop="-33dp"
-                            android:text="Avançado"
-                            android:textSize="12dp"/>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="2dp"
-                            android:background="#cccc"
-                            android:gravity="center_vertical"
-                            android:layout_marginTop="10dp"
-                            android:textAppearance="?attr/textAppearanceListItemSmall"/>
-
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginTop="10dp"
-                            android:autoSizeTextType="uniform"
-                            android:text=" 5ª Competência em destaque:"
-                            android:textAlignment="center"
-                            android:textColor="#6f6f6f"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_marginStart="2dp"
-                            android:autoSizeTextType="uniform"
-                            android:text=" Competência:"
-                            android:textColor="#6f6f6f"
-                            android:textSize="17sp"
-                            android:textStyle="bold" />
-
-                        <EditText
-                            android:id="@+id/editTextCompetencia5Vaga"
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="#FAF8F8"
-                            android:ems="10"
-                            android:gravity="start|top"
-                            android:hint=" Exemplo Excel"
-                            android:inputType="textPersonName"
-                            android:textSize="14dp"
-                            app:layout_constraintStart_toStartOf="parent" />
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_marginStart="2dp"
-                            android:autoSizeTextType="uniform"
-                            android:text="Nivel:"
-                            android:textColor="#6f6f6f"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <CheckBox
-                            android:id="@+id/comp5N1Vaga"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:text="Básico"
-                            android:textSize="12dp"/>
-
-                        <CheckBox
-                            android:id="@+id/comp5N2Vaga"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="120dp"
-                            android:layout_marginTop="-32dp"
-                            android:text="Intermediário "
-                            android:textSize="12dp"/>
-
-                        <CheckBox
-                            android:id="@+id/comp5N3Vaga"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="250dp"
-                            android:layout_marginTop="-33dp"
-                            android:text="Avançado"
-                            android:textSize="12dp" />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="3dp"
-                            android:background="#cccc"
-                            android:gravity="center_vertical"
-                            android:layout_marginTop="15dp"
-                            android:textAppearance="?attr/textAppearanceListItemSmall"/>
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginTop="10dp"
-                            android:autoSizeTextType="uniform"
                             android:text=" Estado"
                             android:textAlignment="center"
                             android:textColor="#6f6f6f"
@@ -728,19 +567,19 @@
                             android:textStyle="bold" />
 
 
-                        <EditText
-                            android:id="@+id/editTextContratoVaga"
-                            android:layout_width="fill_parent"
+                        <AutoCompleteTextView
+                            android:id="@+id/autoCompleteContratoVaga"
+                            android:layout_width="300dp"
                             android:layout_height="30dp"
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="10dp"
                             android:background="#FAF8F8"
                             android:ems="10"
-                            android:hint=" Tipo do contrato"
-                            android:gravity="start|top"
-                            android:inputType="textPersonName"
+                            android:gravity="left"
                             android:textSize="14dp"
-                            app:layout_constraintStart_toStartOf="parent" />
+                            android:hint="Selecione tipo de contrato"
+                            android:completionThreshold="1"
+                            android:completionHint="\n Selecione o contrato" />
 
 
                         <TextView
@@ -811,7 +650,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:layout_marginTop="3dp"
-                                    android:text="Registrar"
+                                    android:text="Anunciar"
                                     android:textAlignment="center"
                                     android:textColor="#6f6f6f"
                                     android:textSize="14sp"
@@ -848,6 +687,7 @@
         app:itemTextColor="#000000"
         android:textSize="16dp"
         app:menu="@menu/menu_item" />
+
 
 
 </androidx.drawerlayout.widget.DrawerLayout>

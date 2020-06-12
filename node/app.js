@@ -47,7 +47,7 @@ function checkHashPassword(userPassword,salt)
 
 const app = express();
 app.use(bodyParser.json()); //Aceitar parametros Json
-app.use(bodyParser.urlencoded({extended: true})); //aceitar parametros de URL coidificada
+app.use(bodyParser.urlencoded({extended: true})); //aceitar parametros de URL codificada
 
 //Start servidor local
 app.listen(PORT, () =>{
@@ -240,10 +240,6 @@ app.post('/cadastrarvagas/',(req,res,next)=>{
     let competencia2nivel = post_data.competencia2nivel;
     let competencia3 = post_data.competencia3;
     let competencia3nivel = post_data.competencia3nivel;  
-    let competencia4 = post_data.competencia4;
-    let competencia4nivel = post_data.competencia4nivel;
-    let competencia5 = post_data.competencia5;
-    let competencia5nivel = post_data.competencia5nivel;
     let vagas = post_data.vagas;  
     let description = post_data.description;  
     let contrato = post_data.contrato;     
@@ -252,7 +248,7 @@ app.post('/cadastrarvagas/',(req,res,next)=>{
             
 
     
-                con.query('INSERT INTO `empresa_vagas`(`cargo`, `empresa`, `competencia_1`, `competencia_1_nivel`, `competencia_2`, `competencia_2_nivel`, `competencia_3`, `competencia_3_nivel`, `competencia_4`, `competencia_4_nivel`, `competencia_5`, `competencia_5_nivel`, `vagas`, `description`, `fk_empresa`, `contrato`,`cidade`,`estado`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[cargo,empresa,competencia1,competencia1nivel,competencia2,competencia2nivel,competencia3,competencia3nivel,competencia4,competencia4nivel,competencia5,competencia5nivel,vagas,description,id_empresa,contrato,cidade,estado],
+                con.query('INSERT INTO `empresa_vagas`(`cargo`, `empresa`, `competencia_1`, `competencia_1_nivel`, `competencia_2`, `competencia_2_nivel`, `competencia_3`, `competencia_3_nivel`, `vagas`, `description`, `fk_empresa`, `contrato`,`cidade`,`estado`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[cargo,empresa,competencia1,competencia1nivel,competencia2,competencia2nivel,competencia3,competencia3nivel,vagas,description,id_empresa,contrato,cidade,estado],
              
                 function(err,result,fields){
                     con.on('error',function(err){
@@ -261,7 +257,7 @@ app.post('/cadastrarvagas/',(req,res,next)=>{
                     });
                     
                     res.json('Vaga registrada com sucesso!'),
-                    res.end(console.log(`Inserindo ${cargo} ${empresa} ${competencia1} ${competencia1nivel} ${competencia2} ${competencia2nivel} ${competencia3} ${competencia3nivel} ${competencia4} ${competencia4nivel} ${competencia5} ${competencia5nivel} ${vagas} ${description} ${id_empresa} ${contrato} ${cidade} ${estado}` ));
+                    res.end(console.log(`Inserindo ${cargo} ${empresa} ${competencia1} ${competencia1nivel} ${competencia2} ${competencia2nivel} ${competencia3} ${competencia3nivel} ${vagas} ${description} ${id_empresa} ${contrato} ${cidade} ${estado}` ));
                 })   
  
  });
@@ -284,40 +280,162 @@ app.post('/cadastrarcurriculo/',(req,res,next)=>{
     let links = post_data.links;  
     let competenciaextra = post_data.competenciaextra;
 
+
+    let competencia1 = post_data.competencia1;
+    let nivel1 = post_data.nivel1;
+    let competencia2 = post_data.competencia2;
+    let nivel2 = post_data.nivel2;
+    let competencia3 = post_data.competencia3;
+    let nivel3 = post_data.nivel3;
+
+                //inserindo Curriculo ao banco
+                con.query('INSERT INTO `usuario_curriculo`(`name`, `objetivo`, `formacao`, `experiencia_1`, `experiencia_2`, `experiencia_3`, `cursos`, `links`, `competencia_extras`, `fk_profissional`) VALUES (?,?,?,?,?,?,?,?,?,?)',[name,objetivo,formacao,experiencia1,experiencia2,experiencia3,cursos,links,competenciaextra,id_usuario],
+             
+                function(err,result,fields){
+                    con.on('error',function(err){
+                        console.log('[MySQL ERROR',err);
+                        res.json('Erro ao Registrar:',err );
+                    });
+                    
+             
+                        //inserindo primeira competencia ao banco
+                con.query('INSERT INTO `usuario_competencias`(`competencia`, `nivel`, `fk_competencia`) VALUES (?,?,?)',[competencia1,nivel1,id_usuario],
+             
+                function(err,result,fields){
+                    con.on('error',function(err){
+                        console.log('[MySQL ERROR',err);
+                        res.json('Erro ao Registrar:',err );
+                    });
+                    
+                    //inserindo segunda competencia ao banco
+                con.query('INSERT INTO `usuario_competencias`(`competencia`, `nivel`, `fk_competencia`) VALUES (?,?,?)',[competencia2,nivel2,id_usuario],
+             
+                function(err,result,fields){
+                    con.on('error',function(err){
+                        console.log('[MySQL ERROR',err);
+                        res.json('Erro ao Registrar:',err );
+                    });
+
+                                            //inserindo terceira competencia ao banco
+                con.query('INSERT INTO `usuario_competencias`(`competencia`, `nivel`, `fk_competencia`) VALUES (?,?,?)',[competencia3,nivel3,id_usuario],
+             
+                function(err,result,fields){
+                    con.on('error',function(err){
+                        console.log('[MySQL ERROR',err);
+                        res.json('Erro ao Registrar:',err );
+                    });
+
+                    res.json('Curriculo registrado com sucesso!'),
+                    res.end(console.log(`Inserindo Curriculo: ${name} ${objetivo} ${formacao} ${experiencia2} ${experiencia3} ${cursos} ${links} ${competenciaextra} ${id_usuario}` ));
+                    res.end(console.log(`Inserindo Competencias: ${competencia1} ${nivel1} ${id_usuario} \n ${competencia2} ${nivel2} ${id_usuario} \n ${competencia3} ${nivel3} ${id_usuario}` ));
+                
+                })
+            })
+        })
+    })  
+
+});
+
+app.get("/cargosbase",(req,res,next)=>{
+    con.query('SELECT * FROM empresa_vagas',function(error,result,fields){
+        con.on('error',function(err){
+            console.log('[MYSQL]ERROR',err);
+        });
+            if(result && result.length)
+            {
+                res.end(JSON.stringify(result,['cargo']));
+            }
+            else
+            {
+                res.end(JSON.stringify('Sem vagas'));
+            }
+    });
     
-                con.query('INSERT INTO `empresa_vagas`(`name`, `objetivo`, `formacao`, `experiencia_1`, `experiencia_2`, `experiencia_3`, `cursos`, `links`, `competencia_extras`, `fk_profissional`) VALUES (?,?,?,?,?,?,?,?,?,?)',[name,objetivo,formacao,experiencia1,experiencia2,experiencia3,cursos,links,competenciaextra,id_usuario],
-             
-                function(err,result,fields){
-                    con.on('error',function(err){
-                        console.log('[MySQL ERROR',err);
-                        res.json('Erro ao Registrar:',err );
-                    });
-                    
-                    res.json('Vaga registrada com sucesso!'),
-                    res.end(console.log(`Inserindo ${name} ${objetivo} ${formacao} ${experiencia2} ${experiencia3} ${cursos} ${links} ${competenciaextra} ${id_usuario}` ));
-                })   
- 
- });
+});
 
 
-  // Cadastrar Competencias 
-app.post('/cadastrarcompetencias/',(req,res,next)=>{
-    let post_data = req.body; //pegando parametros do POST
-  
-    let id_usuario = post_data.id_usuario;
-    let competencia = post_data.competencia;
-    let nivel = post_data.objetivo;
- 
-                con.query('INSERT INTO `empresa_vagas`(`competencia`, `nivel`, `fk_competencia`) VALUES (?,?,?)',[competencia,nivel,id_usuario],
-             
-                function(err,result,fields){
-                    con.on('error',function(err){
-                        console.log('[MySQL ERROR',err);
-                        res.json('Erro ao Registrar:',err );
-                    });
+
+app.post("/buscavagas",(req,res,next)=>{
+    
+    let post_data = req.body;
+
+    let cargo1 = post_data.cargo1;
+    if (cargo1 ==undefined){
+        cargo1 = "";
+    }
+    let cargo2 = post_data.cargo2;
+    if (cargo2 ==undefined){
+        cargo2 = "";
+    }
+    let cargo3 = post_data.cargo3;
+    if (cargo3 ==undefined){
+        cargo3 = "";
+    }
+    let competencia1 = post_data.competencia1;
+    if (competencia1 == undefined){
+        competencia1 = "";
+    }
+    let competencia1nivel = post_data.competencia1nivel;
+    if (competencia1nivel == undefined){
+        competencia1nivel = "";
+    }
+    let competencia2 = post_data.competencia2;
+    if (competencia2 == undefined){
+        competencia2 = "";
+    }
+    let competencia2nivel = post_data.competencia2nivel;
+    if (competencia2nivel == undefined){
+        competencia2nivel = "";
+    }
+    let competencia3 = post_data.competencia3;
+    if (competencia3 == undefined){
+        competencia3 = "";
+    }
+    let competencia3nivel = post_data.competencia3nivel;
+    if (competencia3nivel == undefined){
+        competencia3nivel = "";
+    }
+   
+    let estado = post_data.estado;
+    if (estado == undefined){
+        estado = "";
+    }
+    let cidade = post_data.cidade;
+    if (cidade == undefined){
+        cidade = "";
+    }
+
+
+    //Filtro de busca, todas as combinações de competencia apartir de 3 campos diferentes de ordens diferentes
+    let query = `SELECT * FROM empresa_vagas WHERE cargo IN ('${cargo1}','${cargo2}','${cargo3}')
+                AND competencia_1 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_3 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or competencia_1 LIKE '%${competencia1}%' and competencia_3 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or competencia_2 LIKE '%${competencia1}%' and competencia_3 LIKE '%${competencia2}%' and competencia_1 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or competencia_2 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_3 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or competencia_3 LIKE '%${competencia1}%' and competencia_1 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or competencia_3 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_1 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'`; 
+
                     
-                    res.json('Vaga registrada com sucesso!'),
-                    res.end(console.log(`Inserindo ${name} ${objetivo} ${formacao} ${experiencia2} ${experiencia3} ${cursos} ${links} ${competenciaextra} ${id_usuario}` ));
-                })   
- 
- });
+    console.log(`LOG 1${cargo1}|${cargo2}|${cargo3}${competencia1}|${competencia1nivel}|${competencia2}|${competencia2nivel}|${competencia3}|${competencia3nivel}|${cidade}|${estado}`);
+    console.log(query);
+
+    con.query(query,function(err,result,fields){
+        con.on('error',function(err){
+            console.log('[MYSQL]ERROR',err);
+        
+
+        });
+    
+                if(result && result.length)
+                {
+                        console.log(`${competencia1}|1${cidade}`);
+                        res.end(JSON.stringify(result));
+                }
+                else
+                {
+                   
+                    res.end(JSON.stringify('Sem vagas com esses parametros, teste buscar com outro cargo'));
+            }  
+    });
+
+});
