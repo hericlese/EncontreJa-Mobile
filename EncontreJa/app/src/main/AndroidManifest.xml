@@ -13,7 +13,8 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".MainActivity">
+        <activity android:name=".LoginUsuario" >
+
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +24,9 @@
         </activity>
         <activity android:name=".ActivityHome"/>
 
+        <activity android:name=".ProcurarVagas" />
 
-        <activity android:name=".LoginUsuario" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".PerfilEmpresa" />
         <activity android:name=".PerfilProfissional" />
         <activity android:name=".CadastrarEmpresa" />
@@ -35,7 +37,7 @@
         <activity android:name=".AnunciarVagas" />
         <activity android:name=".MainActivityProfissional" />
         <activity android:name=".MainActivityEmpresa" />
-        <activity android:name=".ProcurarVagas" />
+
     </application>
 
 </manifest>

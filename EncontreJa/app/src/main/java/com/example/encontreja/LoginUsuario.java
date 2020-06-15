@@ -25,6 +25,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.schedulers.Schedulers;
 import retrofit2.Retrofit;
 
+
 public class LoginUsuario extends AppCompatActivity{
 
     LinearLayout btnRegistrarE, btnRegistrarP,btnLogar;
@@ -205,9 +206,6 @@ public class LoginUsuario extends AppCompatActivity{
 
                     }
                 })
-
         );
-
     }
-
 }

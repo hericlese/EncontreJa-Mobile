@@ -31,7 +31,7 @@
                 <TextView
                     android:id="@+id/nomeanuncio"
                     android:layout_width="230dp"
-                    android:layout_height="fill_parent"
+                    android:layout_height="wrap_content"
                     android:text="Nome Anuncio"
                     android:textAlignment="textStart"
                     android:textColor="@color/v5"
@@ -133,8 +133,9 @@
 
 
                     <LinearLayout
+
                         android:layout_marginTop="10dp"
-                        android:layout_gravity="start"
+                        android:layout_gravity="top|end"
                         android:orientation="horizontal"
                         android:layout_height="wrap_content">
 
@@ -155,6 +156,7 @@
                     <LinearLayout
                         android:layout_row="0"
                         android:layout_column="1"
+                        android:layout_gravity="end"
                         android:layout_marginTop="30dp"
                         android:orientation="horizontal"
                         android:background="@drawable/separacao_campo">
@@ -184,7 +186,7 @@
                         <TextView
 
                             android:id="@+id/competencia2nivel"
-                            android:layout_width="fill_parent"
+                            android:layout_width="wrap_content"
                             android:layout_height="15dp"
                             android:layout_gravity="bottom"
                             android:layout_marginEnd="10dp"
@@ -202,7 +204,7 @@
 
                     <LinearLayout
                         android:layout_marginTop="10dp"
-                        android:layout_gravity="start"
+                        android:layout_gravity="end"
                         android:orientation="horizontal"
                         android:layout_height="wrap_content">
 
@@ -223,7 +225,7 @@
                     <LinearLayout
                         android:layout_row="0"
                         android:layout_column="2"
-                        android:layout_gravity="start|bottom"
+                        android:layout_gravity="end|bottom"
                         android:orientation="horizontal">
 
                         <ImageView

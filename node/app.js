@@ -347,7 +347,7 @@ app.get("/cargosbase",(req,res,next)=>{
             }
             else
             {
-                res.end(JSON.stringify('Sem vagas'));
+                res.end(JSON.stringify('Sem historico de cargos'));
             }
     });
     
@@ -355,7 +355,7 @@ app.get("/cargosbase",(req,res,next)=>{
 
 
 
-app.post("/buscavagas",(req,res,next)=>{
+app.post("/buscarvagas",(req,res,next)=>{
     
     let post_data = req.body;
 
@@ -425,7 +425,6 @@ app.post("/buscavagas",(req,res,next)=>{
         
 
         });
-    
                 if(result && result.length)
                 {
                         console.log(`${competencia1}|1${cidade}`);

@@ -18,7 +18,20 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.encontreja.Controler.NodeJS;
+import com.example.encontreja.Model.Cargo;
 import com.google.android.material.navigation.NavigationView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.ArrayList;
+
+import io.reactivex.android.schedulers.AndroidSchedulers;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
+
+
 
 public class MainActivityProfissional extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
 
@@ -27,8 +40,21 @@ public class MainActivityProfissional extends AppCompatActivity implements Navig
     Toolbar toolbar;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
-    LinearLayout  btnProcurarV,btnAnunciarC;
+    LinearLayout  btnProcurarV,btnAnunciarC, btnCadastroProfissional;
+    CompositeDisposable compositeDisposable = new CompositeDisposable();
 
+
+    @Override
+    protected void onStop(){
+        compositeDisposable.clear();
+        super.onStop();
+    }
+
+    @Override
+    protected void onDestroy(){
+        compositeDisposable.clear();
+        super.onDestroy();
+    }
 
     @SuppressLint({"RestrictedApi", "WrongViewCast"})
     @Override
@@ -40,6 +66,21 @@ public class MainActivityProfissional extends AppCompatActivity implements Navig
         navigationView = findViewById(R.id.navigationView); //barra de navegação
         btnProcurarV = findViewById(R.id.card_vagasMain); //Botão ProcurarVagas
         btnAnunciarC = findViewById(R.id.card_AnunciarCurriculoMain); //Botão ProcurarVagas
+        btnCadastroProfissional = findViewById(R.id.card_EditarCadastroProfissionalMain); //Botão editar cadastro
+
+
+        btnCadastroProfissional.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {   //Btn Procurar Vaga
+                // passar os dados para outra View (activity_resultado.xml)
+                // Intent(classe origem, classe destino.class)
+                Intent itEditCadastro = new Intent(
+                        MainActivityProfissional.this,
+                        MainActivity.class
+                );
+                // chamar a outra Activity
+                startActivity(itEditCadastro);
+            }
+        });
 
         btnProcurarV.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {   //Btn Procurar Vaga
@@ -80,7 +121,6 @@ public class MainActivityProfissional extends AppCompatActivity implements Navig
 
 
     }
-
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
