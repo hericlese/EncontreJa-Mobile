@@ -3,6 +3,7 @@ const uuid = require('uuid');
 const express = require('express');
 const mysql = require('mysql');
 const bodyParser = require('body-parser');
+const { exit } = require('process');
 const PORT = 3001;
 
 
@@ -146,7 +147,7 @@ con.query('SELECT * FROM usuario_empresa where email=?',[email], function(err,re
             }    
             else        
             {          // caso nao tenha em nenhuma das 2 tableas crie um novo usuario profissional       
-                con.query('INSERT INTO `usuario_empresa`(`nique_id`, `name`, `email`, `encrypted_password`, `salt`, `empresa`, `responsavel`, `description`,`email_contato`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,?,?,?,?,NOW(),NOW())',[uid,name,email,password,salt,empresa,responsavel,description,email_contato],
+                con.query('INSERT INTO `usuario_empresa`(`nique_id`, `name`, `email`, `encrypted_password`, `salt`, `empresa`, `responsavel`, `description_empresa`,`email_contato`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,?,?,?,?,NOW(),NOW())',[uid,name,email,password,salt,empresa,responsavel,description,email_contato],
                 function(err,result,fields){
                     con.on('error',function(err){
                         console.log('[MySQL ERROR',err);
@@ -288,8 +289,14 @@ app.post('/cadastrarcurriculo/',(req,res,next)=>{
     let competencia3 = post_data.competencia3;
     let nivel3 = post_data.nivel3;
 
+    let chave1 = post_data.chave1;
+    let chave2 = post_data.chave2;
+    let chave3 = post_data.chave3;
+    let chave4 = post_data.chave4;
+    let chave5 = post_data.chave5;
+
                 //inserindo Curriculo ao banco
-                con.query('INSERT INTO `usuario_curriculo`(`name`, `objetivo`, `formacao`, `experiencia_1`, `experiencia_2`, `experiencia_3`, `cursos`, `links`, `competencia_extras`, `fk_profissional`) VALUES (?,?,?,?,?,?,?,?,?,?)',[name,objetivo,formacao,experiencia1,experiencia2,experiencia3,cursos,links,competenciaextra,id_usuario],
+                con.query('INSERT INTO `usuario_curriculo`(`name`, `objetivo`, `formacao`, `experiencia_1`, `experiencia_2`, `experiencia_3`, `cursos`, `links`, `competencia_extras`, `fk_profissional`, `chave1`, `chave2`, `chave3`, `chave4`, `chave5`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[name,objetivo,formacao,experiencia1,experiencia2,experiencia3,cursos,links,competenciaextra,id_usuario,chave1,chave2,chave3,chave4,chave5],
              
                 function(err,result,fields){
                     con.on('error',function(err){
@@ -327,7 +334,7 @@ app.post('/cadastrarcurriculo/',(req,res,next)=>{
 
                     res.json('Curriculo registrado com sucesso!'),
                     res.end(console.log(`Inserindo Curriculo: ${name} ${objetivo} ${formacao} ${experiencia2} ${experiencia3} ${cursos} ${links} ${competenciaextra} ${id_usuario}` ));
-                    res.end(console.log(`Inserindo Competencias: ${competencia1} ${nivel1} ${id_usuario} \n ${competencia2} ${nivel2} ${id_usuario} \n ${competencia3} ${nivel3} ${id_usuario}` ));
+                    res.end(console.log(`Inserindo Competencias: ${competencia1} ${nivel1} ${id_usuario} \n ${competencia2} ${nivel2} ${id_usuario} \n ${competencia3} ${nivel3} ${id_usuario}${chave1}${chave2}${chave3}${chave4}${chave5}`, ));
                 
                 })
             })
@@ -360,15 +367,108 @@ app.post("/buscarvagas",(req,res,next)=>{
     let post_data = req.body;
 
     let cargo1 = post_data.cargo1;
-    if (cargo1 ==undefined){
+    
+    let competencia1 = post_data.competencia1;
+    if (competencia1 == undefined){
+        competencia1 = "";
+    }
+    let competencia1nivel = post_data.competencia1nivel;
+    if (competencia1nivel == undefined){
+        competencia1nivel = "";
+    }
+    let competencia2 = post_data.competencia2;
+    if (competencia2 == undefined){
+        competencia2 = "";
+    }
+    let competencia2nivel = post_data.competencia2nivel;
+    if (competencia2nivel == undefined){
+        competencia2nivel = "";
+    }
+    let competencia3 = post_data.competencia3;
+    if (competencia3 == undefined){
+        competencia3 = "";
+    }
+    let competencia3nivel = post_data.competencia3nivel;
+    if (competencia3nivel == undefined){
+        competencia3nivel = "";
+    }
+   
+    let estado = post_data.estado;
+    if (estado == undefined){
+        estado = "";
+    }
+    let cidade = post_data.cidade;
+    if (cidade == undefined){
+        cidade = "";
+    }
+
+
+
+    //Filtro de busca, todas as combinações de competencia apartir de 3 campos diferentes de ordens diferentes
+    let query = `SELECT * FROM empresa_vagas WHERE cargo LIKE ('%${cargo1}%')
+                AND competencia_1 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_3 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or cargo LIKE ('%${cargo1}%') and  competencia_1 LIKE '%${competencia1}%' and competencia_3 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or cargo LIKE ('%${cargo1}%') and  competencia_2 LIKE '%${competencia1}%' and competencia_3 LIKE '%${competencia2}%' and competencia_1 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or cargo LIKE ('%${cargo1}%') and  competencia_2 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_3 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or cargo LIKE ('%${cargo1}%') and  competencia_3 LIKE '%${competencia1}%' and competencia_1 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or cargo LIKE ('%${cargo1}%') and  competencia_3 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_1 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'`; 
+          
+ console.log(query);
+
+    con.query(query,function(err,result,fields){
+        con.on('error',function(err){
+            console.log('[MYSQL]ERROR',err);
+        
+        });
+                if(result && result.length && cargo1 != "")
+                {
+                   
+                        res.end(JSON.stringify(result));
+                }
+                else
+                { 
+                   
+                    res.end(JSON.stringify('Sem vagas com esses parametros, tente buscar outro cargo'));
+            }  
+    });
+
+});
+
+
+app.get("/cargosbase",(req,res,next)=>{
+    con.query('SELECT * FROM empresa_vagas',function(error,result,fields){
+        con.on('error',function(err){
+            console.log('[MYSQL]ERROR',err);
+        });
+            if(result && result.length)
+            {
+                res.end(JSON.stringify(result,['cargo']));
+            }
+            else
+            {
+                res.end(JSON.stringify('Sem historico de cargos'));
+            }
+    });
+    
+});
+
+
+
+
+app.post("/buscarprofissional",(req,res,next)=>{
+    
+    let post_data = req.body;
+
+    let cargo1 = post_data.cargo1;
+    if (cargo1 == undefined){
         cargo1 = "";
     }
     let cargo2 = post_data.cargo2;
-    if (cargo2 ==undefined){
+    if (cargo2 == undefined){
         cargo2 = "";
     }
     let cargo3 = post_data.cargo3;
-    if (cargo3 ==undefined){
+    if (cargo3 == undefined){
         cargo3 = "";
     }
     let competencia1 = post_data.competencia1;
@@ -406,35 +506,45 @@ app.post("/buscarvagas",(req,res,next)=>{
     }
 
 
-    //Filtro de busca, todas as combinações de competencia apartir de 3 campos diferentes de ordens diferentes
-    let query = `SELECT * FROM empresa_vagas WHERE cargo IN ('${cargo1}','${cargo2}','${cargo3}')
-                AND competencia_1 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_3 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
-                or competencia_1 LIKE '%${competencia1}%' and competencia_3 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
-                or competencia_2 LIKE '%${competencia1}%' and competencia_3 LIKE '%${competencia2}%' and competencia_1 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
-                or competencia_2 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_3 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
-                or competencia_3 LIKE '%${competencia1}%' and competencia_1 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
-                or competencia_3 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_1 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'`; 
 
-                    
-    console.log(`LOG 1${cargo1}|${cargo2}|${cargo3}${competencia1}|${competencia1nivel}|${competencia2}|${competencia2nivel}|${competencia3}|${competencia3nivel}|${cidade}|${estado}`);
-    console.log(query);
+    //Filtro de busca, todas as combinações de competencia apartir de 3 campos diferentes de ordens diferentes
+    let query = `SELECT * FROM empresa_vagas WHERE cargo LIKE ('%${cargo1}%')
+                AND competencia_1 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_3 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or cargo LIKE ('%${cargo1}%') and  competencia_1 LIKE '%${competencia1}%' and competencia_3 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or cargo LIKE ('%${cargo1}%') and  competencia_2 LIKE '%${competencia1}%' and competencia_3 LIKE '%${competencia2}%' and competencia_1 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or cargo LIKE ('%${cargo1}%') and  competencia_2 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_3 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or cargo LIKE ('%${cargo1}%') and  competencia_3 LIKE '%${competencia1}%' and competencia_1 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
+                or cargo LIKE ('%${cargo1}%') and  competencia_3 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_1 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'`; 
+          
+ console.log(query);
 
     con.query(query,function(err,result,fields){
         con.on('error',function(err){
             console.log('[MYSQL]ERROR',err);
         
-
         });
-                if(result && result.length)
+                if(result && result.length && cargo1 != "")
                 {
-                        console.log(`${competencia1}|1${cidade}`);
+                    
+                   
                         res.end(JSON.stringify(result));
                 }
                 else
-                {
+                { 
                    
-                    res.end(JSON.stringify('Sem vagas com esses parametros, teste buscar com outro cargo'));
+                    res.end(JSON.stringify('Sem vagas com esses parametros, tente buscar outro cargo'));
             }  
     });
 
 });
+
+
+/*
+SELECT email_contato,description_empresa
+FROM
+usuario_empresa
+INNER JOIN
+empresa_vagas
+ON
+usuario_empresa.id = empresa_vagas.fk_empresa
+WHERE fk_empresa = 33*/

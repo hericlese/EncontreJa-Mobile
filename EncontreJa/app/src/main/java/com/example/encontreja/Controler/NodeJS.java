@@ -1,8 +1,5 @@
 package com.example.encontreja.Controler;
 
-import com.example.encontreja.Model.VagasList;
-
-import java.util.List;
 import io.reactivex.Observable;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -82,7 +79,13 @@ public interface NodeJS {
                                         @Field("competencia2") String competencia2,
                                         @Field("nivel2") String nivel2,
                                         @Field("competencia3") String competencia3,
-                                        @Field("nivel3") String nivel3);
+                                        @Field("nivel3") String nivel3,
+                                        @Field("chave1") String chave1,
+                                        @Field("chave2") String chave2,
+                                        @Field("chave3") String chave3,
+                                        @Field("chave4") String chave4,
+                                        @Field("chave5") String chave5
+    );
 
     @GET("cargosbase")
     Observable<String> getCargoList();
@@ -92,8 +95,6 @@ public interface NodeJS {
     @FormUrlEncoded
     Observable<String> buscarvagas(
                                         @Field("cargo1") String cargo1,
-                                        @Field("cargo2") String cargo2,
-                                        @Field("cargo3") String cargo3,
                                         @Field("competencia1") String competencia1,
                                         @Field("competencia2") String competencia2,
                                         @Field("competencia3") String competencia3,

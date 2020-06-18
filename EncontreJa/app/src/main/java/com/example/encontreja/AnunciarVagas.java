@@ -116,7 +116,7 @@ public class AnunciarVagas extends AppCompatActivity implements NavigationView.O
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 comp1N2Vaga.setChecked(false);
                 comp1N3Vaga.setChecked(false);
-                competencianivel1 = "1";
+                competencianivel1 = "Básico";
             }
         });
         comp1N2Vaga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -124,7 +124,7 @@ public class AnunciarVagas extends AppCompatActivity implements NavigationView.O
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 comp1N1Vaga.setChecked(false);
                 comp1N3Vaga.setChecked(false);
-                competencianivel1 = "2";
+                competencianivel1 = "Intermediário";
             }
         });
         comp1N3Vaga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -132,7 +132,7 @@ public class AnunciarVagas extends AppCompatActivity implements NavigationView.O
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 comp1N1Vaga.setChecked(false);
                 comp1N2Vaga.setChecked(false);
-                competencianivel1 = "3";
+                competencianivel1 = "Avançado";
             }
         });
 
@@ -142,7 +142,7 @@ public class AnunciarVagas extends AppCompatActivity implements NavigationView.O
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 comp2N2Vaga.setChecked(false);
                 comp2N3Vaga.setChecked(false);
-                competencianivel2 = "1";
+                competencianivel2 = "Básico";
             }
         });
         comp2N2Vaga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -150,7 +150,7 @@ public class AnunciarVagas extends AppCompatActivity implements NavigationView.O
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 comp2N1Vaga.setChecked(false);
                 comp2N3Vaga.setChecked(false);
-                competencianivel2 = "2";
+                competencianivel2 = "Intermediário";
             }
         });
         comp2N3Vaga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -158,7 +158,7 @@ public class AnunciarVagas extends AppCompatActivity implements NavigationView.O
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 comp2N1Vaga.setChecked(false);
                 comp2N2Vaga.setChecked(false);
-                competencianivel2 = "3";
+                competencianivel2 = "Avançado";
             }
         });
 
@@ -168,7 +168,7 @@ public class AnunciarVagas extends AppCompatActivity implements NavigationView.O
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 comp3N2Vaga.setChecked(false);
                 comp3N3Vaga.setChecked(false);
-                competencianivel3 = "1";
+                competencianivel3 = "Básico";
             }
         });
         comp3N2Vaga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -176,7 +176,7 @@ public class AnunciarVagas extends AppCompatActivity implements NavigationView.O
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 comp3N1Vaga.setChecked(false);
                 comp3N3Vaga.setChecked(false);
-                competencianivel3 = "2";
+                competencianivel3 = "Intermediário";
             }
         });
         comp3N3Vaga.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -184,7 +184,7 @@ public class AnunciarVagas extends AppCompatActivity implements NavigationView.O
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 comp3N1Vaga.setChecked(false);
                 comp3N2Vaga.setChecked(false);
-                competencianivel3 = "3";
+                competencianivel3 = "Avançado";
             }
         });
 

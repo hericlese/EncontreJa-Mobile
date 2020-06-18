@@ -16,7 +16,7 @@ public class RetrofitClient {
     public static Retrofit getInstance(){
         if(instance == null)
             instance = new Retrofit.Builder()
-                    .baseUrl("http://192.168.0.5:3001/") //no emulador 127.0.0.1 refere-se a 10.0.2.2
+                    .baseUrl("http://192.168.1.105:3001/") //no emulador 127.0.0.1 refere-se a 10.0.2.2
                     .addConverterFactory((ScalarsConverterFactory.create()))
                     .addConverterFactory(GsonConverterFactory.create())
                     .addCallAdapterFactory(RxJava2CallAdapterFactory.create())

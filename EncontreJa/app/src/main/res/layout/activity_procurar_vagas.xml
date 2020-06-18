@@ -90,7 +90,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginStart="2dp"
                             android:autoSizeTextType="uniform"
-                            android:text="Buscar cargos não é necessário preencher \n todos os campos "
+                            android:text="Buscar cargos"
                             android:textAlignment="center"
                             android:textColor="#6f6f6f"
                             android:textSize="12sp"
@@ -115,56 +115,7 @@
                             android:layout_marginStart="15dp"
                             android:layout_marginEnd="10dp"
                             android:background="#FAF8F8"
-                            android:ems="10"
-                            android:gravity="left"
-                            android:textSize="14dp"
-                            android:hint="Selecione o cargo"
-                            android:completionThreshold="1"
-                            android:completionHint="Selecione o cargo \n" />
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_column="0"
-                            android:layout_marginStart="2dp"
-                            android:autoSizeTextType="uniform"
-                            android:text="Cargo :"
-                            android:textColor="#6f6f6f"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-
-                        <AutoCompleteTextView
-                            android:id="@+id/autoCompleteCargo2Vaga"
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="#FAF8F8"
-                            android:ems="10"
-                            android:gravity="left"
-                            android:textSize="14dp"
-                            android:hint="Selecione o cargo"
-                            android:completionThreshold="1"
-                            android:completionHint="Selecione o cargo \n" />
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_column="0"
-                            android:layout_marginStart="2dp"
-                            android:autoSizeTextType="uniform"
-                            android:text="Cargo :"
-                            android:textColor="#6f6f6f"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-
-                        <AutoCompleteTextView
-                            android:id="@+id/autoCompleteCargo3Vaga"
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="#FAF8F8"
+                            android:inputType="textPersonName"
                             android:ems="10"
                             android:gravity="left"
                             android:textSize="14dp"
@@ -215,7 +166,7 @@
                             android:ems="10"
                             android:gravity="start|top"
                             android:hint=" Exemplo Ingles:"
-                            android:inputType="textMultiLine"
+                            android:inputType="textPersonName"
                             android:textSize="14dp"
                             app:layout_constraintStart_toStartOf="parent" />
 

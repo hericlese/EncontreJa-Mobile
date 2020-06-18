@@ -6,27 +6,22 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
-import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.encontreja.Controler.NodeJS;
 import com.example.encontreja.Controler.RetrofitClient;
+import com.example.encontreja.Model.Vagas;
 import com.google.android.material.navigation.NavigationView;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import java.util.ArrayList;
-import java.util.List;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -48,15 +43,16 @@ public class ProcurarVagas extends AppCompatActivity implements NavigationView.O
 
     };
 
+    ArrayList<Vagas> vagases = new ArrayList<>();
 
-    //Array select Cargos
-    String[] Cargos;
-    public void setCargos(ArrayList<String> cargos) {
-        Cargos = cargos.toArray(new String[0]);
-    }
-    public String[] getCargos() {
-        return Cargos;
-    }
+//    //Array select Cargos
+//    String[] Cargos;
+//    public void setCargos(ArrayList<String> cargos) {
+//        Cargos = cargos.toArray(new String[0]);
+//    }
+//    public String[] getCargos() {
+//        return Cargos;
+//    }
 
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
@@ -77,9 +73,9 @@ public class ProcurarVagas extends AppCompatActivity implements NavigationView.O
     Toolbar toolbar;
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
-    AutoCompleteTextView autoCompleteCidade,autoCompleteEstado,autoCompleteCargo1,autoCompleteCargo2,autoCompleteCargo3;
+    AutoCompleteTextView autoCompleteCidade,autoCompleteEstado;
 
-    EditText editCargo1Busca,editCargo2Busca,editCargo3Busca,editTextComp1,editTextComp2,editTextComp3;
+    EditText editCargo1Busca,editTextComp1,editTextComp2,editTextComp3;
     LinearLayout btnBuscarVaga;
     NodeJS myAPI;
 
@@ -102,8 +98,6 @@ public class ProcurarVagas extends AppCompatActivity implements NavigationView.O
 
         btnBuscarVaga = findViewById(R.id.btnProcurarVaga);
         editCargo1Busca = findViewById(R.id.autoCompleteCargo1Vaga);
-        editCargo2Busca = findViewById(R.id.autoCompleteCargo2Vaga);
-        editCargo3Busca = findViewById(R.id.autoCompleteCargo3Vaga);
         editTextComp1 = findViewById(R.id.editTextCompetencia1Busca);
         editTextComp2 = findViewById(R.id.editTextCompetencia2Busca);
         editTextComp3 = findViewById(R.id.editTextCompetencia3Busca);
@@ -134,7 +128,7 @@ public class ProcurarVagas extends AppCompatActivity implements NavigationView.O
         btnBuscarVaga.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                buscarvagas(editCargo1Busca.getText().toString(),editCargo2Busca.getText().toString(),editCargo3Busca.getText().toString(),
+                buscarvagas(editCargo1Busca.getText().toString(),
                         editTextComp1.getText().toString(),editTextComp2.getText().toString(),editTextComp3.getText().toString(),
                         autoCompleteCidade.getText().toString(),autoCompleteEstado.getText().toString());
 
@@ -150,51 +144,27 @@ public class ProcurarVagas extends AppCompatActivity implements NavigationView.O
     }// Fim Budle
 
 
-        private void  buscarvagas(final String cargo1, String cargo2,String cargo3, String competencia1, String competencia2,
+        private void  buscarvagas(final String cargo1, String competencia1, String competencia2,
                                   String competencia3,String cidade, String estado) {
-        compositeDisposable.add(myAPI.buscarvagas(cargo1, cargo2,cargo3,competencia1,competencia2,competencia3,cidade,estado)
+        compositeDisposable.add(myAPI.buscarvagas(cargo1,competencia1,competencia2,competencia3,cidade,estado)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<String>() {
                     @Override
                     public void accept(String s) throws Exception {
-                        if (s.contains("cargo"))
+                        if (s.contains("id")) {
 
-                            Toast.makeText(ProcurarVagas.this, "Teste" +s, Toast.LENGTH_SHORT).show();
-
+                            Intent intentBuscar = new Intent(ProcurarVagas.this,VagasResult.class);
+                            intentBuscar.putExtra("JsonBusca",s);
+                            startActivity(intentBuscar);
+                                }
                         else
-                            Toast.makeText(ProcurarVagas.this, "erro" + s, Toast.LENGTH_SHORT).show(); // caso de erro retorna erro da API
+                            Toast.makeText(ProcurarVagas.this, s, Toast.LENGTH_SHORT).show(); // caso de erro retorna erro da API
 
 
                     }})
         );
     }
-
-
-
-
-
-//                    @Override
-//                            public void accept(String s) throws Exception {
-//                                if (s.contains("cargo")) {
-//                                // Log.d("LOG", "Cargos:" +s);
-//                                    //chamando a função para manipulação de Json e atribuindo a vareavel que recebera o tratamento
-//                                    try {
-//                                        JSONArray cargoArrayJson = new JSONArray(s);
-//                                        List<String> cargoArray = new ArrayList<String>();
-//                                        for (int i = 0; i < cargoArrayJson.length(); i++) {
-//                                            cargoArray.add(cargoArrayJson.getString(i));
-//                                            setCargos(cargoArray);
-//                                        }
-//                                    } catch (JSONException e) {
-//                                        e.printStackTrace();
-//                                    }
-//                                }
-//                                else{
-//
-//                                }
-//                        }
-
 
 
 

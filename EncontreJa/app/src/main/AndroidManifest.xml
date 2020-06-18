@@ -25,7 +25,7 @@
         <activity android:name=".ActivityHome"/>
 
         <activity android:name=".ProcurarVagas" />
-
+        <activity android:name=".VagasResult" />
         <activity android:name=".MainActivity"/>
         <activity android:name=".PerfilEmpresa" />
         <activity android:name=".PerfilProfissional" />

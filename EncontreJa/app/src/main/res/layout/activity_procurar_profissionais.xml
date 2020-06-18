@@ -24,8 +24,8 @@
             />
 
         <TextView
-            android:layout_width="150dp"
-            android:layout_height="110dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentEnd="true"
             android:layout_marginStart="60dp"
@@ -94,14 +94,15 @@
 
                         <TextView
                             android:layout_width="fill_parent"
-                            android:layout_height="15dp"
+                            android:layout_height="match_parent"
                             android:layout_column="0"
+                            android:layout_marginTop="10dp"
                             android:layout_marginStart="2dp"
                             android:autoSizeTextType="uniform"
-                            android:text="Buscar 3 Cargos"
+                            android:text="Buscar Cargos, não é necessário preencher \n todos os campos "
                             android:textAlignment="center"
                             android:textColor="#6f6f6f"
-                            android:textSize="14sp"
+                            android:textSize="12sp"
                             android:textStyle="bold" />
 
 
@@ -195,7 +196,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginStart="2dp"
                             android:autoSizeTextType="uniform"
-                            android:text="Buscar competências não é necessário preencher \n todos os campos "
+                            android:text="Buscar competências, não é necessário preencher \n todos os campos "
                             android:textAlignment="center"
                             android:textColor="#6f6f6f"
                             android:textSize="12sp"
@@ -507,49 +508,6 @@
                             android:completionThreshold="1"
                             android:completionHint="\n Selecione a cidade" />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="3dp"
-                            android:background="#cccc"
-                            android:gravity="center_vertical"
-                            android:layout_marginTop="15dp"
-                            android:textAppearance="?attr/textAppearanceListItemSmall"/>
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginTop="10dp"
-                            android:autoSizeTextType="uniform"
-                            android:text=" Palavras Chaves para busca do profssional"
-                            android:textAlignment="center"
-                            android:textColor="#6f6f6f"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="30dp"
-                            android:layout_column="0"
-                            android:layout_marginStart="2dp"
-                            android:layout_marginTop="10dp"
-                            android:autoSizeTextType="uniform"
-                            android:text="Palavras Chaves: "                           android:textColor="#6f6f6f"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-
-                        <EditText
-                            android:id="@+id/editTextBuscaPalavra"
-                            android:layout_width="match_parent"
-                            android:layout_height="70dp"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="#FAF8F8"
-                            android:ems="10"
-                            android:gravity="start|top"
-                            android:hint=" Busque palavra chaves como experiencia com SQL, Experiencia com BI, Experiencia em telecomunicações e etc."
-                            android:inputType="textMultiLine"
-                            android:textSize="9dp"
-                            app:layout_constraintStart_toStartOf="parent" />
 
 
                         //BTN procurar

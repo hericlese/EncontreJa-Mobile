@@ -50,7 +50,8 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     EditText editname, editobjetivo,editformacao,editTextexperiencia1,editTextexperiencia2,editTextexperiencia3,editTextcursos,
-            editTextlinks,editTextcompetenciaextra, editTextcompetencia1,editTextcompetencia2,editTextcompetencia3;
+            editTextlinks,editTextcompetenciaextra, editTextcompetencia1,editTextcompetencia2,editTextcompetencia3,editTextchave1,
+            editTextchave2,editTextchave3,editTextchave4,editTextchave5;
 
     CheckBox checkBoxComp1N1Curriculo,checkBoxComp1N2Curriculo,checkBoxComp1N3Curriculo,checkBoxComp2N1Curriculo,
             checkBoxComp2N2Curriculo,checkBoxComp2N3Curriculo,checkBoxComp3N1Curriculo,checkBoxComp3N2Curriculo,
@@ -94,6 +95,11 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
         editTextcompetencia2 = findViewById(R.id.editTextCompetencia2Curriculo);
         editTextcompetencia3 = findViewById(R.id.editTextCompetencia3Curriculo);
 
+        editTextchave1 = findViewById(R.id.editTextCargochave1);
+        editTextchave2 = findViewById(R.id.editTextCargochave2);
+        editTextchave3 = findViewById(R.id.editTextCargochave3);
+        editTextchave4 = findViewById(R.id.editTextCargochave4);
+        editTextchave5 = findViewById(R.id.editTextCargochave5);
 
         registrarCurriculo = findViewById(R.id.btnRegistrarCurriculo);
 
@@ -111,7 +117,7 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkBoxComp1N2Curriculo.setChecked(false);
                 checkBoxComp1N3Curriculo.setChecked(false);
-                competencia1result = "1";
+                competencia1result = "Básico";
             }
         });
         checkBoxComp1N2Curriculo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -119,7 +125,7 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkBoxComp1N1Curriculo.setChecked(false);
                 checkBoxComp1N3Curriculo.setChecked(false);
-                competencia1result = "2";
+                competencia1result = "Intermediário";
             }
         });
         checkBoxComp1N3Curriculo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -127,7 +133,7 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkBoxComp1N1Curriculo.setChecked(false);
                 checkBoxComp1N2Curriculo.setChecked(false);
-                competencia1result = "3";
+                competencia1result = "";
             }
         });
 
@@ -137,7 +143,7 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkBoxComp2N2Curriculo.setChecked(false);
                 checkBoxComp2N3Curriculo.setChecked(false);
-                competencia2result = "1";
+                competencia2result = "Básico";
             }
         });
         checkBoxComp2N2Curriculo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -145,7 +151,7 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkBoxComp2N1Curriculo.setChecked(false);
                 checkBoxComp2N3Curriculo.setChecked(false);
-                competencia2result = "2";
+                competencia2result = "Intermediário";
             }
         });
         checkBoxComp2N3Curriculo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -153,7 +159,7 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkBoxComp2N1Curriculo.setChecked(false);
                 checkBoxComp2N2Curriculo.setChecked(false);
-                competencia2result = "3";
+                competencia2result = "Avançado";
             }
         });
 
@@ -163,7 +169,7 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkBoxComp3N2Curriculo.setChecked(false);
                 checkBoxComp3N3Curriculo.setChecked(false);
-                competencia3result = "1";
+                competencia3result = "Básico";
             }
         });
         checkBoxComp3N2Curriculo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -171,7 +177,7 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkBoxComp3N1Curriculo.setChecked(false);
                 checkBoxComp3N3Curriculo.setChecked(false);
-                competencia3result = "2";
+                competencia3result = "Intermediário";
             }
         });
         checkBoxComp3N3Curriculo.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -179,7 +185,7 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 checkBoxComp3N1Curriculo.setChecked(false);
                 checkBoxComp3N2Curriculo.setChecked(false);
-                competencia3result = "3";
+                competencia3result = "Avançado";
             }
         });
 
@@ -197,8 +203,8 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
                            editTextexperiencia1.getText().toString(),editTextexperiencia2.getText().toString(),
                            editTextexperiencia3.getText().toString(),editTextcursos.getText().toString(),editTextlinks.getText().toString(),
                            editTextcompetenciaextra.getText().toString(),id_usuario.toString(),editTextcompetencia1.getText().toString(),competencia1result.toString(),
-                           editTextcompetencia2.getText().toString(),competencia2result.toString(),
-                           editTextcompetencia3.getText().toString(),competencia3result.toString());
+                           editTextcompetencia2.getText().toString(),competencia2result.toString(),editTextcompetencia3.getText().toString(),competencia3result.toString(),
+                           editTextchave1.getText().toString(),editTextchave2.getText().toString(),editTextchave3.getText().toString(),editTextchave4.getText().toString(),editTextchave5.getText().toString());
             }
         });
 
@@ -211,10 +217,12 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
     //atribuindo informação ao metodo cadastrarCurriculo para API
     private void cadastrarCurriculo(String name, String objetivo, String formacao, String experiencia1 , String experiencia2,
                                     String experiencia3, String cursos, String links, String competenciaextra, String id_usuario,
-            String competencia1, String nivel1, String competencia2, String nivel2, String competencia3, String nivel3) {
+            String competencia1, String nivel1, String competencia2, String nivel2, String competencia3, String nivel3,String chave1,
+                                    String chave2, String chave3,String chave4,String chave5) {
 
         compositeDisposable.add(myAPI.cadastrarCurriculo( name,objetivo,formacao,experiencia1,experiencia2,experiencia3,
-                cursos,links,competenciaextra,id_usuario,competencia1,nivel1,competencia2,nivel2,competencia3,nivel3)
+                cursos,links,competenciaextra,id_usuario,competencia1,nivel1,competencia2,nivel2,competencia3,nivel3,chave1,
+                 chave2, chave3, chave4, chave5)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Consumer<String>() {
@@ -225,8 +233,6 @@ public class AnunciarCurriculo extends AppCompatActivity implements NavigationVi
                 })
         );
     }
-
-
 
 
 
