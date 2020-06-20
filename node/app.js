@@ -261,7 +261,7 @@ app.post('/cadastrarvagas/',(req,res,next)=>{
                     res.end(console.log(`Inserindo ${cargo} ${empresa} ${competencia1} ${competencia1nivel} ${competencia2} ${competencia2nivel} ${competencia3} ${competencia3nivel} ${vagas} ${description} ${id_empresa} ${contrato} ${cidade} ${estado}` ));
                 })   
  
- });
+ })
 
 
 
@@ -294,54 +294,30 @@ app.post('/cadastrarcurriculo/',(req,res,next)=>{
     let chave3 = post_data.chave3;
     let chave4 = post_data.chave4;
     let chave5 = post_data.chave5;
+    let cidade = post_data.cidade;
+    let estado = post_data.estado;
+    let sexo = post_data.sexo;
+    let idade = post_data.idade
 
                 //inserindo Curriculo ao banco
-                con.query('INSERT INTO `usuario_curriculo`(`name`, `objetivo`, `formacao`, `experiencia_1`, `experiencia_2`, `experiencia_3`, `cursos`, `links`, `competencia_extras`, `fk_profissional`, `chave1`, `chave2`, `chave3`, `chave4`, `chave5`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[name,objetivo,formacao,experiencia1,experiencia2,experiencia3,cursos,links,competenciaextra,id_usuario,chave1,chave2,chave3,chave4,chave5],
+                con.query('INSERT INTO `usuario_curriculo`(`name`, `objetivo`, `formacao`, `experiencia_1`, `experiencia_2`, `experiencia_3`, `cursos`, `links`, `competencia_extras`, `fk_profissional`, `chave1`, `chave2`, `chave3`, `chave4`, `chave5`, `competencia1`, `nivel1`, `competencia2`, `nivel2`, `competencia3`, `nivel3`, `cidade_curriculo`, `estado_curriculo`, `sexo_curriculo`, `idade`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)',[name,objetivo,formacao,experiencia1,experiencia2,experiencia3,cursos,links,competenciaextra,id_usuario,chave1,chave2,chave3,chave4,chave5,competencia1,nivel1,competencia2,nivel2,competencia3,nivel3,cidade,estado,sexo,idade],
              
                 function(err,result,fields){
                     con.on('error',function(err){
                         console.log('[MySQL ERROR',err);
                         res.json('Erro ao Registrar:',err );
                     });
-                    
-             
-                        //inserindo primeira competencia ao banco
-                con.query('INSERT INTO `usuario_competencias`(`competencia`, `nivel`, `fk_competencia`) VALUES (?,?,?)',[competencia1,nivel1,id_usuario],
-             
-                function(err,result,fields){
-                    con.on('error',function(err){
-                        console.log('[MySQL ERROR',err);
-                        res.json('Erro ao Registrar:',err );
-                    });
-                    
-                    //inserindo segunda competencia ao banco
-                con.query('INSERT INTO `usuario_competencias`(`competencia`, `nivel`, `fk_competencia`) VALUES (?,?,?)',[competencia2,nivel2,id_usuario],
-             
-                function(err,result,fields){
-                    con.on('error',function(err){
-                        console.log('[MySQL ERROR',err);
-                        res.json('Erro ao Registrar:',err );
-                    });
-
-                                            //inserindo terceira competencia ao banco
-                con.query('INSERT INTO `usuario_competencias`(`competencia`, `nivel`, `fk_competencia`) VALUES (?,?,?)',[competencia3,nivel3,id_usuario],
-             
-                function(err,result,fields){
-                    con.on('error',function(err){
-                        console.log('[MySQL ERROR',err);
-                        res.json('Erro ao Registrar:',err );
-                    });
+                
 
                     res.json('Curriculo registrado com sucesso!'),
                     res.end(console.log(`Inserindo Curriculo: ${name} ${objetivo} ${formacao} ${experiencia2} ${experiencia3} ${cursos} ${links} ${competenciaextra} ${id_usuario}` ));
-                    res.end(console.log(`Inserindo Competencias: ${competencia1} ${nivel1} ${id_usuario} \n ${competencia2} ${nivel2} ${id_usuario} \n ${competencia3} ${nivel3} ${id_usuario}${chave1}${chave2}${chave3}${chave4}${chave5}`, ));
-                
-                })
-            })
-        })
-    })  
+                    res.end(console.log(`Inserindo Competencias: ${competencia1} ${nivel1}  \n ${competencia2} ${nivel2} \n ${competencia3} ${nivel3} \n ${chave1}${chave2}${chave3}${chave4}${chave5}`, ));
 
 });
+})
+
+
+
 
 app.get("/cargosbase",(req,res,next)=>{
     con.query('SELECT * FROM empresa_vagas',function(error,result,fields){
@@ -358,7 +334,7 @@ app.get("/cargosbase",(req,res,next)=>{
             }
     });
     
-});
+})
 
 
 
@@ -403,8 +379,8 @@ app.post("/buscarvagas",(req,res,next)=>{
     }
 
 
-
     //Filtro de busca, todas as combinações de competencia apartir de 3 campos diferentes de ordens diferentes
+
     let query = `SELECT * FROM empresa_vagas WHERE cargo LIKE ('%${cargo1}%')
                 AND competencia_1 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_3 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
                 or cargo LIKE ('%${cargo1}%') and  competencia_1 LIKE '%${competencia1}%' and competencia_3 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
@@ -413,7 +389,7 @@ app.post("/buscarvagas",(req,res,next)=>{
                 or cargo LIKE ('%${cargo1}%') and  competencia_3 LIKE '%${competencia1}%' and competencia_1 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
                 or cargo LIKE ('%${cargo1}%') and  competencia_3 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_1 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'`; 
           
- console.log(query);
+    console.log(query);
 
     con.query(query,function(err,result,fields){
         con.on('error',function(err){
@@ -422,17 +398,19 @@ app.post("/buscarvagas",(req,res,next)=>{
         });
                 if(result && result.length && cargo1 != "")
                 {
-                   
+
                         res.end(JSON.stringify(result));
+
+                        console.log(`result json${result}`);
                 }
                 else
                 { 
                    
-                    res.end(JSON.stringify('Sem vagas com esses parametros, tente buscar outro cargo'));
+                    res.end(JSON.stringify('Sem vagas com esses parametros, tente buscar por outro cargo'));
             }  
     });
 
-});
+})
 
 
 app.get("/cargosbase",(req,res,next)=>{
@@ -463,14 +441,7 @@ app.post("/buscarprofissional",(req,res,next)=>{
     if (cargo1 == undefined){
         cargo1 = "";
     }
-    let cargo2 = post_data.cargo2;
-    if (cargo2 == undefined){
-        cargo2 = "";
-    }
-    let cargo3 = post_data.cargo3;
-    if (cargo3 == undefined){
-        cargo3 = "";
-    }
+
     let competencia1 = post_data.competencia1;
     if (competencia1 == undefined){
         competencia1 = "";
@@ -506,45 +477,131 @@ app.post("/buscarprofissional",(req,res,next)=>{
     }
 
 
+    //Filtro de busca, todas as combinações de competencia apartir de 3 e 5 cargos diferentes campos diferentes de ordens diferentes 
 
-    //Filtro de busca, todas as combinações de competencia apartir de 3 campos diferentes de ordens diferentes
-    let query = `SELECT * FROM empresa_vagas WHERE cargo LIKE ('%${cargo1}%')
-                AND competencia_1 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_3 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
-                or cargo LIKE ('%${cargo1}%') and  competencia_1 LIKE '%${competencia1}%' and competencia_3 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
-                or cargo LIKE ('%${cargo1}%') and  competencia_2 LIKE '%${competencia1}%' and competencia_3 LIKE '%${competencia2}%' and competencia_1 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
-                or cargo LIKE ('%${cargo1}%') and  competencia_2 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_3 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
-                or cargo LIKE ('%${cargo1}%') and  competencia_3 LIKE '%${competencia1}%' and competencia_1 LIKE '%${competencia2}%' and competencia_2 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'
-                or cargo LIKE ('%${cargo1}%') and  competencia_3 LIKE '%${competencia1}%' and competencia_2 LIKE '%${competencia2}%' and competencia_1 LIKE '%${competencia3}%' and cidade like '%${cidade}%' and estado LIKE '%${estado}%'`; 
-          
- console.log(query);
+    let querybusca = `  
+SELECT * FROM usuario_curriculo WHERE cidade_curriculo LIKE '%${cidade}%' and estado_curriculo  LIKE '%${estado}%'and competencia1 LIKE '%${competencia1}%' and competencia2 LIKE '%${competencia2}%' and competencia3 LIKE '%${competencia3}%'
+AND chave1 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' AND competencia1 LIKE '%${competencia1}%' and competencia3 LIKE '%${competencia2}%' and competencia2 LIKE '%${competencia3}%'
+AND  chave1 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' and competencia2 LIKE '%${competencia1}%' and competencia3 LIKE '%${competencia2}%' and competencia1 LIKE '%${competencia3}%'
+and  chave1 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' and competencia2 LIKE '%${competencia1}%' and competencia1 LIKE '%${competencia2}%' and competencia3 LIKE '%${competencia3}%'
+and chave1 LIKE '%${cargo1}%' 
+or cidade_curriculo like  '%%' and estado_curriculo  LIKE '%${estado}%'  and competencia3 LIKE '%${competencia1}%' and competencia1 LIKE '%${competencia2}%' and competencia2 LIKE '%${competencia3}%'
+AND chave1 LIKE  '%${cargo1}%'
+or cidade_curriculo like  '%%' and estado_curriculo  LIKE '%${estado}%'  and competencia3 LIKE '%${competencia1}%' and competencia2 LIKE '%${competencia2}%' and competencia1 LIKE '%${competencia3}%'
+AND chave1 LIKE  '%${cargo1}%'
 
-    con.query(query,function(err,result,fields){
+
+or cidade_curriculo LIKE '%${cidade}%' and estado_curriculo  LIKE '%${estado}%'and competencia1 LIKE '%${competencia1}%' and competencia2 LIKE '%${competencia2}%' and competencia3 LIKE '%${competencia3}%'
+AND chave2 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' AND competencia1 LIKE '%${competencia1}%' and competencia3 LIKE '%${competencia2}%' and competencia2 LIKE '%${competencia3}%'
+AND  chave2 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' and competencia2 LIKE '%${competencia1}%' and competencia3 LIKE '%${competencia2}%' and competencia1 LIKE '%${competencia3}%'
+and  chave2 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' and competencia2 LIKE '%${competencia1}%' and competencia1 LIKE '%${competencia2}%' and competencia3 LIKE '%${competencia3}%'
+and chave2 LIKE '%${cargo1}%' 
+or cidade_curriculo like  '%%' and estado_curriculo  LIKE '%${estado}%'  and competencia3 LIKE '%${competencia1}%' and competencia1 LIKE '%${competencia2}%' and competencia2 LIKE '%${competencia3}%'
+AND chave2 LIKE  '%${cargo1}%'
+or cidade_curriculo like  '%%' and estado_curriculo  LIKE '%${estado}%'  and competencia3 LIKE '%${competencia1}%' and competencia2 LIKE '%${competencia2}%' and competencia1 LIKE '%${competencia3}%'
+AND chave2 LIKE  '%${cargo1}%'
+
+
+
+    or cidade_curriculo LIKE '%${cidade}%' and estado_curriculo  LIKE '%${estado}%'and competencia1 LIKE '%${competencia1}%' and competencia2 LIKE '%${competencia2}%' and competencia3 LIKE '%${competencia3}%'
+AND chave3 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' AND competencia1 LIKE '%${competencia1}%' and competencia3 LIKE '%${competencia2}%' and competencia2 LIKE '%${competencia3}%'
+AND  chave3 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' and competencia2 LIKE '%${competencia1}%' and competencia3 LIKE '%${competencia2}%' and competencia1 LIKE '%${competencia3}%'
+and  chave3 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' and competencia2 LIKE '%${competencia1}%' and competencia1 LIKE '%${competencia2}%' and competencia3 LIKE '%${competencia3}%'
+and chave3 LIKE '%${cargo1}%' 
+or cidade_curriculo like  '%%' and estado_curriculo  LIKE '%${estado}%'  and competencia3 LIKE '%${competencia1}%' and competencia1 LIKE '%${competencia2}%' and competencia2 LIKE '%${competencia3}%'
+AND chave3 LIKE  '%${cargo1}%'
+or cidade_curriculo like  '%%' and estado_curriculo  LIKE '%${estado}%'  and competencia3 LIKE '%${competencia1}%' and competencia2 LIKE '%${competencia2}%' and competencia1 LIKE '%${competencia3}%'
+AND chave3 LIKE  '%${cargo1}%'
+
+
+
+    or cidade_curriculo LIKE '%${cidade}%' and estado_curriculo  LIKE '%${estado}%'and competencia1 LIKE '%${competencia1}%' and competencia2 LIKE '%${competencia2}%' and competencia3 LIKE '%${competencia3}%'
+AND chave4 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' AND competencia1 LIKE '%${competencia1}%' and competencia3 LIKE '%${competencia2}%' and competencia2 LIKE '%${competencia3}%'
+AND  chave4 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' and competencia2 LIKE '%${competencia1}%' and competencia3 LIKE '%${competencia2}%' and competencia1 LIKE '%${competencia3}%'
+and  chave4 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' and competencia2 LIKE '%${competencia1}%' and competencia1 LIKE '%${competencia2}%' and competencia3 LIKE '%${competencia3}%'
+and chave4 LIKE '%${cargo1}%' 
+or cidade_curriculo like  '%%' and estado_curriculo  LIKE '%${estado}%'  and competencia3 LIKE '%${competencia1}%' and competencia1 LIKE '%${competencia2}%' and competencia2 LIKE '%${competencia3}%'
+AND chave4 LIKE  '%${cargo1}%'
+or cidade_curriculo like  '%%' and estado_curriculo  LIKE '%${estado}%'  and competencia3 LIKE '%${competencia1}%' and competencia2 LIKE '%${competencia2}%' and competencia1 LIKE '%${competencia3}%'
+AND chave4 LIKE  '%${cargo1}%'
+
+
+        or cidade_curriculo LIKE '%${cidade}%' and estado_curriculo  LIKE '%${estado}%'and competencia1 LIKE '%${competencia1}%' and competencia2 LIKE '%${competencia2}%' and competencia3 LIKE '%${competencia3}%'
+AND chave5 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' AND competencia1 LIKE '%${competencia1}%' and competencia3 LIKE '%${competencia2}%' and competencia2 LIKE '%${competencia3}%'
+AND  chave5 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' and competencia2 LIKE '%${competencia1}%' and competencia3 LIKE '%${competencia2}%' and competencia1 LIKE '%${competencia3}%'
+and  chave5 LIKE '%${cargo1}%'
+or cidade_curriculo LIKE  '%%' and estado_curriculo  LIKE '%${estado}%' and competencia2 LIKE '%${competencia1}%' and competencia1 LIKE '%${competencia2}%' and competencia3 LIKE '%${competencia3}%'
+and chave5 LIKE '%${cargo1}%' 
+or cidade_curriculo like  '%%' and estado_curriculo  LIKE '%${estado}%'  and competencia3 LIKE '%${competencia1}%' and competencia1 LIKE '%${competencia2}%' and competencia2 LIKE '%${competencia3}%'
+AND chave5 LIKE  '%${cargo1}%'
+or cidade_curriculo like  '%%' and estado_curriculo  LIKE '%${estado}%'  and competencia3 LIKE '%${competencia1}%' and competencia2 LIKE '%${competencia2}%' and competencia1 LIKE '%${competencia3}%'
+AND chave5 LIKE  '%${cargo1}%'
+  
+    `            
+    con.query(querybusca,function(err,result,fields){
         con.on('error',function(err){
             console.log('[MYSQL]ERROR',err);
         
         });
-                if(result && result.length && cargo1 != "")
+        console.log(`${cargo1}/${competencia1}`);
+                if(result && result.length && cargo1 != "" || competencia1 != "")
                 {
-                    
-                   
                         res.end(JSON.stringify(result));
+
+                        console.log(querybusca);
                 }
                 else
                 { 
                    
-                    res.end(JSON.stringify('Sem vagas com esses parametros, tente buscar outro cargo'));
-            }  
+                res.end(JSON.stringify('Sem Profissionais com esses parametros, tente buscar por outro cargo ou competencia'));
+
+                console.log(querybusca);
+
+        
+                       
+                }  
     });
 
 });
 
 
+
+
+
 /*
-SELECT email_contato,description_empresa
-FROM
-usuario_empresa
-INNER JOIN
-empresa_vagas
-ON
-usuario_empresa.id = empresa_vagas.fk_empresa
-WHERE fk_empresa = 33*/
+
+
+*/
+
+/*
+
+Algoritimo inner join 
+ // coletando so ID para innerjoin
+                    var id = (JSON.stringify(result,['id']));   
+                
+                      //Enner Join email contato e descrição da empresa
+                    let queryinner = `SELECT email_contato,description_empresa FROM usuario_empresa INNER JOIN empresa_vagas ON usuario_empresa.id = empresa_vagas.fk_empresa WHERE fk_empresa = ${id}`
+                        
+                    con.query(queryinner,function(err,result,fields){
+                        con.on('error',function(err){
+                            console.log('[MYSQL]ERROR',err);
+                        });  
+                        
+                          console.log(`result inner${result}`);
+
+                    });
+                    */

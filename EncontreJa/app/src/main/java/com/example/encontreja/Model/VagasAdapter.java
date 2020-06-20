@@ -76,7 +76,7 @@ public class VagasAdapter extends ArrayAdapter {
 
         Vagas vagasClass = (Vagas)this.getItem(position);
         vagasHolder.txt_Empresa.setText(vagasClass.getEmpresa());
-        vagasHolder.txt_aVagas.setText(vagasClass.getVagas()+"Vagas");
+        vagasHolder.txt_aVagas.setText(" "+vagasClass.getVagas()+" Vagas");
         vagasHolder.txt_aContrato.setText(vagasClass.getContrato());
         vagasHolder.txt_aCargo.setText(vagasClass.getCargo());
         vagasHolder.txt_aCompetencia1.setText(vagasClass.getCompetencia_1());

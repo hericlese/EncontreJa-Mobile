@@ -14,276 +14,284 @@
     android:layout_gravity="top"
     >
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_marginTop="5dp"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="start"
-                        android:orientation="horizontal"
-                        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
 
-                        <TextView
-                            android:id="@+id/cargoanuncio"
-                            android:layout_width="match_parent"
-                            android:layout_height="23dp"
-                            android:text="Cargo Vaga"
-                            android:textAlignment="center"
-                            android:textColor="@color/v5"
-                            android:textSize="15sp"
-                            android:textStyle="bold"
+        >
 
-                            />
+        <TextView
+            android:id="@+id/cargoanuncio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cargo Vaga"
+            android:textAlignment="center"
+            android:textColor="@color/v5"
+            android:textSize="22sp"
 
-                        <GridLayout
-                            android:layout_marginStart="-400dp"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="20dp"
-                            android:columnCount="3">
-
-                            <TextView
-                                android:id="@+id/empresanomevagaanuncio"
-                                android:layout_width="241dp"
-                                android:layout_height="20dp"
-                                android:layout_column="0"
-                                android:layout_gravity="start"
-                                android:layout_marginStart="5dp"
-                                android:autoSizeTextType="uniform"
-                                android:text="EMPRESA NAME "
-                                android:textColor="@color/v2"
-                                android:textSize="15sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:id="@+id/numerovagaanuncio"
-                                android:layout_width="56dp"
-                                android:layout_height="17dp"
-                                android:layout_column="1"
-                                android:layout_gravity="right"
-                                android:layout_marginStart="2dp"
-                                android:autoSizeTextType="uniform"
-                                android:text="1 Vaga"
-                                android:textColor="@color/v4"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-
-                            <TextView
-                                android:id="@+id/contratovaga"
-                                android:layout_width="80dp"
-                                android:layout_height="17dp"
-                                android:layout_column="2"
-                                android:layout_marginStart="2dp"
-                                android:layout_marginEnd="10dp"
-                                android:gravity="center"
-                                android:autoSizeTextType="uniform"
-                                android:text="Temporario"
-                                android:textColor="#000000"
-                                android:textSize="12sp"
-                                android:textStyle="bold" />
-
-                        </GridLayout>
+            android:textStyle="bold" />
 
 
 
-                        //grid competencias
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-402dp"
+            android:layout_marginTop="30dp"
+            android:columnCount="3"
+            android:rowCount="2"
 
-                        <GridLayout
-                            android:layout_marginStart="-400dp"
-                            android:layout_marginEnd="10dp"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="40dp"
-                            android:layout_marginBottom="10dp"
-                            android:columnCount="3">
+           >
 
-                            ///////////////////////////////////////COMPETENCIA 1
+            <TextView
+                android:id="@+id/empresanomevagaanuncio"
+                android:layout_width="241dp"
+                android:layout_height="match_parent"
+                android:layout_column="0"
+                android:layout_gravity="start"
+                android:background="@drawable/separacao_campo"
+                android:layout_marginStart="5dp"
+                android:autoSizeTextType="uniform"
+                android:text="EMPRESA NAME "
+                android:textColor="@color/v2"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-                            <LinearLayout
-                                android:layout_width="130dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="start"
-                                android:layout_marginTop="10dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/competencia1anuncio"
-                                    android:layout_width="130dp"
-                                    android:layout_height="15dp"
-                                    android:layout_column="0"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_marginBottom="3dp"
-                                    android:textAlignment="center"
-                                    android:autoSizeTextType="uniform"
-                                    android:text="Competencia 1"
-                                    android:textColor="@color/v5"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-
-                            ///////////////////////////////////////COMPETENCIA 2
-
-
-                            <LinearLayout
-                                android:layout_width="130dp"
-                                android:layout_marginTop="10dp"
-                                android:layout_gravity="end"
-                                android:orientation="horizontal"
-                                android:layout_column="1"
-                                android:layout_height="wrap_content">
-
-                                <TextView
-                                    android:id="@+id/competencia2anuncio"
-                                    android:layout_width="130dp"
-                                    android:layout_height="15dp"
-                                    android:layout_marginStart="2dp"
-                                    android:layout_marginBottom="3dp"
-                                    android:textAlignment="center"
-                                    android:autoSizeTextType="uniform"
-                                    android:text="Competencia 1"
-                                    android:textColor="@color/v5"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-
-                            ///////////////////////////////////////COMPETENCIA 3
+            <TextView
+                android:id="@+id/numerovagaanuncio"
+                android:layout_width="60dp"
+                android:layout_height="17dp"
+                android:layout_column="1"
+                android:layout_gravity="right"
+                android:layout_marginStart="3dp"
+                android:autoSizeTextType="uniform"
+                android:text="1 Vaga"
+                android:textColor="@color/v4"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:background="@drawable/separacao_campo"/>
 
 
-                            <LinearLayout
-                                android:layout_width="130dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="start"
-                                android:layout_marginTop="10dp"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/competencia3anuncio"
-                                    android:layout_width="130dp"
-                                    android:layout_height="15dp"
-                                    android:layout_column="1"
-                                    android:layout_marginStart="2dp"
-                                    android:textAlignment="center"
-                                    android:layout_marginBottom="3dp"
-                                    android:autoSizeTextType="uniform"
-                                    android:text="Competencia 1"
-                                    android:textColor="@color/v5"
-                                    android:textSize="12sp"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
-                        </GridLayout>
-
-                        <GridLayout
-                            android:layout_marginStart="-400dp"
-                            android:layout_width="fill_parent"
-                            android:layout_height="23dp"
-                            android:layout_marginTop="60dp"
-                            android:layout_marginBottom="10dp"
-                            android:columnCount="3">
-
-                            //separar
-
-                            <LinearLayout
-                                android:layout_width="130dp"
-                                android:layout_row="0"
-                                android:layout_column="0"
-                                android:layout_gravity="start|bottom"
-                                android:background="@drawable/separacao_campo"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:id="@+id/competencia1nivel"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="15dp"
-                                    android:layout_gravity="bottom"
-                                    android:autoSizeTextType="uniform"
-                                    android:text="Avançado"
-                                    android:textAlignment="center"
-                                    android:textColor="@color/v4"
-                                    android:textSize="9sp"
-                                    android:textStyle="bold" />
-
-                            </LinearLayout>
+            <TextView
+                android:id="@+id/contratovaga"
+                android:layout_width="80dp"
+                android:layout_height="17dp"
+                android:layout_column="2"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="10dp"
+                android:autoSizeTextType="uniform"
+                android:gravity="center"
+                android:text="Temporario"
+                android:textColor="#000000"
+                android:textSize="12sp"
+                android:textStyle="bold" />
 
 
-                            <LinearLayout
-                                android:layout_width="130dp"
-                                android:layout_row="0"
-                                android:layout_column="1"
-                                android:layout_gravity="start|bottom"
-                                android:background="@drawable/separacao_campo"
-
-                                android:orientation="horizontal">
-
-                                <TextView
-
-                                    android:id="@+id/competencia2nivel"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="15dp"
-                                    android:layout_gravity="bottom"
-                                    android:autoSizeTextType="uniform"
-                                    android:text="Médio"
-                                    android:textAlignment="center"
-                                    android:textColor="@color/v4"
-                                    android:textSize="9sp"
-                                    android:textStyle="bold" />
-                            </LinearLayout>
+        </GridLayout>
 
 
-                            <LinearLayout
-                                android:layout_width="130dp"
-                                android:layout_row="0"
-                                android:layout_column="2"
-                                android:layout_gravity="start|bottom"
-                                android:orientation="horizontal">
+        //grid competencias
 
-                                <TextView
-                                    android:id="@+id/competencia3nivel"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="15dp"
-                                    android:layout_gravity="bottom"
-                                    android:textAlignment="center"
-                                    android:autoSizeTextType="uniform"
-                                    android:text="Básico"
-                                    android:textColor="@color/v4"
-                                    android:textSize="9sp"
-                                    android:textStyle="bold" />
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="-400dp"
+            android:layout_marginTop="45dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="10dp"
+            android:columnCount="3">
 
-                            </LinearLayout>
-                        </GridLayout>
 
-                        <GridLayout
-                            android:layout_marginStart="-400dp"
-                            android:layout_width="fill_parent"
-                            android:layout_height="23dp"
-                            android:layout_marginTop="80dp"
-                            android:layout_marginBottom="10dp"
-                            android:columnCount="2">
+            ///////////////////////////////////////COMPETENCIA 1
 
-                            //separar
+            <LinearLayout
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
 
-                            <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_row="0"
-                                android:layout_column="0"
-                                android:layout_gravity="start|bottom"
-                                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/competencia1anuncio"
+                    android:layout_width="130dp"
+                    android:layout_height="15dp"
+                    android:layout_column="0"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginBottom="3dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="Competencia 1"
+                    android:textAlignment="center"
+                    android:textColor="@color/v5"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-                                <TextView
-                                    android:id="@+id/competenciacidadeestado"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="15dp"
-                                    android:layout_marginEnd="5dp"
-                                    android:layout_marginBottom="2dp"
-                                    android:autoSizeTextType="uniform"
-                                    android:text="Estado-Cidade"
-                                    android:textAlignment="textEnd"
-                                    android:textColor="#6f6f6f"
-                                    android:textSize="6sp"
-                                    android:textStyle="bold" />
+            ///////////////////////////////////////COMPETENCIA 2
 
-                            </LinearLayout>
-                        </GridLayout>
 
-                    </LinearLayout>
+            <LinearLayout
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="end"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/competencia2anuncio"
+                    android:layout_width="130dp"
+                    android:layout_height="15dp"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginBottom="3dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="Competencia 1"
+                    android:textAlignment="center"
+                    android:textColor="@color/v5"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            ///////////////////////////////////////COMPETENCIA 3
+
+
+            <LinearLayout
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/competencia3anuncio"
+                    android:layout_width="130dp"
+                    android:layout_height="15dp"
+                    android:layout_column="1"
+                    android:layout_marginStart="2dp"
+                    android:layout_marginBottom="3dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="Competencia 1"
+                    android:textAlignment="center"
+                    android:textColor="@color/v5"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="23dp"
+            android:layout_marginStart="-400dp"
+            android:layout_marginTop="65dp"
+            android:layout_marginBottom="10dp"
+            android:columnCount="3">
+
+            //separar
+
+            <LinearLayout
+                android:layout_width="130dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="start|bottom"
+                android:background="@drawable/separacao_campo"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/competencia1nivel"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_gravity="bottom"
+                    android:autoSizeTextType="uniform"
+                    android:text="Avançado"
+                    android:textAlignment="center"
+                    android:textColor="@color/v4"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="130dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_gravity="start|bottom"
+                android:background="@drawable/separacao_campo"
+
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:id="@+id/competencia2nivel"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_gravity="bottom"
+                    android:autoSizeTextType="uniform"
+                    android:text="Médio"
+                    android:textAlignment="center"
+                    android:textColor="@color/v4"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="130dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:layout_gravity="start|bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/competencia3nivel"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_gravity="bottom"
+                    android:autoSizeTextType="uniform"
+                    android:text="Básico"
+                    android:textAlignment="center"
+                    android:textColor="@color/v4"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </GridLayout>
+
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="23dp"
+            android:layout_marginStart="-400dp"
+            android:layout_marginTop="85dp"
+            android:layout_marginBottom="10dp"
+            android:columnCount="2">
+
+            //separar
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:layout_gravity="start|bottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/competenciacidadeestado"
+                    android:layout_width="match_parent"
+                    android:layout_height="15dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginBottom="2dp"
+                    android:autoSizeTextType="uniform"
+                    android:text="Estado-Cidade"
+                    android:textAlignment="textEnd"
+                    android:textColor="#6f6f6f"
+                    android:textSize="6sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+        </GridLayout>
+
+    </LinearLayout>
                 </androidx.cardview.widget.CardView>
 

@@ -84,7 +84,11 @@ public interface NodeJS {
                                         @Field("chave2") String chave2,
                                         @Field("chave3") String chave3,
                                         @Field("chave4") String chave4,
-                                        @Field("chave5") String chave5
+                                        @Field("chave5") String chave5,
+                                        @Field("cidade") String cidade,
+                                        @Field("estado") String estado,
+                                        @Field("sexo") String sexo,
+                                        @Field("idade") String idade
     );
 
     @GET("cargosbase")
@@ -104,7 +108,16 @@ public interface NodeJS {
 
 
 
-
+    @POST("buscarprofissional")
+    @FormUrlEncoded
+    Observable<String> buscarprofissional(
+                                        @Field("cargo1") String cargo1,
+                                        @Field("competencia1") String competencia1,
+                                        @Field("competencia2") String competencia2,
+                                        @Field("competencia3") String competencia3,
+                                        @Field("cidade") String cidade,
+                                        @Field("estado") String estado
+    );
 
 
 

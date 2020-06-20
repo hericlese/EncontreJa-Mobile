@@ -24,6 +24,8 @@
         </activity>
         <activity android:name=".ActivityHome"/>
 
+        <activity android:name=".ProcurarProfissionais" />
+        <activity android:name=".ProfissionaisResult" />
         <activity android:name=".ProcurarVagas" />
         <activity android:name=".VagasResult" />
         <activity android:name=".MainActivity"/>

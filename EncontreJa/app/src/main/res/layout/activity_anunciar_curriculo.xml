@@ -86,265 +86,301 @@
                 app:cardElevation="6dp">
 
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:orientation="vertical"
-                    android:padding="5dp">
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent"
+                   android:layout_gravity="center"
+                   android:orientation="vertical"
+                   android:padding="5dp">
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="15dp"
-                        android:layout_column="0"
-                        android:layout_marginStart="2dp"
-                        android:autoSizeTextType="uniform"
-                        android:text="Curriculo"
-                        android:textColor="#6f6f6f"
-                        android:textAlignment="center"
-                        android:textSize="14sp"
-                        android:textStyle="bold" />
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="15dp"
+                       android:layout_column="0"
+                       android:layout_marginStart="2dp"
+                       android:autoSizeTextType="uniform"
+                       android:text="Curriculo"
+                       android:textAlignment="center"
+                       android:textColor="#6f6f6f"
+                       android:textSize="14sp"
+                       android:textStyle="bold" />
 
 
-                    <TextView
-                        android:id="@+id/competencia2vaga"
-                        android:layout_width="fill_parent"
-                        android:layout_height="15dp"
-                        android:layout_column="0"
-                        android:layout_marginStart="2dp"
-                        android:autoSizeTextType="uniform"
-                        android:text="Nome:"
-                        android:textColor="#6f6f6f"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+                   <TextView
+                       android:id="@+id/competencia2vaga"
+                       android:layout_width="fill_parent"
+                       android:layout_height="15dp"
+                       android:layout_column="0"
+                       android:layout_marginStart="2dp"
+                       android:autoSizeTextType="uniform"
+                       android:text="Nome:"
+                       android:textColor="#6f6f6f"
+                       android:textSize="12sp"
+                       android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextNomeCurriculo"
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="#FAF8F8"
-                        android:ems="10"
-                        android:hint=" Digite seu nome completo"
-                        android:inputType="textPersonName"
-                        android:textAlignment="center"
-                        android:textSize="14dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.114" />
+                   <EditText
+                       android:id="@+id/editTextNomeCurriculo"
+                       android:layout_width="match_parent"
+                       android:layout_height="30dp"
+                       android:layout_marginStart="15dp"
+                       android:layout_marginEnd="10dp"
+                       android:background="#FAF8F8"
+                       android:ems="10"
+                       android:hint=" Digite seu nome completo"
+                       android:inputType="textPersonName"
+                       android:textAlignment="center"
+                       android:textSize="14dp"
+                       app:layout_constraintBottom_toBottomOf="parent"
+                       app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintStart_toStartOf="parent"
+                       app:layout_constraintTop_toTopOf="parent"
+                       app:layout_constraintVertical_bias="0.114" />
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="15dp"
-                        android:layout_column="0"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="10dp"
-                        android:autoSizeTextType="uniform"
-                        android:text="Objetivo:"
-                        android:textColor="#6f6f6f"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="15dp"
+                       android:layout_column="0"
+                       android:layout_marginStart="2dp"
+                       android:layout_marginTop="10dp"
+                       android:autoSizeTextType="uniform"
+                       android:text="Objetivo:"
+                       android:textColor="#6f6f6f"
+                       android:textSize="12sp"
+                       android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextObjetivoCurriculo"
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="#FAF8F8"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:hint=" Resumidamente dite seus objetivos profissionais: "
-                        android:inputType="textMultiLine"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="parent" />
+                   <EditText
+                       android:id="@+id/editTextObjetivoCurriculo"
+                       android:layout_width="match_parent"
+                       android:layout_height="50dp"
+                       android:layout_marginStart="15dp"
+                       android:layout_marginEnd="10dp"
+                       android:background="#FAF8F8"
+                       android:ems="10"
+                       android:gravity="start|top"
+                       android:hint=" Resumidamente dite seus objetivos profissionais: "
+                       android:inputType="textMultiLine"
+                       android:textSize="12sp"
+                       app:layout_constraintStart_toStartOf="parent" />
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="15dp"
-                        android:layout_column="0"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="10dp"
-                        android:autoSizeTextType="uniform"
-                        android:text="Formações:"
-                        android:textColor="#6f6f6f"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="15dp"
+                       android:layout_column="0"
+                       android:layout_marginStart="2dp"
+                       android:layout_marginTop="10dp"
+                       android:autoSizeTextType="uniform"
+                       android:text="Formações:"
+                       android:textColor="#6f6f6f"
+                       android:textSize="12sp"
+                       android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextFormacaoCurriculo"
-                        android:layout_width="match_parent"
-                        android:layout_height="140dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="#FAF8F8"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:hint=" Formações atualizadas como: \n Faculdade1 X \n Curso  X\n Inicio 04-2020 Fim 04-2025 \n \n Faculdade2 X \n Curso  X\n Inicio 04-2020 Fim 04-2025 \n \n Faculdade3 X \n Curso  X\n Inicio 04-2020 Fim 04-2025"
-                        android:inputType="textMultiLine"
-                        android:textSize="9dp"
-                        app:layout_constraintStart_toStartOf="parent" />
+                   <EditText
+                       android:id="@+id/editTextFormacaoCurriculo"
+                       android:layout_width="match_parent"
+                       android:layout_height="140dp"
+                       android:layout_marginStart="15dp"
+                       android:layout_marginEnd="10dp"
+                       android:background="#FAF8F8"
+                       android:ems="10"
+                       android:gravity="start|top"
+                       android:hint=" Formações atualizadas como: \n Faculdade1 X \n Curso  X\n Inicio 04-2020 Fim 04-2025 \n \n Faculdade2 X \n Curso  X\n Inicio 04-2020 Fim 04-2025 \n \n Faculdade3 X \n Curso  X\n Inicio 04-2020 Fim 04-2025"
+                       android:inputType="textMultiLine"
+                       android:textSize="9dp"
+                       app:layout_constraintStart_toStartOf="parent" />
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="30dp"
-                        android:layout_column="0"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="10dp"
-                        android:autoSizeTextType="uniform"
-                        android:text="Experiencias: \n 1"
-                        android:textColor="#6f6f6f"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="30dp"
+                       android:layout_column="0"
+                       android:layout_marginStart="2dp"
+                       android:layout_marginTop="10dp"
+                       android:autoSizeTextType="uniform"
+                       android:text="Experiencias: \n 1"
+                       android:textColor="#6f6f6f"
+                       android:textSize="12sp"
+                       android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextExperiencias1Curriculo"
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="#FAF8F8"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:hint=" Experiencias como:\n Cargo X\n Empresa X\n Exercia X função \n Inicio 04-2020 Fim 04-2025 \n Exercia a função de ......."
-                        android:inputType="textMultiLine"
-                        android:textSize="9dp"
-                        app:layout_constraintStart_toStartOf="parent" />
+                   <EditText
+                       android:id="@+id/editTextExperiencias1Curriculo"
+                       android:layout_width="match_parent"
+                       android:layout_height="70dp"
+                       android:layout_marginStart="15dp"
+                       android:layout_marginEnd="10dp"
+                       android:background="#FAF8F8"
+                       android:ems="10"
+                       android:gravity="start|top"
+                       android:hint=" Experiencias como:\n Cargo X\n Empresa X\n Exercia X função \n Inicio 04-2020 Fim 04-2025 \n Exercia a função de ......."
+                       android:inputType="textMultiLine"
+                       android:textSize="9dp"
+                       app:layout_constraintStart_toStartOf="parent" />
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="30dp"
-                        android:layout_column="0"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="10dp"
-                        android:autoSizeTextType="uniform"
-                        android:text="Experiencias: \n 2"
-                        android:textColor="#6f6f6f"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="30dp"
+                       android:layout_column="0"
+                       android:layout_marginStart="2dp"
+                       android:layout_marginTop="10dp"
+                       android:autoSizeTextType="uniform"
+                       android:text="Experiencias: \n 2"
+                       android:textColor="#6f6f6f"
+                       android:textSize="12sp"
+                       android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextExperiencias2Curriculo"
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="#FAF8F8"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:hint=" Experiencias como:\n Cargo X\n Empresa X\n Exercia X função \n Inicio 04-2020 Fim 04-2025 \n Exercia a função de ......."
-                        android:inputType="textMultiLine"
-                        android:textSize="9dp"
-                        app:layout_constraintStart_toStartOf="parent" />
+                   <EditText
+                       android:id="@+id/editTextExperiencias2Curriculo"
+                       android:layout_width="match_parent"
+                       android:layout_height="70dp"
+                       android:layout_marginStart="15dp"
+                       android:layout_marginEnd="10dp"
+                       android:background="#FAF8F8"
+                       android:ems="10"
+                       android:gravity="start|top"
+                       android:hint=" Experiencias como:\n Cargo X\n Empresa X\n Exercia X função \n Inicio 04-2020 Fim 04-2025 \n Exercia a função de ......."
+                       android:inputType="textMultiLine"
+                       android:textSize="9dp"
+                       app:layout_constraintStart_toStartOf="parent" />
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="30dp"
-                        android:layout_column="0"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="10dp"
-                        android:autoSizeTextType="uniform"
-                        android:text="Experiencias: \n 3"
-                        android:textColor="#6f6f6f"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="30dp"
+                       android:layout_column="0"
+                       android:layout_marginStart="2dp"
+                       android:layout_marginTop="10dp"
+                       android:autoSizeTextType="uniform"
+                       android:text="Experiencias: \n 3"
+                       android:textColor="#6f6f6f"
+                       android:textSize="12sp"
+                       android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextExperiencias3Curriculo"
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="#FAF8F8"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:hint=" Experiencias como:\n Cargo X\n Empresa X\n Exercia X função \n Inicio 04-2020 Fim 04-2025 \n Exercia a função de ......."
-                        android:inputType="textMultiLine"
-                        android:textSize="9dp"
-                        app:layout_constraintStart_toStartOf="parent" />
+                   <EditText
+                       android:id="@+id/editTextExperiencias3Curriculo"
+                       android:layout_width="match_parent"
+                       android:layout_height="70dp"
+                       android:layout_marginStart="15dp"
+                       android:layout_marginEnd="10dp"
+                       android:background="#FAF8F8"
+                       android:ems="10"
+                       android:gravity="start|top"
+                       android:hint=" Experiencias como:\n Cargo X\n Empresa X\n Exercia X função \n Inicio 04-2020 Fim 04-2025 \n Exercia a função de ......."
+                       android:inputType="textMultiLine"
+                       android:textSize="9dp"
+                       app:layout_constraintStart_toStartOf="parent" />
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="15dp"
-                        android:layout_column="0"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="10dp"
-                        android:autoSizeTextType="uniform"
-                        android:text="Cursos:"
-                        android:textColor="#6f6f6f"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="15dp"
+                       android:layout_column="0"
+                       android:layout_marginStart="2dp"
+                       android:layout_marginTop="10dp"
+                       android:autoSizeTextType="uniform"
+                       android:text="Cursos:"
+                       android:textColor="#6f6f6f"
+                       android:textSize="12sp"
+                       android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextCursosCurriculo"
-                        android:layout_width="match_parent"
-                        android:layout_height="155dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="#FAF8F8"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:hint=" Instituição1: \n Curso1 X \n Detalhes1 X\n Inicio 04-2020 Fim 04-2025 \n \n Instituição2: \n Curso2 X \n Detalhes2 X\n Inicio 04-2020 Fim 04-2025 \n \n Instituição3: \n Curso3 X \n Detalhes3 X\n Inicio 04-2020 Fim 04-2025 \n \n"
-                        android:inputType="textMultiLine"
-                        android:textSize="9dp"
-                        app:layout_constraintStart_toStartOf="parent" />
+                   <EditText
+                       android:id="@+id/editTextCursosCurriculo"
+                       android:layout_width="match_parent"
+                       android:layout_height="155dp"
+                       android:layout_marginStart="15dp"
+                       android:layout_marginEnd="10dp"
+                       android:background="#FAF8F8"
+                       android:ems="10"
+                       android:gravity="start|top"
+                       android:hint=" Instituição1: \n Curso1 X \n Detalhes1 X\n Inicio 04-2020 Fim 04-2025 \n \n Instituição2: \n Curso2 X \n Detalhes2 X\n Inicio 04-2020 Fim 04-2025 \n \n Instituição3: \n Curso3 X \n Detalhes3 X\n Inicio 04-2020 Fim 04-2025 \n \n"
+                       android:inputType="textMultiLine"
+                       android:textSize="9dp"
+                       app:layout_constraintStart_toStartOf="parent" />
 
-                        <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="15dp"
-                        android:layout_column="0"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="10dp"
-                        android:autoSizeTextType="uniform"
-                        android:text="Links:"
-                        android:textColor="#6f6f6f"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="15dp"
+                       android:layout_column="0"
+                       android:layout_marginStart="2dp"
+                       android:layout_marginTop="10dp"
+                       android:autoSizeTextType="uniform"
+                       android:text="Links:"
+                       android:textColor="#6f6f6f"
+                       android:textSize="17sp"
+                       android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextLinksCurriculo"
-                        android:layout_width="match_parent"
-                        android:layout_height="35dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="#FAF8F8"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:hint=" Campo dedicado para links e informações adicionais: \n linkedin.com/in \n https://github.com/explore"
-                        android:inputType="textMultiLine"
-                        android:textSize="9dp"
-                        app:layout_constraintStart_toStartOf="parent" />
+                   <EditText
+                       android:id="@+id/editTextLinksCurriculo"
+                       android:layout_width="match_parent"
+                       android:layout_height="35dp"
+                       android:layout_marginStart="15dp"
+                       android:layout_marginEnd="10dp"
+                       android:background="#FAF8F8"
+                       android:ems="10"
+                       android:gravity="start|top"
+                       android:hint=" Campo dedicado para links e informações adicionais: \n linkedin.com/in \n https://github.com/explore"
+                       android:inputType="textMultiLine"
+                       android:textSize="9dp"
+                       app:layout_constraintStart_toStartOf="parent" />
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="15dp"
-                        android:layout_column="0"
-                        android:layout_marginStart="2dp"
-                        android:layout_marginTop="10dp"
-                        android:autoSizeTextType="uniform"
-                        android:text="Competências Extras:"
-                        android:textColor="#6f6f6f"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+                   <TextView
+                       android:layout_width="fill_parent"
+                       android:layout_height="15dp"
+                       android:layout_column="0"
+                       android:layout_marginStart="2dp"
+                       android:layout_marginTop="10dp"
+                       android:autoSizeTextType="uniform"
+                       android:text="Competências Extras:"
+                       android:textColor="#6f6f6f"
+                       android:textSize="17sp"
+                       android:textStyle="bold" />
 
-                    <EditText
-                        android:id="@+id/editTextCompetenciaExtCurriculo"
-                        android:layout_width="match_parent"
-                        android:layout_height="70dp"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginEnd="10dp"
-                        android:background="#FAF8F8"
-                        android:ems="10"
-                        android:gravity="start|top"
-                        android:hint=" Campo dedicado para competências extras (Separe 3 competências principais para preencher no proximo bloco:
+                   <EditText
+                       android:id="@+id/editTextCompetenciaExtCurriculo"
+                       android:layout_width="match_parent"
+                       android:layout_height="70dp"
+                       android:layout_marginStart="15dp"
+                       android:layout_marginEnd="10dp"
+                       android:background="#FAF8F8"
+                       android:ems="10"
+                       android:gravity="start|top"
+                       android:hint=" Campo dedicado para competências extras (Separe 3 competências principais para preencher no proximo bloco:
                          \n Conhecimento em Excel Avançado \n Conhecimento em Ingles Intermediario \n Conhecimento em SQL \n Conhecimento em Hardware Medio"
-                        android:inputType="textMultiLine"
-                        android:textSize="9dp"
-                        app:layout_constraintStart_toStartOf="parent" />
-                </LinearLayout>
+                       android:inputType="textMultiLine"
+                       android:textSize="9dp"
+                       app:layout_constraintStart_toStartOf="parent" />
+
+                   <CheckBox
+                       android:id="@+id/checkBoxHomem2"
+                       android:layout_width="90dp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="15dp"
+                       android:layout_marginTop="20dp"
+                       android:text="Homem"
+                       app:layout_constraintStart_toStartOf="@+id/checkBoxHomem"
+                       app:layout_constraintTop_toBottomOf="@+id/checkBoxHomem" />
+
+                   <CheckBox
+                       android:id="@+id/checkBoxMulher2"
+                       android:layout_width="90dp"
+                       android:layout_height="wrap_content"
+                       android:layout_marginStart="120dp"
+                       android:layout_marginTop="-32dp"
+                       android:text="Mulher"
+                       app:layout_constraintStart_toEndOf="@+id/checkBoxMulher"
+                       app:layout_constraintTop_toBottomOf="@+id/checkBoxMulher" />
+
+
+                   <EditText
+                       android:id="@+id/editTextIdade"
+                       android:layout_width="200dp"
+                       android:layout_height="48dp"
+                       android:layout_marginStart="15dp"
+                       android:layout_marginTop="30dp"
+                       android:layout_marginEnd="15dp"
+                       android:background="#FAF8F8"
+                       android:ems="10"
+                       android:hint=" Idade"
+                       android:inputType="number"
+                       android:textSize="14dp"
+                       app:layout_constraintStart_toStartOf="parent" />
+
+               </LinearLayout>
             </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
@@ -797,6 +833,99 @@
                             android:inputType="textPersonName"
                             android:textSize="14dp"
                             app:layout_constraintStart_toStartOf="parent" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="#cccc"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="10dp"
+                            android:textAppearance="?attr/textAppearanceListItemSmall"/>
+
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="10dp"
+                            android:autoSizeTextType="uniform"
+                            android:text=" Estado"
+                            android:textAlignment="center"
+                            android:textColor="#6f6f6f"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:layout_marginStart="2dp"
+                            android:autoSizeTextType="uniform"
+                            android:text=" Estado:"
+                            android:textColor="#6f6f6f"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autoCompleteEstadocu"
+                            android:layout_width="300dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="#FAF8F8"
+                            android:ems="10"
+                            android:gravity="left"
+                            android:textSize="14dp"
+                            android:hint="Selecione o estado"
+                            android:completionThreshold="1"
+                            android:completionHint="\n Selecione o estado" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="3dp"
+                            android:background="#cccc"
+                            android:gravity="center_vertical"
+                            android:layout_marginTop="15dp"
+                            android:textAppearance="?attr/textAppearanceListItemSmall"/>
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginTop="10dp"
+                            android:autoSizeTextType="uniform"
+                            android:text=" Cidade"
+                            android:textAlignment="center"
+                            android:textColor="#6f6f6f"
+                            android:textSize="14sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="15dp"
+                            android:layout_marginStart="2dp"
+                            android:autoSizeTextType="uniform"
+                            android:text=" Cidade:"
+                            android:textColor="#6f6f6f"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autoCompleteCidadecu"
+                            android:layout_width="300dp"
+                            android:layout_height="30dp"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="#FAF8F8"
+                            android:ems="10"
+                            android:inputType="textAutoComplete"
+                            android:gravity="left"
+                            android:textSize="14dp"
+                            android:hint="Selecione a cidade"
+                            android:completionThreshold="1"
+                            android:completionHint="\n Selecione a cidade" />
+
+
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>

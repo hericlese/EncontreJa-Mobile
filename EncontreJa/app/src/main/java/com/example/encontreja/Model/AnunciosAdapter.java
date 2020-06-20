@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -22,7 +23,7 @@ public class AnunciosAdapter extends ArrayAdapter {
         super(context, resource);
     }
 
-    public void add(Vagas object) {
+    public void add(Anuncios object) {
         super.add(object);
         list.add(object);
     }
@@ -50,21 +51,21 @@ public class AnunciosAdapter extends ArrayAdapter {
         if(row == null)
         {
             LayoutInflater layoutInflater = (LayoutInflater)this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row = layoutInflater.inflate(R.layout.layout_anunciosvagas,parent,false);
+            row = layoutInflater.inflate(R.layout.layout_anunciosprofissionais,parent,false);
 
             anunciosHolder = new AnunciosHolder();
 
-            anunciosHolder.txt_Empresa = (TextView) row.findViewById(R.id.empresanomevagaanuncio);
-            anunciosHolder.txt_aVagas = (TextView) row.findViewById(R.id.numerovagaanuncio);
-            anunciosHolder.txt_aContrato = (TextView) row.findViewById(R.id.contratovaga);
-            anunciosHolder.txt_aCargo = (TextView) row.findViewById(R.id.cargoanuncio);
-            anunciosHolder.txt_aCompetencia1 = (TextView) row.findViewById(R.id.competencia1anuncio);
-            anunciosHolder.txt_aCompetencia1nivel = (TextView) row.findViewById(R.id.competencia1nivel);
-            anunciosHolder.txt_aCompetencia2 = (TextView) row.findViewById(R.id.competencia2anuncio);
-            anunciosHolder.txt_aCompetencia2nivel = (TextView) row.findViewById(R.id.competencia2nivel);
-            anunciosHolder.txt_aCompetencia3 = (TextView) row.findViewById(R.id.competencia3anuncio);
-            anunciosHolder.txt_aCompetencia3nivel = (TextView) row.findViewById(R.id.competencia3nivel);
+            anunciosHolder.txt_Nome = (TextView) row.findViewById(R.id.nomeanuncio);
+            anunciosHolder.txt_idade = (TextView) row.findViewById(R.id.idadeanuncio);
+            anunciosHolder.txt_aCompetencia1 = (TextView) row.findViewById(R.id.competencia1anunciopro);
+            anunciosHolder.txt_aCompetencia1nivel = (TextView) row.findViewById(R.id.competencia1nivelpro);
+            anunciosHolder.txt_aCompetencia2 = (TextView) row.findViewById(R.id.competencia2anunciopro);
+            anunciosHolder.txt_aCompetencia2nivel = (TextView) row.findViewById(R.id.competencia2nivelpro);
+            anunciosHolder.txt_aCompetencia3 = (TextView) row.findViewById(R.id.competencia3anunciopro);
+            anunciosHolder.txt_aCompetencia3nivel = (TextView) row.findViewById(R.id.competencia3nivelpro);
             anunciosHolder.txt_aCidadeEstado = (TextView) row.findViewById(R.id.competenciacidadeestado);
+
+            // anunciosHolder.img = (ImageView) row.findViewById(R.id.imgprofissional);
 
 
             row.setTag(anunciosHolder);
@@ -75,17 +76,15 @@ public class AnunciosAdapter extends ArrayAdapter {
         }
 
         Anuncios anunciosClass = (Anuncios)this.getItem(position);
-        anunciosHolder.txt_Empresa.setText(anunciosClass.getEmpresa());
-        anunciosHolder.txt_aVagas.setText(anunciosClass.getVagas()+"Vagas");
-        anunciosHolder.txt_aContrato.setText(anunciosClass.getContrato());
-        anunciosHolder.txt_aCargo.setText(anunciosClass.getCargo());
-        anunciosHolder.txt_aCompetencia1.setText(anunciosClass.getCompetencia_1());
-        anunciosHolder.txt_aCompetencia1nivel.setText(anunciosClass.getCompetencia_1_nivel());
-        anunciosHolder.txt_aCompetencia2.setText(anunciosClass.getCompetencia_2());
-        anunciosHolder.txt_aCompetencia2nivel.setText(anunciosClass.getCompetencia_2_nivel());
-        anunciosHolder.txt_aCompetencia3.setText(anunciosClass.getCompetencia_3());
-        anunciosHolder.txt_aCompetencia3nivel.setText(anunciosClass.getCompetencia_3_nivel());
-        anunciosHolder.txt_aCidadeEstado.setText(anunciosClass.getCidade()+"-"+vagasClass.getEstado());
+        anunciosHolder.txt_Nome.setText(anunciosClass.getName());
+        anunciosHolder.txt_idade.setText(anunciosClass.getIdade()+" Anos");
+        anunciosHolder.txt_aCompetencia1.setText(anunciosClass.getCompetencia1());
+        anunciosHolder.txt_aCompetencia1nivel.setText(anunciosClass.getNivel1());
+        anunciosHolder.txt_aCompetencia2.setText(anunciosClass.getCompetencia2());
+        anunciosHolder.txt_aCompetencia2nivel.setText(anunciosClass.getNivel2());
+        anunciosHolder.txt_aCompetencia3.setText(anunciosClass.getCompetencia3());
+        anunciosHolder.txt_aCompetencia3nivel.setText(anunciosClass.getNivel3());
+        anunciosHolder.txt_aCidadeEstado.setText(anunciosClass.getCidade_curriculo()+"-"+anunciosClass.getEstado_curriculo());
 
         return row;
     }
@@ -93,7 +92,6 @@ public class AnunciosAdapter extends ArrayAdapter {
 
     static class AnunciosHolder{
 
-        TextView txt_Empresa,txt_aVagas,txt_aContrato,txt_aCargo, txt_aCompetencia1 ,txt_aCompetencia1nivel ,txt_aCompetencia2,
-                txt_aCompetencia2nivel,txt_aCompetencia3 ,txt_aCompetencia3nivel,txt_aCidadeEstado;
+        TextView txt_Nome,txt_idade, txt_aCompetencia1 ,txt_aCompetencia1nivel ,txt_aCompetencia2, txt_aCompetencia2nivel,txt_aCompetencia3 ,txt_aCompetencia3nivel,txt_aCidadeEstado;
     }
 }

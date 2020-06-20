@@ -4,11 +4,13 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Vagas implements Serializable {
-    String cargo,empresa,competencia_1,competencia_2,competencia_3,id,fk_empresa,vagas,description,contrato,cidade,estado,competencia_1_nivel,competencia_2_nivel,competencia_3_nivel,emailcontato,descricaoempresa;
+    String cargo,empresa,competencia_1,competencia_2,competencia_3,id,fk_empresa,vagas,description,contrato,cidade,estado,
+            competencia_1_nivel,competencia_2_nivel,competencia_3_nivel;
 
 
     public Vagas(String cargo, String empresa, String competencia_1, String competencia_2, String competencia_3,
-                 String id, String fk_empresa, String vagas, String description, String contrato,  String cidade,  String estado,String competencia_1_nivel,String competencia_2_nivel, String competencia_3_nivel,String emailcontato,String descricaoempresa) {
+                 String id, String fk_empresa, String vagas, String description, String contrato,  String cidade,  String estado,
+                 String competencia_1_nivel,String competencia_2_nivel, String competencia_3_nivel) {
         this.cargo = cargo;
         this.empresa = empresa;
         this.competencia_1 = competencia_1;
@@ -24,8 +26,6 @@ public class Vagas implements Serializable {
         this.contrato = contrato;
         this.cidade = cidade;
         this.estado = estado;
-        this.emailcontato = emailcontato;
-        this.descricaoempresa = descricaoempresa;
 
 
     }
@@ -154,19 +154,5 @@ public class Vagas implements Serializable {
         this.competencia_3_nivel = competencia_3_nivel;
     }
 
-    public String getEmailcontato() {
-        return emailcontato;
-    }
 
-    public void setEmailcontato(String emailcontato) {
-        this.emailcontato = emailcontato;
-    }
-
-    public String getDescricaoempresa() {
-        return descricaoempresa;
-    }
-
-    public void setDescricaoempresa(String descricaoempresa) {
-        this.descricaoempresa = descricaoempresa;
-    }
 }

@@ -43,17 +43,6 @@ public class ProcurarVagas extends AppCompatActivity implements NavigationView.O
 
     };
 
-    ArrayList<Vagas> vagases = new ArrayList<>();
-
-//    //Array select Cargos
-//    String[] Cargos;
-//    public void setCargos(ArrayList<String> cargos) {
-//        Cargos = cargos.toArray(new String[0]);
-//    }
-//    public String[] getCargos() {
-//        return Cargos;
-//    }
-
 
     CompositeDisposable compositeDisposable = new CompositeDisposable();
 
@@ -114,13 +103,6 @@ public class ProcurarVagas extends AppCompatActivity implements NavigationView.O
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>( this,
                 android.R.layout.simple_list_item_1,Cidades);
         autoCompleteCidade.setAdapter(adapter2);
-
-
-        //Seleção Cargo
-        //autoCompleteCargo1 = findViewById(R.id.autoCompleteCargo1Vaga);
-        //Array select cargo
-        //ArrayAdapter<String> adapter3 = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1,Cargos);
-        //autoCompleteCargo1.setAdapter(adapter3);
 
 
 

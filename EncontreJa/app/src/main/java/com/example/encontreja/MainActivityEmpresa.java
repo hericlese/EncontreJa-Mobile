@@ -57,7 +57,7 @@ public class MainActivityEmpresa extends AppCompatActivity implements Navigation
                 // Intent(classe origem, classe destino.class)
                 Intent itProcurarProfissional = new Intent(
                         MainActivityEmpresa.this,
-                        AnunciosProfissionais.class
+                        ProcurarProfissionais.class
                 );
                 // chamar a outra Activity
                 startActivity(itProcurarProfissional);

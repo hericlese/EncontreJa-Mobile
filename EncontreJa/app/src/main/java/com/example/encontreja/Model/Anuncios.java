@@ -3,34 +3,40 @@ package com.example.encontreja.Model;
 import java.io.Serializable;
 
 public class Anuncios implements Serializable {
-    String id, nome, idade,sexo,email_contato,data,objetivo,formacao,experiencai1,experiencai2,experiencai3,cursos,links,competenciasextras, competencia1, competencia1nivel,competencia2, competencia2nivel, competencia3, competencia3nivel, cidade, estado,fk_profissinal;
+    String id, name, objetivo, formacao, experiencia_1, experiencia_2, experiencia_3, cursos, links, competencia_extras, fk_profissional,
+            competencia1, nivel1, competencia2, nivel2, competencia3, nivel3, cidade_curriculo, estado_curriculo, sexo_curriculo, idade;
 
 
-    public Anuncios(String id, String nome, String idade, String sexo, String email_contato, String data, String objetivo, String formacao, String experiencai1, String experiencai2, String experiencai3, String cursos, String links, String competenciasextras, String competencia1, String competencia1nivel, String competencia2, String competencia2nivel, String competencia3, String competencia3nivel, String cidade, String estado, String fk_profissinal) {
+    public Anuncios(String id, String name, String objetivo, String formacao, String experiencia_1, String experiencia_2, String experiencia_3, String cursos,
+                    String links, String competencia_extras, String fk_profissional, String competencia1, String nivel1, String competencia2, String nivel2,
+                    String competencia3, String nivel3, String cidade_curriculo, String estado_curriculo, String sexo_curriculo, String idade) {
         this.id = id;
-        this.nome = nome;
-        this.idade = idade;
-        this.sexo = sexo;
-        this.email_contato = email_contato;
-        this.data = data;
+        this.name = name;
         this.objetivo = objetivo;
         this.formacao = formacao;
-        this.experiencai1 = experiencai1;
-        this.experiencai2 = experiencai2;
-        this.experiencai3 = experiencai3;
+        this.experiencia_1 = experiencia_1;
+        this.experiencia_2 = experiencia_2;
+        this.experiencia_3 = experiencia_3;
         this.cursos = cursos;
         this.links = links;
-        this.competenciasextras = competenciasextras;
+        this.competencia_extras = competencia_extras;
+        this.fk_profissional = fk_profissional;
         this.competencia1 = competencia1;
-        this.competencia1nivel = competencia1nivel;
+        this.nivel1 = nivel1;
         this.competencia2 = competencia2;
-        this.competencia2nivel = competencia2nivel;
+        this.nivel2 = nivel2;
         this.competencia3 = competencia3;
-        this.competencia3nivel = competencia3nivel;
-        this.cidade = cidade;
-        this.estado = estado;
-        this.fk_profissinal = fk_profissinal;
+        this.nivel3 = nivel3;
+        this.cidade_curriculo = cidade_curriculo;
+        this.estado_curriculo = estado_curriculo;
+        this.sexo_curriculo = sexo_curriculo;
+        this.idade = idade;
     }
+
+
+    public Anuncios() {
+    }
+
 
     public String getId() {
         return id;
@@ -40,44 +46,12 @@ public class Anuncios implements Serializable {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public String getName() {
+        return name;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public String getIdade() {
-        return idade;
-    }
-
-    public void setIdade(String idade) {
-        this.idade = idade;
-    }
-
-    public String getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(String sexo) {
-        this.sexo = sexo;
-    }
-
-    public String getEmail_contato() {
-        return email_contato;
-    }
-
-    public void setEmail_contato(String email_contato) {
-        this.email_contato = email_contato;
-    }
-
-    public String getData() {
-        return data;
-    }
-
-    public void setData(String data) {
-        this.data = data;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getObjetivo() {
@@ -96,28 +70,28 @@ public class Anuncios implements Serializable {
         this.formacao = formacao;
     }
 
-    public String getExperiencai1() {
-        return experiencai1;
+    public String getExperiencia_1() {
+        return experiencia_1;
     }
 
-    public void setExperiencai1(String experiencai1) {
-        this.experiencai1 = experiencai1;
+    public void setExperiencia_1(String experiencia_1) {
+        this.experiencia_1 = experiencia_1;
     }
 
-    public String getExperiencai2() {
-        return experiencai2;
+    public String getExperiencia_2() {
+        return experiencia_2;
     }
 
-    public void setExperiencai2(String experiencai2) {
-        this.experiencai2 = experiencai2;
+    public void setExperiencia_2(String experiencia_2) {
+        this.experiencia_2 = experiencia_2;
     }
 
-    public String getExperiencai3() {
-        return experiencai3;
+    public String getExperiencia_3() {
+        return experiencia_3;
     }
 
-    public void setExperiencai3(String experiencai3) {
-        this.experiencai3 = experiencai3;
+    public void setExperiencia_3(String experiencia_3) {
+        this.experiencia_3 = experiencia_3;
     }
 
     public String getCursos() {
@@ -136,12 +110,20 @@ public class Anuncios implements Serializable {
         this.links = links;
     }
 
-    public String getCompetenciasextras() {
-        return competenciasextras;
+    public String getCompetencia_extras() {
+        return competencia_extras;
     }
 
-    public void setCompetenciasextras(String competenciasextras) {
-        this.competenciasextras = competenciasextras;
+    public void setCompetencia_extras(String competencia_extras) {
+        this.competencia_extras = competencia_extras;
+    }
+
+    public String getFk_profissional() {
+        return fk_profissional;
+    }
+
+    public void setFk_profissional(String fk_profissional) {
+        this.fk_profissional = fk_profissional;
     }
 
     public String getCompetencia1() {
@@ -152,12 +134,12 @@ public class Anuncios implements Serializable {
         this.competencia1 = competencia1;
     }
 
-    public String getCompetencia1nivel() {
-        return competencia1nivel;
+    public String getNivel1() {
+        return nivel1;
     }
 
-    public void setCompetencia1nivel(String competencia1nivel) {
-        this.competencia1nivel = competencia1nivel;
+    public void setNivel1(String nivel1) {
+        this.nivel1 = nivel1;
     }
 
     public String getCompetencia2() {
@@ -168,12 +150,12 @@ public class Anuncios implements Serializable {
         this.competencia2 = competencia2;
     }
 
-    public String getCompetencia2nivel() {
-        return competencia2nivel;
+    public String getNivel2() {
+        return nivel2;
     }
 
-    public void setCompetencia2nivel(String competencia2nivel) {
-        this.competencia2nivel = competencia2nivel;
+    public void setNivel2(String nivel2) {
+        this.nivel2 = nivel2;
     }
 
     public String getCompetencia3() {
@@ -184,35 +166,43 @@ public class Anuncios implements Serializable {
         this.competencia3 = competencia3;
     }
 
-    public String getCompetencia3nivel() {
-        return competencia3nivel;
+    public String getNivel3() {
+        return nivel3;
     }
 
-    public void setCompetencia3nivel(String competencia3nivel) {
-        this.competencia3nivel = competencia3nivel;
+    public void setNivel3(String nivel3) {
+        this.nivel3 = nivel3;
     }
 
-    public String getCidade() {
-        return cidade;
+    public String getCidade_curriculo() {
+        return cidade_curriculo;
     }
 
-    public void setCidade(String cidade) {
-        this.cidade = cidade;
+    public void setCidade_curriculo(String cidade_curriculo) {
+        this.cidade_curriculo = cidade_curriculo;
     }
 
-    public String getEstado() {
-        return estado;
+    public String getEstado_curriculo() {
+        return estado_curriculo;
     }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
+    public void setEstado_curriculo(String estado_curriculo) {
+        this.estado_curriculo = estado_curriculo;
     }
 
-    public String getFk_profissinal() {
-        return fk_profissinal;
+    public String getSexo_curriculo() {
+        return sexo_curriculo;
     }
 
-    public void setFk_profissinal(String fk_profissinal) {
-        this.fk_profissinal = fk_profissinal;
+    public void setSexo_curriculo(String sexo_curriculo) {
+        this.sexo_curriculo = sexo_curriculo;
+    }
+
+    public String getIdade() {
+        return idade;
+    }
+
+    public void setIdade(String idade) {
+        this.idade = idade;
     }
 }

@@ -88,7 +88,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_gravity="top"
                         android:orientation="vertical"
                         android:padding="5dp">
 
@@ -99,7 +99,7 @@
                             android:layout_marginTop="10dp"
                             android:layout_marginStart="2dp"
                             android:autoSizeTextType="uniform"
-                            android:text="Buscar Cargos, não é necessário preencher \n todos os campos "
+                            android:text="Buscar Cargo, não obrigatorio"
                             android:textAlignment="center"
                             android:textColor="#6f6f6f"
                             android:textSize="12sp"
@@ -125,56 +125,6 @@
                             android:layout_marginEnd="10dp"
                             android:background="#FAF8F8"
                             android:ems="10"
-                            android:hint=" Digite o cargo"
-                            android:inputType="textPersonName"
-                            android:textAlignment="center"
-                            android:textSize="16dp"
-                            />
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_column="0"
-                            android:layout_marginStart="2dp"
-                            android:autoSizeTextType="uniform"
-                            android:text="Cargo :"
-                            android:textColor="#6f6f6f"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-
-                        <EditText
-                            android:id="@+id/editTextBusca2Cargo"
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="#FAF8F8"
-                            android:ems="10"
-                            android:hint=" Digite mais um cargo"
-                            android:inputType="textPersonName"
-                            android:textAlignment="center"
-                            android:textSize="16dp"
-                            />
-
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_column="0"
-                            android:layout_marginStart="2dp"
-                            android:autoSizeTextType="uniform"
-                            android:text="Cargo :"
-                            android:textColor="#6f6f6f"
-                            android:textSize="12sp"
-                            android:textStyle="bold" />
-
-                        <EditText
-                            android:id="@+id/editTextBusca3Cargo"
-                            android:layout_width="match_parent"
-                            android:layout_height="30dp"
-                            android:layout_marginStart="15dp"
-                            android:layout_marginEnd="10dp"
-                            android:background="#FAF8F8"
-                            android:ems="10"
-                            android:hint=" Digite mais um cargo"
                             android:inputType="textPersonName"
                             android:textAlignment="center"
                             android:textSize="16dp"
@@ -214,7 +164,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/editTextCompetencia1Busca"
+                            android:id="@+id/editTextCompetencia1BuscaPro"
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_marginStart="15dp"
@@ -227,41 +177,6 @@
                             android:textSize="14dp"
                             app:layout_constraintStart_toStartOf="parent" />
 
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_marginStart="2dp"
-                            android:autoSizeTextType="uniform"
-                            android:text="Nivel:"
-                            android:textColor="#6f6f6f"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <CheckBox
-                            android:id="@+id/comp1N1Busca"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:text="Básico"
-                            android:textSize="12dp" />
-
-                        <CheckBox
-                            android:id="@+id/comp1N2Busca"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="120dp"
-                            android:layout_marginTop="-32dp"
-                            android:text="Intermediário "
-                            android:textSize="12dp" />
-
-                        <CheckBox
-                            android:id="@+id/comp1N3Busca"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="250dp"
-                            android:layout_marginTop="-33dp"
-                            android:text="Avançado"
-                            android:textSize="12dp" />
 
                         -                        <TextView
                         android:layout_width="match_parent"
@@ -294,7 +209,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/editTextCompetencia2Busca"
+                            android:id="@+id/editTextCompetencia2BuscaPro"
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_marginStart="15dp"
@@ -307,43 +222,6 @@
                             android:textSize="14dp"
                             app:layout_constraintStart_toStartOf="parent" />
 
-                        <TextView
-                            android:layout_width="fill_parent"
-                            android:layout_height="15dp"
-                            android:layout_marginStart="2dp"
-                            android:autoSizeTextType="uniform"
-                            android:text="Nivel:"
-                            android:textColor="#6f6f6f"
-                            android:textSize="14sp"
-                            android:textStyle="bold" />
-
-                        <CheckBox
-                            android:id="@+id/comp2N1Busca"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:text="Básico"
-                            android:textSize="12dp"
-
-                            />
-
-                        <CheckBox
-                            android:id="@+id/comp2N2Busca"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="120dp"
-                            android:layout_marginTop="-32dp"
-                            android:text="Intermediário "
-                            android:textSize="12dp"/>
-
-                        <CheckBox
-                            android:id="@+id/comp2N3Busca"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="250dp"
-                            android:layout_marginTop="-33dp"
-                            android:text="Avançado"
-                            android:textSize="12dp" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -377,7 +255,7 @@
                             android:textStyle="bold" />
 
                         <EditText
-                            android:id="@+id/editTextCompetencia3Busca"
+                            android:id="@+id/editTextCompetencia3BuscaPro"
                             android:layout_width="match_parent"
                             android:layout_height="30dp"
                             android:layout_marginStart="15dp"
@@ -390,33 +268,6 @@
                             android:textSize="14dp"
                             app:layout_constraintStart_toStartOf="parent" />
 
-                        <CheckBox
-                            android:id="@+id/comp3N1Busca"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="15dp"
-                            android:text="Básico"
-                            android:textSize="12dp"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/editTextCep" />
-
-                        <CheckBox
-                            android:id="@+id/comp3N2Busca"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="120dp"
-                            android:layout_marginTop="-32dp"
-                            android:text="Intermediário "
-                            android:textSize="12dp"/>
-
-                        <CheckBox
-                            android:id="@+id/comp3N3Busca"
-                            android:layout_width="fill_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="250dp"
-                            android:layout_marginTop="-33dp"
-                            android:text="Avançado"
-                            android:textSize="12dp" />
 
                         <TextView
                             android:layout_width="match_parent"
@@ -449,7 +300,7 @@
                             android:textStyle="bold" />
 
                         <AutoCompleteTextView
-                            android:id="@+id/autoCompleteEstadoVaga"
+                            android:id="@+id/autoCompleteEstadoProfiAnun"
                             android:layout_width="300dp"
                             android:layout_height="30dp"
                             android:layout_marginStart="15dp"
@@ -494,7 +345,7 @@
                             android:textStyle="bold" />
 
                         <AutoCompleteTextView
-                            android:id="@+id/autoCompleteCidadeVaga"
+                            android:id="@+id/autoCompleteCidadeProfiAnun"
                             android:layout_width="300dp"
                             android:layout_height="30dp"
                             android:layout_marginStart="15dp"
@@ -524,7 +375,7 @@
                             >
 
                             <LinearLayout
-                                android:id="@+id/btnProcurarVaga"
+                                android:id="@+id/btnProcurarProfissional"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:orientation="vertical"
@@ -547,10 +398,6 @@
 
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
-
-
-
-
 
             </GridLayout>
 

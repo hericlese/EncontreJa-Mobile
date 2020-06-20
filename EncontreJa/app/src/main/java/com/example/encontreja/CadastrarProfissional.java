@@ -99,14 +99,14 @@ public class CadastrarProfissional extends AppCompatActivity implements Navigati
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 check_sexom.setChecked(false);
-                check_result = "1";
+                check_result = "Homem";
             }
         });
         check_sexom.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 check_sexoh.setChecked(false);
-                check_result = "0";
+                check_result = "Mulher";
 
             }
         });

@@ -1,14 +1,17 @@
 package com.example.encontreja;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -17,9 +20,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.example.encontreja.Controler.NodeJS;
+import com.example.encontreja.Controler.RetrofitClient;
 import com.google.android.material.navigation.NavigationView;
 
+import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.functions.Consumer;
+import io.reactivex.schedulers.Schedulers;
+import retrofit2.Retrofit;
 
 
 public class ProcurarProfissionais extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
@@ -54,11 +62,8 @@ public class ProcurarProfissionais extends AppCompatActivity implements Navigati
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     AutoCompleteTextView autoCompleteCidade,autoCompleteEstado;
-    CheckBox comp1N1Busca,comp1N2Busca,comp1N3Busca,comp2N1Busca,comp2N2Busca,comp2N3Busca, comp3N1Busca,
-            comp3N2Busca,comp3N3Busca;
-    EditText editCargo1Busca,editCargo2Busca,editCargo3Busca,editTextComp1,editTextComp2,editTextComp3,editTextBuscaPalavra;
-    LinearLayout btnBuscarVaga;
-    String competenciaBuscaN1,competenciaBuscaN2,competenciaBuscaN3;
+    EditText editCargo1Busca,editTextComp1,editTextComp2,editTextComp3;
+    LinearLayout btnBuscarprofi;
     NodeJS myAPI;
 
     @SuppressLint({"RestrictedApi", "WrongViewCast"})
@@ -78,121 +83,63 @@ public class ProcurarProfissionais extends AppCompatActivity implements Navigati
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-        btnBuscarVaga = findViewById(R.id.btnProcurarVaga);
+
         editCargo1Busca = findViewById(R.id.editTextBuscaCargo);
-        editCargo2Busca = findViewById(R.id.editTextBusca2Cargo);
-        editCargo3Busca = findViewById(R.id.editTextBusca3Cargo);
-        editTextComp1 = findViewById(R.id.editTextCompetencia1Busca);
-        editTextComp2 = findViewById(R.id.editTextCompetencia2Busca);
-        editTextComp3 = findViewById(R.id.editTextCompetencia3Busca);
-
-        comp1N1Busca = findViewById(R.id.comp1N1Busca);
-        comp1N2Busca = findViewById(R.id.comp1N2Busca);
-        comp1N3Busca = findViewById(R.id.comp1N3Busca);
-        comp2N1Busca = findViewById(R.id.comp2N1Busca);
-        comp2N2Busca = findViewById(R.id.comp2N2Busca);
-        comp2N3Busca = findViewById(R.id.comp2N3Busca);
-        comp3N1Busca = findViewById(R.id.comp3N1Busca);
-        comp3N2Busca = findViewById(R.id.comp3N2Busca);
-        comp3N3Busca = findViewById(R.id.comp3N3Busca);
-
-
-
-        //Event de click em checkbox Competencia1
-        comp1N1Busca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                comp1N2Busca.setChecked(false);
-                comp1N3Busca.setChecked(false);
-                competenciaBuscaN1 = "1";
-            }
-        });
-        comp1N2Busca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                comp1N1Busca.setChecked(false);
-                comp1N3Busca.setChecked(false);
-                competenciaBuscaN1 = "2";
-            }
-        });
-        comp1N3Busca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                comp1N1Busca.setChecked(false);
-                comp1N2Busca.setChecked(false);
-                competenciaBuscaN1 = "3";
-            }
-        });
-
-        //Event de click em checkbox Competencia2
-        comp2N1Busca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                comp2N2Busca.setChecked(false);
-                comp2N3Busca.setChecked(false);
-                competenciaBuscaN2 = "1";
-            }
-        });
-        comp2N2Busca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                comp2N1Busca.setChecked(false);
-                comp2N3Busca.setChecked(false);
-                competenciaBuscaN2 = "2";
-            }
-        });
-        comp2N3Busca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                comp2N1Busca.setChecked(false);
-                comp2N2Busca.setChecked(false);
-                competenciaBuscaN2 = "3";
-            }
-        });
-
-        //Event de click em checkbox Competencia3
-        comp3N1Busca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                comp3N2Busca.setChecked(false);
-                comp3N3Busca.setChecked(false);
-                competenciaBuscaN3 = "1";
-            }
-        });
-        comp3N2Busca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                comp3N1Busca.setChecked(false);
-                comp3N3Busca.setChecked(false);
-                competenciaBuscaN3 = "2";
-            }
-        });
-        comp3N3Busca.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                comp3N1Busca.setChecked(false);
-                comp3N2Busca.setChecked(false);
-                competenciaBuscaN3 = "3";
-            }
-        });
-
-
+        editTextComp1 = findViewById(R.id.editTextCompetencia1BuscaPro);
+        editTextComp2 = findViewById(R.id.editTextCompetencia2BuscaPro);
+        editTextComp3 = findViewById(R.id.editTextCompetencia3BuscaPro);
+        btnBuscarprofi = findViewById(R.id.btnProcurarProfissional);
 
         //Seleção Estado
-        autoCompleteEstado = findViewById(R.id.autoCompleteEstadoVaga);
+        autoCompleteEstado = findViewById(R.id.autoCompleteEstadoProfiAnun);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>( this,
                 android.R.layout.simple_list_item_1,Estados);
         autoCompleteEstado.setAdapter(adapter);
 
         //Seleção Cidade
-        autoCompleteCidade = findViewById(R.id.autoCompleteCidadeVaga);
+        autoCompleteCidade = findViewById(R.id.autoCompleteCidadeProfiAnun);
         ArrayAdapter<String> adapter2 = new ArrayAdapter<String>( this,
                 android.R.layout.simple_list_item_1,Cidades);
         autoCompleteCidade.setAdapter(adapter2);
 
 
+        btnBuscarprofi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                buscarprofissional(editCargo1Busca.getText().toString(),editTextComp1.getText().toString(),editTextComp2.getText().toString(),editTextComp3.getText().toString(),autoCompleteCidade.getText().toString(),autoCompleteEstado.getText().toString());
+
+            }
+        });
+
+
+
+        //iniciando API
+        Retrofit retrofit = RetrofitClient.getInstance();
+        myAPI = retrofit.create(NodeJS.class);
+
+
     }
 
+    private void  buscarprofissional(final String cargo1, String competencia1, String competencia2,
+                              String competencia3,String cidade, String estado) {
+        compositeDisposable.add(myAPI.buscarprofissional(cargo1,competencia1,competencia2,competencia3,cidade,estado)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Consumer<String>() {
+                    @Override
+                    public void accept(String s) throws Exception {
+                        if (s.contains("id")) {
+
+                            Intent intentBuscar = new Intent(ProcurarProfissionais.this,ProfissionaisResult.class);
+                            intentBuscar.putExtra("JsonBusca",s);
+                            startActivity(intentBuscar);
+                        }
+                        else
+                            Toast.makeText(ProcurarProfissionais.this, s, Toast.LENGTH_SHORT).show(); // caso de erro retorna erro da API
+                    }})
+        );
+    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
